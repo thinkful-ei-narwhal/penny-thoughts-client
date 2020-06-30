@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: #D4AA7D;
+  padding: 1rem;
+}
+
+.form-container {
+  padding: 2rem;
+  margin: 4rem auto;
+  width: 80%;
+  height: 70vh;
+  background-color: #90A9B7;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.input-group {
+  margin: 1rem;
+}
+
+.message-submit {
+  display: block;
+  padding: .7rem;
+  margin: 2rem auto 0;
+  font-size: 1.2rem;
+  background-color: rgb(107, 104, 104);
+}

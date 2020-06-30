@@ -1,0 +1,13 @@
+.coin {
+  background-image: url(../images/shiny-coin1.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  text-align: center;
+  margin: 2rem;
+}
