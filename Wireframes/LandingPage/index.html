@@ -9,24 +9,29 @@
 </head>
 <body>
   <nav role="navigation">
-    <span>NAV</span>
+    <h1>Penny<img class="header-logo" src="../images/penny.svg" alt="penny">Thoughts</h1>
+    <button class="basic-button">Create Account</button>
     <i class="fas fa-bars"></i>
   </nav>
   <main>
-    <section class="user-options">
-      <span class="sign-in">Sign-In</span>
-      <span class="create-user">Create Account</span>
-    </section>
-    <section class="icon-container">
-      <i class="coins fas fa-coins"></>
-    </section>
+    <form class="login-form" action="">
+      <p class="input-group">
+        <label class="basic-label" for="username">Username</label>
+        <input class="basic-input" type="text" name="username" id="username" required>
+      </p>
+      <p class="input-group">
+        <label class="basic-label" for="pwd">Password</label>
+        <input class="basic-input" type="password" name="pwd" id="pwd">
+      </p>
+      <button class="filled-button" type="submit">Log In</button>
+    </form>
     <section class="app-desc">
       <p>
-        PennyThoughts is an app that.......
-      </p>
-    </section>
-    <section class="user-options">
-      <button class="sign-in">Get Inspired</button>
+        Penny Thoughts is an app that allows users to share and view positive, motivational statements. With today's quarantine keeping people at home, Penny Thoughts helps bring positivity to users by showing them positive statements. Sign up and begin reaping the benefits of positivity.
+      </p> 
+      <button class="filled-button">
+        Get Inspired
+      </button>
     </section>
   </main>
 </body>
