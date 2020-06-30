@@ -1,0 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: #D4AA7D;
+  padding: 1rem;
+}
+
+.user-greeting {
+  display: flex;
+  justify-content: space-around;
+  margin: 2rem;
+}
+
+.messages-container {
+  width: 100%;
+  min-height: 30rem;
+  background-color: #90A9B7; 
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.wishing-well {
+  height: 300px;
+  width: 300px;
+}
+
+.coin {
+  background-image: url(../images/shiny-coin1.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  text-align: center;
+  margin: 2rem;
+}
+
+.message-form {
+  text-align: center;
+}
+
+

@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: lightgrey;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: #D4AA7D;
+  padding: 1rem;
+}
+
+.user-options {
+  display: flex;
+  justify-content: space-around;
+  padding: 1rem;
+}
+
+.sign-in {
+  background-color: #D2D8B3;
+  border: 1px solid black;
+  padding: .5rem;
+}
+
+.create-user {
+  background-color: #D2D8B3;
+  border: 1px solid black;
+  padding: .5rem;
+}
+
+.icon-container {
+  /* height: 30rem; */
+  width: 100%;
+}
+
+.coins {
+  display: block;
+  margin: 2rem auto;
+  font-size: 5rem;
+  text-align: center;
+}
+
+.app-desc {
+  background-color: #90A9B7;
+  padding: 1rem;
+  width: 90%;
+  margin: 7rem auto 2rem;
+}
