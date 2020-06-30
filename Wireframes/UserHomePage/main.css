@@ -12,10 +12,15 @@ nav {
   padding: 1rem;
 }
 
+.header-logo {
+  height: 1rem;
+  width: 1rem;
+}
+
 .user-greeting {
   display: flex;
   justify-content: space-around;
-  margin: 2rem;
+  margin: 1rem;
 }
 
 .messages-container {
@@ -24,11 +29,7 @@ nav {
   background-color: #90A9B7; 
   display: flex;
   flex-wrap: wrap;
-}
-
-.wishing-well {
-  height: 300px;
-  width: 300px;
+  justify-content: space-evenly;
 }
 
 .coin {
@@ -47,6 +48,17 @@ nav {
 
 .message-form {
   text-align: center;
+}
+
+.basic-label {
+  font-size: 20px;
+}
+
+.basic-input {
+  font-size: 16px;
+  width: 200px;
+  padding: 5px;
+  /* display: block; */
 }
 
 
