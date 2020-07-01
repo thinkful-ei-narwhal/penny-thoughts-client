@@ -47,7 +47,7 @@ export default class LoginForm extends Component {
           .then(res => {
             this.context.processLogin(res.authToken)
             //go to the dashboard following a successful login
-            this.props.history.push('/');
+            this.props.history.push('/browse');
           })
       })
       .catch(res => {
