@@ -40,7 +40,7 @@ export default class RegistrationForm extends Component {
       full_name: this.state.name,
       username: this.state.username,
       email: this.state.email,
-      password:this.state.password,
+      password: this.state.password,
       admin: false
     }
 
@@ -50,9 +50,9 @@ export default class RegistrationForm extends Component {
     }
 
     AuthApiService.postUser(newUser)
-      .then(() => {
-        AuthApiService.postLogin(newUserLogin)
-      })
+      // .then(() => {
+      //   AuthApiService.postLogin(newUserLogin)
+      // })
       .then(() => {
         this.props.history.push('/')
       })
@@ -63,30 +63,33 @@ export default class RegistrationForm extends Component {
 
   render() {
     return (
-      <form onSubmit={(e) => this.handleSubmit(e)} className='RegistrationForm'>
+      <section>
+        <h2>Register</h2>
+        <form onSubmit={(e) => this.handleSubmit(e)} className='RegistrationForm'>
 
-        <label htmlFor='RegisterName'>
-          Full Name:
-          <input onChange={(e) => this.handleNameChange(e)} type='text' name='RegisterName'/>
-        </label>
+          <label htmlFor='RegisterName'>
+            Full Name:
+            <input onChange={(e) => this.handleNameChange(e)} type='text' name='RegisterName'/>
+          </label>
 
-        <label htmlFor='RegisterEmail'>
-          E-Mail:
-          <input onChange={(e) => this.handleEmailChange(e)} type='text' name='RegisterEmail'/>
-        </label>
+          <label htmlFor='RegisterEmail'>
+            E-Mail:
+            <input onChange={(e) => this.handleEmailChange(e)} type='text' name='RegisterEmail'/>
+          </label>
 
-        <label htmlFor='RegisterUsername'>
-          Username:
-          <input onChange={(e) => this.handleUsernameChange(e)} type='text' name='RegisterUsername'/>
-        </label>
+          <label htmlFor='RegisterUsername'>
+            Username:
+            <input onChange={(e) => this.handleUsernameChange(e)} type='text' name='RegisterUsername'/>
+          </label>
 
-        <label htmlFor='RegisterPassword'>
-          Password:
-          <input onChange={(e) => this.handlePasswordChange(e)} type='text' name='RegisterPassword'/>
-        </label>
+          <label htmlFor='RegisterPassword'>
+            Password:
+            <input onChange={(e) => this.handlePasswordChange(e)} type='text' name='RegisterPassword'/>
+          </label>
 
-        <input type='submit' value="Create Account" />
-      </form>
+          <input type='submit' value="Create Account" />
+        </form>
+      </section>
     )
   }
 }

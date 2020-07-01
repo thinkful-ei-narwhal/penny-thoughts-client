@@ -4,7 +4,7 @@ import TokenService from '../../services/token-service';
 import AuthApiService from '../../services/auth-api-service';
 
 
-export default class LoginFor extends Component {
+export default class LoginForm extends Component {
   static contextType = UserContext;
 
   constructor(props) {
@@ -33,7 +33,7 @@ export default class LoginFor extends Component {
     const password = this.state.password
     
     AuthApiService.postLogin({
-      user_name: username,
+      username: username,
       password: password
     })
       .then(res => {
@@ -42,11 +42,11 @@ export default class LoginFor extends Component {
           password: ''
         })
         TokenService.saveAuthToken(res.authToken)
-      })
-      .then(() => {
-        this.context.processLogin(res.authToken)
-        //go to the dashboard following a successful login
-        this.props.history.push('/');
+          .then(res => {
+            this.context.processLogin(res.authToken)
+            //go to the dashboard following a successful login
+            this.props.history.push('/');
+          })
       })
       .catch(res => {
         this.setState({ error: res.error })
