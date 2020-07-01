@@ -1,13 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {BrowserRouter } from 'react-router-dom';
+import {UserProvider} from './contexts/UserContext';
+import {MessageProvider} from './contexts/MessagesContext';
 import './index.css';
-import App from './App';
+import App from '../src/components/app/App';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <BrowserRouter>
+    {/*<UserProvider>*/}
+      <MessageProvider>
+        <App/>
+      </MessageProvider>
+    {/*<UserProvider>*/}
+  </BrowserRouter>,
   document.getElementById('root')
 );
 
