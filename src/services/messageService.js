@@ -1,14 +1,14 @@
 import config from '../config';
-import TokenService from './TokenService';
+// import TokenService from './TokenService';
 
 const messageService = {
     getTenRandom(){
         let error;
-        return fetch(`${config.API_ENDPOINT}/`,{
+        return fetch(`${config.API_ENDPOINT}/messages`,{
             method: 'GET',
             headers:{
                 'content-type': 'application/json',
-                'Authorization': `Bearer ${TokenService.getAuthToken()}`
+                // 'Authorization': `Bearer ${TokenService.getAuthToken()}`
             }
         })
         .then(res => {
@@ -28,11 +28,11 @@ const messageService = {
     
     getOneRandom(){
         let error;
-        return fetch(`${config.API_ENDPOINT}/`,{
+        return fetch(`${config.API_ENDPOINT}/messages/single`,{
             method: 'GET',
             headers:{
                 'content-type': 'application/json',
-                'Authorization': `Bearer ${TokenService.getAuthToken()}`
+                // 'Authorization': `Bearer ${TokenService.getAuthToken()}`
             }
         })
         .then(res => {

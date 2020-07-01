@@ -1,7 +1,7 @@
 
 import React, {Fragment } from 'react';
 import {Route, Switch} from 'react-router-dom';
-import HomePage from '../../routes/PublicHomePage/PublicHomePage';
+import PublicHomePage from '../../routes/PublicHomePage/PublicHomePage';
 import LandingPage from '../../routes/LandingPage/LandingPage';
 import RegistrationPage from '../../routes/RegistrationPage/RegistrationPage';
 import PrivateHomePage from '../../routes/PrivateHomePage/PrivateHomePage';
@@ -21,20 +21,22 @@ function App() {
           <Switch>
             <Route
               exact path = {'/'}
-              component = {HomePage}/>
-            <PublicOnlyRoute
-              path = {'/landing'}
               component = {LandingPage}/>
-            <PublicOnlyRoute
+            {/* make this public only */}
+            <Route
+              path = {'/browse'}
+              component = {PublicHomePage}/>
+            {/* make this public only */}
+            <Route
               path = {'/register'}
               component = {RegistrationPage}/>
             {/* make this private*/}
             <Route 
-              path={'/userHome'}
+              path={'/home'}
               component={PrivateHomePage}/>
             {/* make this private*/}
             <Route
-              path={'/userSettings'}
+              path={'/settings'}
               component={UserSettingsPage}/>
             {/* make this private*/}
             <Route

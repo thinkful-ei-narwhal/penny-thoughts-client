@@ -24,6 +24,7 @@ export class MessageProvider extends Component {
       error: error
     })
   }
+  
   clearError = () => {
     this.setState({
       error: null
