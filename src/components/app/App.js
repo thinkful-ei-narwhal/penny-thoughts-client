@@ -7,8 +7,6 @@ import RegistrationPage from '../../routes/RegistrationPage/RegistrationPage';
 import PrivateHomePage from '../../routes/PrivateHomePage/PrivateHomePage';
 import UserSettingsPage from '../../routes/UserSettingsPage/UserSettingsPage';
 import AdminDashboardPage from '../../routes/AdminDashboardPage/AdminDashboardPage';
-import LoginForm from '../user/login-form';
-import RegistrationForm from '../user/registration-form';
 import NotFoundPage from '../../routes/NotFoundPage/NotFoundPage';
 import ErrorPage from '../ErrorPage/ErrorPage';
 import PrivateRoute from '../../utils/PrivateRoute';
@@ -19,8 +17,6 @@ function App() {
   return (
     <Fragment>
       <main>
-        <LoginForm />
-        <RegistrationForm />
         <ErrorPage>
           <Switch>
             <Route
