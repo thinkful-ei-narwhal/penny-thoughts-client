@@ -4,7 +4,7 @@ import config from '../config';
 const messageService = {
     getTenRandom(){
         let error;
-        return fetch(`${config.API_ENDPOINT}/`,{
+        return fetch(`${config.API_ENDPOINT}/messages`,{
             method: 'GET',
             headers:{
                 'content-type': 'application/json',
@@ -28,7 +28,7 @@ const messageService = {
     
     getOneRandom(){
         let error;
-        return fetch(`${config.API_ENDPOINT}/`,{
+        return fetch(`${config.API_ENDPOINT}/messages/single`,{
             method: 'GET',
             headers:{
                 'content-type': 'application/json',
