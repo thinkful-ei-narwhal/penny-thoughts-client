@@ -1,5 +1,5 @@
 import config from '../config';
-import TokenService from './TokenService';
+// import TokenService from './TokenService';
 
 const messageService = {
     getTenRandom(){
@@ -8,7 +8,7 @@ const messageService = {
             method: 'GET',
             headers:{
                 'content-type': 'application/json',
-                'Authorization': `Bearer ${TokenService.getAuthToken()}`
+                // 'Authorization': `Bearer ${TokenService.getAuthToken()}`
             }
         })
         .then(res => {
@@ -32,7 +32,7 @@ const messageService = {
             method: 'GET',
             headers:{
                 'content-type': 'application/json',
-                'Authorization': `Bearer ${TokenService.getAuthToken()}`
+                // 'Authorization': `Bearer ${TokenService.getAuthToken()}`
             }
         })
         .then(res => {
