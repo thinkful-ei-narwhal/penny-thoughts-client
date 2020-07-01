@@ -32,6 +32,8 @@ export default class LoginForm extends Component {
     const username = this.state.username
     const password = this.state.password
     
+    console.log(username);
+    console.log(password);
     AuthApiService.postLogin({
       username: username,
       password: password
