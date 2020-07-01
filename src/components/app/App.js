@@ -1,5 +1,5 @@
 import React from 'react';
-import Demo from './Demo/Demo'
+import Demo from '../../Demo/Demo'
 import './App.css';
 
 function App() {
