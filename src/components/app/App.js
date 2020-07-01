@@ -12,7 +12,7 @@ import PrivateRoute from '../../utils/PrivateRoute';
 import PublicOnlyRoute from '../../utils/PublicOnlyRoute';
 import './App.css';
 
-function App(props) {
+function App() {
   return (
     <Fragment>
       <main>
@@ -21,10 +21,12 @@ function App(props) {
             <Route
               exact path = {'/'}
               component = {LandingPage}/>
-            <PublicOnlyRoute
+            {/* make this public only */}
+            <Route
               path = {'/browse'}
               component = {PublicHomePage}/>
-            <PublicOnlyRoute
+            {/* make this public only */}
+            <Route
               path = {'/register'}
               component = {RegistrationPage}/>
             {/* make this private*/}

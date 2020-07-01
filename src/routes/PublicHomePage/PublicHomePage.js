@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import MessageContext from '../../contexts/MessagesContext'
 import MessageService from '../../services/messageService'
 
-export class PublicHomePage extends Component {
+class PublicHomePage extends Component {
   static context = MessageContext;
 
   componentDidMount() {
@@ -14,6 +14,7 @@ export class PublicHomePage extends Component {
 
   render() {
     const { messages } = this.context
+    console.log(this.context)
     return (
       <div>
         {
