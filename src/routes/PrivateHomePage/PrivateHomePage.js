@@ -2,11 +2,9 @@ import React, { Component } from 'react'
 import MessageContext from '../../contexts/MessagesContext'
 import MessageService from '../../services/messageService'
 import SingleMessage from '../../components/SingleMessage/SingleMessage'
-import UserContext from '../../contexts/UserContext'
 
 class PublicHomePage extends Component {
   static contextType = MessageContext;
-  static contextType = UserContext;
 
   componentDidMount() {
     this.context.clearError()
