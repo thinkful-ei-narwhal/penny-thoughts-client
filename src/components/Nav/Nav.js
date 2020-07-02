@@ -27,7 +27,7 @@ export class Nav extends Component {
     return ( 
       <div className = 'header__not-logged-in' >
         <NavLink to = '/register' >
-          Sing Up
+          Sign Up
         </NavLink> 
       </div>
     )

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { UserContext } from '../../contexts/UserContext';
+import UserContext from '../../contexts/UserContext';
 import TokenService from '../../services/token-service';
 import AuthApiService from '../../services/auth-api-service';
 import {Link} from 'react-router-dom';
