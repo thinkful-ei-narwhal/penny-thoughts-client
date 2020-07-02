@@ -23,23 +23,23 @@ function App() {
               exact path = {'/'}
               component = {LandingPage}/>
             {/* make this public only */}
-            <Route
+            <PublicOnlyRoute
               path = {'/browse'}
               component = {PublicHomePage}/>
             {/* make this public only */}
-            <Route
+            <PublicOnlyRoute
               path = {'/register'}
               component = {RegistrationPage}/>
             {/* make this private*/}
-            <Route 
+            <PrivateRoute 
               path={'/home'}
               component={PrivateHomePage}/>
             {/* make this private*/}
-            <Route
+            <PrivateRoute
               path={'/settings'}
               component={UserSettingsPage}/>
             {/* make this private*/}
-            <Route
+            <PrivateRoute
               path={'/admin'}
               component={AdminDashboardPage}/>
             {/* make this private*/}
