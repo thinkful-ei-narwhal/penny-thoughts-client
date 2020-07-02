@@ -61,6 +61,7 @@ export default class RegistrationForm extends Component {
   render() {
     return (
       <section>
+      {this.state.error && <p>{this.state.error}</p>}
         <h2>Register</h2>
         <form onSubmit={(e) => this.handleSubmit(e)} className='RegistrationForm'>
 
@@ -81,7 +82,7 @@ export default class RegistrationForm extends Component {
 
           <label htmlFor='RegisterPassword'>
             Password:
-            <input onChange={(e) => this.handlePasswordChange(e)} type='text' name='RegisterPassword'/>
+            <input type="password" onChange={(e) => this.handlePasswordChange(e)} name='RegisterPassword'/>
           </label>
 
           <input type='submit' value="Create Account" />
