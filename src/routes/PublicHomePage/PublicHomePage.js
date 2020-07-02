@@ -24,8 +24,6 @@ class PublicHomePage extends Component {
   }
 
   render() {
-    const { messages } = this.context
-    console.log(messages)
     return (
       <div>
         <main>

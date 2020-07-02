@@ -2,8 +2,6 @@ import React, { Component } from 'react'
 import MessageContext from '../../contexts/MessagesContext'
 import MessageService from '../../services/messageService'
 import SingleMessage from '../../components/SingleMessage/SingleMessage'
-import DeleteAccountButton from '../../components/DeleteAccountButton/deleteAccount-button'
-import LogoutButton from '../../components/LogoutButton/logout-button'
 
 class PublicHomePage extends Component {
   static contextType = MessageContext;
@@ -26,12 +24,8 @@ class PublicHomePage extends Component {
   }
 
   render() {
-    const { messages } = this.context
-    console.log(messages)
     return (
       <div>
-        <DeleteAccountButton {...this.props}/>
-        <LogoutButton {...this.props}/>
         <section class="user-greeting">
           <h2>
             Welcome Mango Peterson!
