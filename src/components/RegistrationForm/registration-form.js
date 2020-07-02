@@ -50,14 +50,12 @@ export default class RegistrationForm extends Component {
     }
 
     AuthApiService.postUser(newUser)
-      // .then(() => {
-      //   AuthApiService.postLogin(newUserLogin)
-      // })
       .then(() => {
         this.props.history.push('/')
       })
       .catch(res => {
         this.setState({ error: res.error })
+        console.log(this.state.error)
       })
   }
 
