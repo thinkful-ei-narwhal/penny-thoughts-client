@@ -2,11 +2,11 @@ import React, { Component } from 'react'
 import MessageContext from '../../contexts/MessagesContext'
 import MessageService from '../../services/messageService'
 import SingleMessage from '../../components/SingleMessage/SingleMessage'
-import DeleteAccountButton from '../../components/DeleteAccountButton/deleteAccount-button'
-import LogoutButton from '../../components/LogoutButton/logout-button'
+import UserContext from '../../contexts/UserContext'
 
 class PublicHomePage extends Component {
   static contextType = MessageContext;
+  static contextType = UserContext;
 
   componentDidMount() {
     this.context.clearError()
@@ -26,12 +26,8 @@ class PublicHomePage extends Component {
   }
 
   render() {
-    const { messages } = this.context
-    console.log(messages)
     return (
       <div>
-        <DeleteAccountButton {...this.props}/>
-        <LogoutButton {...this.props}/>
         <section class="user-greeting">
           <h2>
             Welcome Mango Peterson!
