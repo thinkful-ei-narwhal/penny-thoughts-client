@@ -2,10 +2,13 @@ import React, {Component } from 'react';
 
 const MessagesContext = React.createContext({
   messages: [],
+  submittedMessage: '',
   error: null,
+  success: null,
   setError: () => {},
   clearError: () => {},
-  setMessages: () => {}
+  setMessages: () => {},
+  setSuccess: () => {}
 });
 
 export default MessagesContext;
@@ -15,7 +18,9 @@ export class MessageProvider extends Component {
     super(props)
     this.state = {
       messages: [],
+      submittedMessage: '',
       error: null,
+      success: null
     }
   }
 
@@ -37,13 +42,32 @@ export class MessageProvider extends Component {
     })
   }
 
+  setSubmittedMessage = message => {
+    this.setState({
+      submittedMessage: message
+    }, () => {
+      return this.state.submittedMessage
+    })
+  }
+
+  setSuccess = () => {
+    this.setState({
+      error: null,
+      success: 'Your message was successfully saved!'
+    })
+  }
+
   render() {
     const value = {
       messages: this.state.messages,
+      submittedMessage: this.state.submittedMessage,
       error: this.state.error,
+      success: null,
       clearError: this.clearError,
       setError: this.setError,
-      setMessages: this.setMessages
+      setMessages: this.setMessages,
+      setSubmittedMessage: this.setSubmittedMessage,
+      setSuccess: this.setSuccess
     }
 
     return (
