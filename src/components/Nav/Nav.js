@@ -37,7 +37,7 @@ export class Nav extends Component {
     return ( 
       <nav className = 'header' >
         <NavLink to = '/' >
-          <h2 > MY DISCIPLINE </h2>
+          <h2 > Penny Thoughts </h2>
         </NavLink> 
         <section className = 'navlinks' > {
           TokenService.hasAuthToken() ?
