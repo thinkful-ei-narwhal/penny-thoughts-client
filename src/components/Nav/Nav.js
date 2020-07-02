@@ -8,13 +8,13 @@ export class Nav extends Component {
 
   handleLogoutClick = () => {
     TokenService.clearAuthToken();
-    this.context.clearAuthToken();
   }
 
   renderLogoutLink() {
     return ( 
       <div className = 'header__logged-in' >
-        <NavLink 
+        <NavLink  
+          className='no-style'
           onClick = { this.handleLogoutClick }
           to = '/' >
             Logout 
@@ -26,7 +26,8 @@ export class Nav extends Component {
   renderLoginLink() {
     return ( 
       <div className = 'header__not-logged-in' >
-        <NavLink to = '/register' >
+        <NavLink 
+        to = '/register' >
           Sign Up
         </NavLink> 
       </div>

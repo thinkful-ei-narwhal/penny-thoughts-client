@@ -17,8 +17,8 @@ import './App.css';
 function App() {
   return (
     <Fragment>
+      <Route path='/' component={Navigation} />
       <main>
-        <Navigation/>
         <ErrorPage>
           <Switch>
             <PublicOnlyRoute
