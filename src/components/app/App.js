@@ -19,7 +19,7 @@ function App() {
       <main>
         <ErrorPage>
           <Switch>
-            <Route
+            <PublicOnlyRoute
               exact path = {'/'}
               component = {LandingPage}/>
             {/* make this public only */}

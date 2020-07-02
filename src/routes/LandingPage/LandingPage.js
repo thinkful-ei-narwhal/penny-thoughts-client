@@ -5,7 +5,7 @@ export class LandingPage extends Component {
   render() {
     return (
       <div>
-        <LoginForm/>
+        <LoginForm {...this.props}/>
       </div>
     )
   }
