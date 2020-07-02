@@ -11,11 +11,13 @@ import NotFoundPage from '../../routes/NotFoundPage/NotFoundPage';
 import ErrorPage from '../ErrorPage/ErrorPage';
 import PrivateRoute from '../../utils/PrivateRoute';
 import PublicOnlyRoute from '../../utils/PublicOnlyRoute';
+import Navigation from '../Nav/Nav';
 import './App.css';
 
 function App() {
   return (
     <Fragment>
+      <Route path='/' component={Navigation} />
       <main>
         <ErrorPage>
           <Switch>
