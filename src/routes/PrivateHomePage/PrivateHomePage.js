@@ -7,7 +7,7 @@ class PublicHomePage extends Component {
   static contextType = MessageContext;
 
   state = {
-    error: '' 
+    success: '' 
   }
 
   componentDidMount() {
@@ -28,13 +28,13 @@ class PublicHomePage extends Component {
   }
 
   handleAddMessage = (message) => {
-    const { submittedMessage, setError, setSubmittedMessage, clearError } = this.context
+    const { submittedMessage, setError, setSubmittedMessage, clearError, setSuccess } = this.context
     if (!message) return setError('You must include a valid message.')
     clearError()
     MessageService.addMessage(message)
       .then(data => {
+        this.setState({ success: 'You successfully added your message!' })
         setSubmittedMessage(data.message)
-        this.context.setSuccess()
       })
       .catch(err => {
         setError(err)
@@ -51,7 +51,7 @@ class PublicHomePage extends Component {
           </h2>
         </section>
         { this.context.error && <p className="private-home-error">{this.context.error}</p> }
-        { this.context.success && <p className="private-home-success">{this.context.success}</p> }
+        { this.state.success.length !== 0 && <p className="private-home-success">{this.state.success}</p> }
         <form className="message-form" onSubmit={ev => {
           ev.preventDefault()
           this.handleAddMessage(ev.target.message.value)

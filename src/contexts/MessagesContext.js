@@ -50,11 +50,11 @@ export class MessageProvider extends Component {
     })
   }
 
-  setSuccess = () => {
+  setSuccess = fn => {
     this.setState({
       error: null,
       success: 'Your message was successfully saved!'
-    })
+    }, fn)
   }
 
   render() {
