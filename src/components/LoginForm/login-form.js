@@ -32,8 +32,6 @@ export default class LoginForm extends Component {
     const username = this.state.username
     const password = this.state.password
     
-    console.log(username);
-    console.log(password);
     AuthApiService.postLogin({
       username: username,
       password: password
@@ -44,11 +42,8 @@ export default class LoginForm extends Component {
           password: ''
         })
         TokenService.saveAuthToken(res.authToken)
-          .then(res => {
-            this.context.processLogin(res.authToken)
-            //go to the dashboard following a successful login
-            this.props.history.push('/browse');
-          })
+        this.context.processLogin(res.authToken)
+        this.props.history.push('/home');
       })
       .catch(res => {
         this.setState({ error: res.error })
