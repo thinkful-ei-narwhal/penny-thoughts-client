@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import MessageContext from '../../contexts/MessagesContext'
 import MessageService from '../../services/messageService'
 import SingleMessage from '../../components/SingleMessage/SingleMessage'
-import DeleteAccountButton from '../../components/buttons/deleteAccount'
-import LogoutButton from '../../components/buttons/logout'
+import DeleteAccountButton from '../../components/DeleteAccountButton/deleteAccount-button'
+import LogoutButton from '../../components/LogoutButton/logout-button'
 
 class PublicHomePage extends Component {
   static contextType = MessageContext;
