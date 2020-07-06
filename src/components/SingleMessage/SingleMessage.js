@@ -8,11 +8,9 @@ export default class SingleMessage extends Component {
 
   updateMessage(id) {
     const messages = this.context.messages;
-    messageService.getOneRandom()
+    messageService.getOneRandom(id)
     .then(data => {
-      
         this.context.changeMessage(data[0], id)
-      
     })
     .catch(err => this.context.setError(err))
   }

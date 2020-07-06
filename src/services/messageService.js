@@ -16,8 +16,8 @@ const messageService = {
         })
     },
     
-    getOneRandom(){
-        return fetch(`${config.API_ENDPOINT}/messages/single`,{
+    getOneRandom(id){
+        return fetch(`${config.API_ENDPOINT}/messages/single/${id}`,{
             method: 'GET',
             headers:{
                 'content-type': 'application/json',
