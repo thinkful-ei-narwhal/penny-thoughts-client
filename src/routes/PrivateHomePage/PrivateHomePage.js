@@ -6,10 +6,6 @@ import SingleMessage from '../../components/SingleMessage/SingleMessage'
 class PublicHomePage extends Component {
   static contextType = MessageContext;
 
-  state = {
-    success: '' 
-  }
-
   componentDidMount() {
     this.context.clearError()
     MessageService.getTenRandom()
@@ -28,13 +24,14 @@ class PublicHomePage extends Component {
   }
 
   handleAddMessage = (message) => {
-    const { submittedMessage, setError, setSubmittedMessage, clearError, setSuccess } = this.context
+    const { submittedMessage, setError, setSubmittedMessage, clearError, setSuccess, success} = this.context
     if (!message) return setError('You must include a valid message.')
     clearError()
     MessageService.addMessage(message)
       .then(data => {
-        this.setState({ success: 'You successfully added your message!' })
+        
         setSubmittedMessage(data.message)
+        setSuccess();
       })
       .catch(err => {
         setError(err)
@@ -43,6 +40,7 @@ class PublicHomePage extends Component {
 
   render() {
     const { messages } = this.context
+    console.log(this.context.success);
     return (
       <div>
         <section className="user-greeting">
@@ -51,7 +49,7 @@ class PublicHomePage extends Component {
           </h2>
         </section>
         { this.context.error && <p className="private-home-error">{this.context.error}</p> }
-        { this.state.success.length !== 0 && <p className="private-home-success">{this.state.success}</p> }
+        { this.context.success && <p className="private-home-success">{this.context.success}</p> }
         <form className="message-form" onSubmit={ev => {
           ev.preventDefault()
           this.handleAddMessage(ev.target.message.value)

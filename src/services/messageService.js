@@ -3,7 +3,6 @@ import TokenService from './token-service';
 
 const messageService = {
     getTenRandom(){
-        let error;
         return fetch(`${config.API_ENDPOINT}/messages`,{
             method: 'GET',
             headers:{
@@ -18,7 +17,6 @@ const messageService = {
     },
     
     getOneRandom(){
-        let error;
         return fetch(`${config.API_ENDPOINT}/messages/single`,{
             method: 'GET',
             headers:{

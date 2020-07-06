@@ -8,7 +8,8 @@ const MessagesContext = React.createContext({
   setError: () => {},
   clearError: () => {},
   setMessages: () => {},
-  setSuccess: () => {}
+  setSuccess: () => {},
+  clearSuccess: () => {}
 });
 
 export default MessagesContext;
@@ -26,12 +27,14 @@ export class MessageProvider extends Component {
 
   setError = error => {
     this.setState({
+      success: null,
       error: error
     })
   }
   
   clearError = () => {
     this.setState({
+      success: null,
       error: null
     })
   }
@@ -50,11 +53,19 @@ export class MessageProvider extends Component {
     })
   }
 
-  setSuccess = fn => {
+  clearSuccess = () => {
+    this.setState({
+      sucess: null
+    })
+  }
+
+  setSuccess = () => {
     this.setState({
       error: null,
       success: 'Your message was successfully saved!'
-    }, fn)
+    }, () => {
+      return this.state.success
+    })
   }
 
   render() {
@@ -62,12 +73,13 @@ export class MessageProvider extends Component {
       messages: this.state.messages,
       submittedMessage: this.state.submittedMessage,
       error: this.state.error,
-      success: null,
+      success: this.state.success,
       clearError: this.clearError,
       setError: this.setError,
       setMessages: this.setMessages,
       setSubmittedMessage: this.setSubmittedMessage,
-      setSuccess: this.setSuccess
+      setSuccess: this.setSuccess,
+      clearSuccess: this.clearSuccess,
     }
 
     return (
