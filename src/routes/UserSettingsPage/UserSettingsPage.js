@@ -1,13 +1,13 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import UserMessages from '../../components/UserMessages/UserMessages'
 
-export class UserSettingsPage extends Component {
+export default class UserSettingsPage extends Component {
   render() {
     return (
       <div>
-        
+        <UserMessages/>
       </div>
     )
   }
 }
 
-export default UserSettingsPage
