@@ -27,12 +27,12 @@ class PublicHomePage extends Component {
     return (
       <div>
         <main>
-          <section class="user-greeting">
+          <section className="user-greeting">
             <h2>
               Welcome Mango Peterson!
             </h2>
           </section>
-          <section class="messages-container">
+          <section className="messages-container">
             {this.generateMessages()}
           </section>
         </main>

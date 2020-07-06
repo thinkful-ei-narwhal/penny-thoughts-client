@@ -7,9 +7,12 @@ export default class SingleMessage extends Component {
   static contextType = MessageContext;
 
   updateMessage(id) {
+    const messages = this.context.messages;
     messageService.getOneRandom()
     .then(data => {
-      this.context.changeMessage(data[0], id)
+      
+        this.context.changeMessage(data[0], id)
+      
     })
     .catch(err => this.context.setError(err))
   }

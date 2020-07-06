@@ -26,17 +26,17 @@ class PublicHomePage extends Component {
   render() {
     return (
       <div>
-        <section class="user-greeting">
+        <section className="user-greeting">
           <h2>
             Welcome Mango Peterson!
           </h2>
         </section>
-        <form class="message-form">
-          <label for="message">Share Positive Message</label>
-          <input class="basic-input" type="text" name="message" id="message" />
+        <form className="message-form">
+          <label htmlFor="message">Share Positive Message</label>
+          <input className="basic-input" type="text" name="message" id="message" />
           <button>Add New Message</button>
         </form>
-        <section class="messages-container">
+        <section className="messages-container">
           {this.generateMessages()}
         </section>
       </div>
