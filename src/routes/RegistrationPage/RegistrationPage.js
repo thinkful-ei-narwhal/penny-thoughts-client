@@ -5,7 +5,9 @@ export class RegistrationPage extends Component {
   render() {
     return (
       <div>
-        <RegistrationForm/>
+        <RegistrationForm
+          {...this.props}
+        />
       </div>
     )
   }
