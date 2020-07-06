@@ -49,16 +49,12 @@ export class MessageProvider extends Component {
 
 
   changeMessage = (data, id) => {
-    console.log(id);
     let ind = this.state.messages.findIndex(el => el.id === id)
-    console.log(ind);
     let newArr = this.state.messages;
     newArr[ind] = data;
-    console.log(newArr);
     this.setState({
       messages: newArr
     })
-    console.log(this.state.messages);
   }
   
   setSubmittedMessage = message => {
