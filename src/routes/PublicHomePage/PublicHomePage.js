@@ -18,7 +18,7 @@ class PublicHomePage extends Component {
   generateMessages() {
     const { messages } = this.context
     const temp = messages.map(message => {
-      return <SingleMessage key={message.id} message={message.message} />
+      return <SingleMessage key={message.id} id={message.id} message={message.message} />
     })
     return temp
   }
@@ -27,12 +27,12 @@ class PublicHomePage extends Component {
     return (
       <div>
         <main>
-          <section class="user-greeting">
+          <section className="user-greeting">
             <h2>
               Welcome Mango Peterson!
             </h2>
           </section>
-          <section class="messages-container">
+          <section className="messages-container">
             {this.generateMessages()}
           </section>
         </main>
