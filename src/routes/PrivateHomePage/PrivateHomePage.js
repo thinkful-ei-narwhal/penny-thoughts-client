@@ -18,7 +18,7 @@ class PublicHomePage extends Component {
   generateMessages() {
     const { messages } = this.context
     const temp = messages.map(message => {
-      return <SingleMessage key={message.id} message={message.message} />
+      return <SingleMessage key={message.id} id={message.id} message={message.message} />
     })
     return temp
   }

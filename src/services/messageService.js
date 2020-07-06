@@ -12,9 +12,7 @@ const messageService = {
             }
         })
         .then(res => {
-            if (!res.ok) {
-              error = { code: res.status};
-            }
+          if (!res.ok) return res.json().then(e => Promise.reject(e))
             return res.json();
           })
           .then(data => {
@@ -36,9 +34,7 @@ const messageService = {
             }
         })
         .then(res => {
-            if (!res.ok) {
-              error = { code: res.status};
-            }
+          if (!res.ok) return res.json().then(e => Promise.reject(e))
             return res.json();
           })
           .then(data => {

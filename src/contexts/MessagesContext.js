@@ -5,7 +5,8 @@ const MessagesContext = React.createContext({
   error: null,
   setError: () => {},
   clearError: () => {},
-  setMessages: () => {}
+  setMessages: () => {},
+  changeMessage: () => {}
 });
 
 export default MessagesContext;
@@ -37,13 +38,27 @@ export class MessageProvider extends Component {
     })
   }
 
+  changeMessage = (data, id) => {
+    console.log(id);
+    let ind = this.state.messages.findIndex(el => el.id === id)
+    console.log(ind);
+    let newArr = this.state.messages;
+    newArr[ind] = data;
+    console.log(newArr);
+    this.setState({
+      messages: newArr
+    })
+    console.log(this.state.messages);
+  }
+
   render() {
     const value = {
       messages: this.state.messages,
       error: this.state.error,
       clearError: this.clearError,
       setError: this.setError,
-      setMessages: this.setMessages
+      setMessages: this.setMessages,
+      changeMessage: this.changeMessage,
     }
 
     return (
