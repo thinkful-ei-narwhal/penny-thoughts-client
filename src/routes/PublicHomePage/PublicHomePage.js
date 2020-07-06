@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import MessageContext from '../../contexts/MessagesContext'
 import MessageService from '../../services/messageService'
 import SingleMessage from '../../components/SingleMessage/SingleMessage'
+import WelcomeName from '../../components/WelcomeName/WelcomeName';
 
 class PublicHomePage extends Component {
   static contextType = MessageContext;
@@ -28,9 +29,7 @@ class PublicHomePage extends Component {
       <div>
         <main>
           <section className="user-greeting">
-            <h2>
-              Welcome Mango Peterson!
-            </h2>
+            <WelcomeName/>
           </section>
           <section className="messages-container">
             {this.generateMessages()}

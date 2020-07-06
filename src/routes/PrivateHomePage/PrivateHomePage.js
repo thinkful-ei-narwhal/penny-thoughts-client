@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import MessageContext from '../../contexts/MessagesContext'
 import MessageService from '../../services/messageService'
 import SingleMessage from '../../components/SingleMessage/SingleMessage'
+import WelcomeName from '../../components/WelcomeName/WelcomeName';
 
 class PublicHomePage extends Component {
   static contextType = MessageContext;
@@ -44,9 +45,7 @@ class PublicHomePage extends Component {
     return (
       <div>
         <section className="user-greeting">
-          <h2>
-            Welcome Mango Peterson!
-          </h2>
+          <WelcomeName/>
         </section>
         { this.context.error && <p className="private-home-error">{this.context.error}</p> }
         { this.context.success && <p className="private-home-success">{this.context.success}</p> }
