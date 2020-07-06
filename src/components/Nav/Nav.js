@@ -19,6 +19,11 @@ export class Nav extends Component {
           to = '/' >
             Logout 
         </NavLink> 
+        <NavLink  
+          className='no-style'
+          to = '/settings' >
+            settings
+        </NavLink> 
       </div>
     )
   }
