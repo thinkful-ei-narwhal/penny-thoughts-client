@@ -2,10 +2,12 @@ import React, {Component } from 'react';
 
 const MessagesContext = React.createContext({
   messages: [],
+  userMessages: [],
   error: null,
   setError: () => {},
   clearError: () => {},
-  setMessages: () => {}
+  setMessages: () => {},
+  setUserMessages: () => {}
 });
 
 export default MessagesContext;
@@ -15,6 +17,7 @@ export class MessageProvider extends Component {
     super(props)
     this.state = {
       messages: [],
+      userMessages: [],
       error: null,
     }
   }
@@ -37,13 +40,21 @@ export class MessageProvider extends Component {
     })
   }
 
+  setUserMessages = data => {
+    this.setState({
+      userMessages: data
+    })
+  }
+
   render() {
     const value = {
       messages: this.state.messages,
+      userMessages: this.state.userMessages,
       error: this.state.error,
       clearError: this.clearError,
       setError: this.setError,
-      setMessages: this.setMessages
+      setMessages: this.setMessages,
+      setUserMessages: this.setUserMessages
     }
 
     return (

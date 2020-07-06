@@ -40,6 +40,9 @@ export class Nav extends Component {
         <NavLink to = '/' >
           <h2 > Penny Thoughts </h2>
         </NavLink> 
+        <NavLink to = '/settings' >
+          <p>Settings</p>
+        </NavLink> 
         <section className = 'navlinks' > {
           TokenService.hasAuthToken() ?
           this.renderLogoutLink() :
