@@ -6,11 +6,8 @@ import {Link} from 'react-router-dom';
 
 
 export default class LoginForm extends Component {
-  static contextType = UserContext;
 
-  static defaultProps = {
-    onLoginSucess: () => {}
-  };
+  static contextType = UserContext;
 
   state = {error: null}
 
@@ -27,19 +24,18 @@ export default class LoginForm extends Component {
       username.value = ''
       password.value = ''
       TokenService.saveAuthToken(res.authToken)
-      this.context.getUserState()
-      this.props.onLoginSuccess()
+      this.props.history.push('/home')
+      
     })
     .catch(res => {
       this.setState({error: res.error})
-      this.props.history.push('/home');
     })
   }
 
   render() {
     const { error } = this.state;
-
     return (
+      
       <form className="signup-form"
       onSubmit={this.handleSubmitJwtAuth}
       >
