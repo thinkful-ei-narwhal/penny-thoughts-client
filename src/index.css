@@ -68,3 +68,15 @@ nav {
   padding: 5px;
   /* display: block; */
 }
+
+.private-home-error {
+  text-align: center;
+  color: red;
+  font-weight: bold;
+}
+
+.private-home-success {
+  text-align: center;
+  color: green;
+  font-weight: bold;
+}
