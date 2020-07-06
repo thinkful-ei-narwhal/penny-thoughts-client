@@ -8,7 +8,7 @@ const MessagesContext = React.createContext({
   setError: () => {},
   clearError: () => {},
   setMessages: () => {},
-  changeMessage: () => {}
+  changeMessage: () => {},
   setSuccess: () => {},
   clearSuccess: () => {}
 
