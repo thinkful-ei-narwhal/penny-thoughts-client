@@ -19,6 +19,9 @@ export class Nav extends Component {
           to = '/' >
             Logout 
         </NavLink> 
+        <NavLink to = '/settings' >
+          <p>Settings</p>
+        </NavLink> 
       </div>
     )
   }
@@ -39,9 +42,6 @@ export class Nav extends Component {
       <nav className = 'header' >
         <NavLink to = '/' >
           <h2 > Penny Thoughts </h2>
-        </NavLink> 
-        <NavLink to = '/settings' >
-          <p>Settings</p>
         </NavLink> 
         <section className = 'navlinks' > {
           TokenService.hasAuthToken() ?

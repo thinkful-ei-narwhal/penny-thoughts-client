@@ -4,13 +4,16 @@ const MessagesContext = React.createContext({
   messages: [],
   userMessages: [],
   error: null,
+  success: null,
   setError: () => { },
   clearError: () => { },
   setMessages: () => { },
   setUserMessages: () => { },
   updateUserMessage: () => { },
   isLoading: false,
-  toggleLoading: () => { }
+  toggleLoading: () => {},
+  setSuccess: () => {},
+  clearSuccess: () => {}
 });
 
 export default MessagesContext;
@@ -23,11 +26,12 @@ export class MessageProvider extends Component {
       userMessages: [],
       error: null,
       success: null,
-      isLoading: true
+      isLoading: false
     }
   }
 
   setError = error => {
+    console.log(error);
     this.setState({
       success: null,
       error: error
@@ -52,39 +56,35 @@ export class MessageProvider extends Component {
       userMessages: data
     })
   }
+
   toggleLoading = () => {
-    if (this.state.isLoading === true) {
-      this.setState({ isLoading: false })
-    }
-    if (this.state.isLoading === false) {
-      this.setState({ isLoading: true })
-    }
+    this.setState({ isLoading: !this.state.isLoading })
   }
   updateUserMessage = (id, value) => {
     //then call the update method on the server
     //then put the below code into the .then() of the check
-    this.toggleLoading()
     messageService.editUserMessage(id, value)
-      .then((res) => {
-        if (res === 204) {
-          const userMessages = [...this.state.userMessages]
-          userMessages.find(mes => mes.id === id).message = value;
-          userMessages.find(mes => mes.id === id).flagged = false;
-          //update the new state
-          this.setState({ userMessages: userMessages, isLoading: false, error: null })
-        }
-        //if endpoint accepted: do above, else:
-        const userMessages = [...this.state.userMessages]
-        userMessages.find(mes => mes.id === id).flagged = true;
-        //update the new state
-        this.setState({ error: res })
-        this.setState({
-          userMessages: userMessages,
-          isLoading: false,
-        })
-      })
-      .catch(err => console.log(err))
+      
+    const userMessages = [...this.state.userMessages]
+    userMessages.find(mes => mes.id === id).message = value;
+    userMessages.find(mes => mes.id === id).flagged = false;
+    //update the new state
+    this.setState({ userMessages: userMessages, isLoading: false, error: null })
+  }
 
+  clearSuccess = () => {
+    this.setState({
+      sucess: null
+    })
+  }
+
+  setSuccess = () => {
+    this.setState({
+      error: null,
+      success: 'Your message was successfully saved!'
+    }, () => {
+      return this.state.success
+    })
   }
 
   render() {
@@ -92,13 +92,16 @@ export class MessageProvider extends Component {
       messages: this.state.messages,
       userMessages: this.state.userMessages,
       error: this.state.error,
+      success: this.state.success,
       clearError: this.clearError,
       setError: this.setError,
       setMessages: this.setMessages,
       setUserMessages: this.setUserMessages,
       updateUserMessage: this.updateUserMessage,
       isLoading: this.state.isLoading,
-      toggleLoading: this.toggleLoading
+      toggleLoading: this.toggleLoading,
+      setSuccess: this.setSuccess,
+      clearSuccess: this.clearSuccess,
     }
 
     return (

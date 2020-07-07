@@ -99,14 +99,11 @@ const messageService = {
         'Authorization': `Bearer ${TokenService.getAuthToken()}`
       }
     })
-      .then(res => {
-        if (!res.ok) {
-
-          return res.status && res.json().then(e => e)
-        }
-        return res.status;
-      })
-
+    .then(res =>
+      (!res.ok) ?
+      res.json().then(e => Promise.reject(e)) :
+      res
+    )
   },
 }
 
