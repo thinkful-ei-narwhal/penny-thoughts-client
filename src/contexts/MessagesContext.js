@@ -60,6 +60,7 @@ export class MessageProvider extends Component {
   toggleLoading = () => {
     this.setState({ isLoading: !this.state.isLoading })
   }
+  
   updateUserMessage = (id, value) => {
     //then call the update method on the server
     //then put the below code into the .then() of the check
