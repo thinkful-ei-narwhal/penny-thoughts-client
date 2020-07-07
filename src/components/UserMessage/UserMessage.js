@@ -9,15 +9,18 @@ export class UserMessage extends Component {
 
   handleEditMessage = (id) => {
     const message = this.refs[`${id}`].value;
-    const { setError, updateUserMessage, clearError, setSuccess, success} = this.context
+    const { setError, updateUserMessage, clearError, setSuccess, success, toggleLoadingThink} = this.context
     if (!message) return setError('You must include a valid message.')
     clearError()
+    toggleLoadingThink()
     MessageService.editUserMessage(id, message)
       .then(() => {
+        toggleLoadingThink()
         updateUserMessage(id, message)
         setSuccess();
       })
       .catch(err => {
+        toggleLoadingThink()
         setError(err)
       })
   }

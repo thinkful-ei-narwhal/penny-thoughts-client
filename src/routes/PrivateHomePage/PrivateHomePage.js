@@ -3,6 +3,7 @@ import MessageContext from '../../contexts/MessagesContext'
 import MessageService from '../../services/messageService'
 import SingleMessage from '../../components/SingleMessage/SingleMessage'
 import WelcomeName from '../../components/WelcomeName/WelcomeName';
+import ThinkingLoader from '../../components/Loaders/ThinkingLoader/ThinkingLoader';
 
 class PublicHomePage extends Component {
   static contextType = MessageContext;
@@ -25,30 +26,33 @@ class PublicHomePage extends Component {
   }
 
   handleAddMessage = (message) => {
-    const { submittedMessage, setError, setSubmittedMessage, clearError, setSuccess, success} = this.context
+    const { submittedMessage, setError, setSubmittedMessage, clearError, setSuccess, success, toggleLoading} = this.context
     if (!message) return setError('You must include a valid message.')
     clearError()
+    toggleLoading()
     MessageService.addMessage(message)
       .then(data => {
         
         setSubmittedMessage(data.message)
+        toggleLoading()
         setSuccess();
       })
       .catch(err => {
+        toggleLoading()
         setError(err)
       })
   }
 
   render() {
-    const { messages } = this.context
-    console.log(this.context.success);
+    const { messages, isLoading, error, success} = this.context
     return (
       <div>
         <section className="user-greeting">
           <WelcomeName/>
         </section>
-        { this.context.error && <p className="private-home-error">{this.context.error}</p> }
-        { this.context.success && <p className="private-home-success">{this.context.success}</p> }
+        {isLoading && <ThinkingLoader/>}
+        { error && <p className="private-home-error">{error}</p> }
+        { success && <p className="private-home-success">{success}</p> }
         <form className="message-form" onSubmit={ev => {
           ev.preventDefault()
           this.handleAddMessage(ev.target.message.value)
