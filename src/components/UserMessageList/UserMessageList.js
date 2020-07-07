@@ -42,9 +42,9 @@ export default class UserMessages extends Component {
         {this.context.error && <p className="private-home-error">{this.context.error}</p>}
         {this.context.success && <p className="private-home-success">{this.context.success}</p>}
           <p>these are your messages</p>
-          <div>
+          <ul>
             {this.generateUserMessages()}
-          </div>
+          </ul>
         </section>
       </div>
     )
