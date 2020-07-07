@@ -5,6 +5,7 @@ const MessagesContext = React.createContext({
   userMessages: [],
   error: null,
   success: null,
+
   setError: () => { },
   clearError: () => { },
   setMessages: () => { },
@@ -12,8 +13,11 @@ const MessagesContext = React.createContext({
   updateUserMessage: () => { },
   isLoading: false,
   toggleLoading: () => {},
+  setMessages: () => {},
+  changeMessage: () => {},
   setSuccess: () => {},
   clearSuccess: () => {}
+
 });
 
 export default MessagesContext;
@@ -50,8 +54,25 @@ export class MessageProvider extends Component {
       messages: data
     })
   }
+  
+  changeMessage = (data, id) => {
+    let ind = this.state.messages.findIndex(el => el.id === id)
+    let newArr = this.state.messages;
+    newArr[ind] = data;
+    this.setState({
+      messages: newArr
+    })
+  }
+  
+  setSubmittedMessage = message => {
+    this.setState({
+      submittedMessage: message
+    }, () => {
+      return this.state.submittedMessage
+    })
+  }
 
-  setUserMessages = data => {
+setUserMessages = data => {
     this.setState({
       userMessages: data
     })
@@ -101,6 +122,8 @@ export class MessageProvider extends Component {
       updateUserMessage: this.updateUserMessage,
       isLoading: this.state.isLoading,
       toggleLoading: this.toggleLoading,
+      changeMessage: this.changeMessage,
+      setSubmittedMessage: this.setSubmittedMessage,
       setSuccess: this.setSuccess,
       clearSuccess: this.clearSuccess,
     }

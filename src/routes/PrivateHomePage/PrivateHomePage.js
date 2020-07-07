@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import MessageContext from '../../contexts/MessagesContext'
 import MessageService from '../../services/messageService'
 import SingleMessage from '../../components/SingleMessage/SingleMessage'
+import WelcomeName from '../../components/WelcomeName/WelcomeName';
 
 class PublicHomePage extends Component {
   static contextType = MessageContext;
@@ -17,8 +18,8 @@ class PublicHomePage extends Component {
 
   generateMessages() {
     const { messages } = this.context
-    const temp = messages.map(message => {
-      return <SingleMessage key={message.id} message={message.message} />
+    const temp = messages.map((message, index) => {
+      return <SingleMessage key={index} id={message.id} message={message.message} />
     })
     return temp
   }
@@ -44,9 +45,7 @@ class PublicHomePage extends Component {
     return (
       <div>
         <section className="user-greeting">
-          <h2>
-            Welcome Mango Peterson!
-          </h2>
+          <WelcomeName/>
         </section>
         { this.context.error && <p className="private-home-error">{this.context.error}</p> }
         { this.context.success && <p className="private-home-success">{this.context.success}</p> }
