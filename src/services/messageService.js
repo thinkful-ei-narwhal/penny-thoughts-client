@@ -65,7 +65,7 @@ const messageService = {
   },
 
   deleteUserMessage(id) {
-    console.log(id)
+    // console.log(id)
     let error;
     return fetch(`${config.API_ENDPOINT}/messages/userData`, {
       method: 'DELETE',
@@ -79,6 +79,7 @@ const messageService = {
         if (!res.ok) {
           error = { code: res.status };
         }
+        return res.json()
       })
       .then(data => {
         console.log(data)
@@ -88,6 +89,24 @@ const messageService = {
         }
         return data
       })
+  },
+  editUserMessage(id, newMessage) {
+    return fetch(`${config.API_ENDPOINT}/messages/userData`, {
+      method: 'PATCH',
+      body: JSON.stringify({ id, message: newMessage }),
+      headers: {
+        'content-type': 'application/json',
+        'Authorization': `Bearer ${TokenService.getAuthToken()}`
+      }
+    })
+      .then(res => {
+        if (!res.ok) {
+
+          return res.status && res.json().then(e => e)
+        }
+        return res.status;
+      })
+
   },
 }
 
