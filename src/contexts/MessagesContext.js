@@ -16,8 +16,8 @@ const MessagesContext = React.createContext({
   setMessages: () => {},
   changeMessage: () => {},
   setSuccess: () => {},
-  clearSuccess: () => {}
-
+  clearSuccess: () => {},
+  deleteUserMessage: () => {}
 });
 
 export default MessagesContext;
@@ -109,6 +109,20 @@ setUserMessages = data => {
     })
   }
 
+  deleteUserMessage = (messageID) => {
+    //this.toggleLoading()
+    let temp = [...this.state.userMessages].filter(msg => msg.id !== messageID)
+    console.log(temp)
+    messageService.deleteUserMessage(messageID)
+      .then((res) => {
+        if (res === 204) {
+          this.setState({ userMessages: temp, isLoading: false })
+        }
+      })
+      .catch(err => this.context.setError(err))
+  }
+  
+
   render() {
     const value = {
       messages: this.state.messages,
@@ -126,6 +140,7 @@ setUserMessages = data => {
       setSubmittedMessage: this.setSubmittedMessage,
       setSuccess: this.setSuccess,
       clearSuccess: this.clearSuccess,
+      deleteUserMessage: this.deleteUserMessage,
     }
 
     return (

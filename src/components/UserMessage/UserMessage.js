@@ -7,7 +7,8 @@ export class UserMessage extends Component {
   static contextType = MessageContext;
 
 
-  handleEditMessage = (id, message) => {
+  handleEditMessage = (id) => {
+    const message = this.refs[`${id}`].value;
     const { setError, updateUserMessage, clearError, setSuccess, success} = this.context
     if (!message) return setError('You must include a valid message.')
     clearError()
@@ -21,29 +22,18 @@ export class UserMessage extends Component {
       })
   }
 
-  deleteUserMessage(id) {
-    MessageService.deleteUserMessage(id)
-      .then(
-        MessageService.getUserMessages()
-          .then(data => {
-            this.context.setUserMessages(data)
-          })
-          .catch(err => this.context.setError(err))
-      )
+  deleteUserMessage = (id) => {
+    this.context.deleteUserMessage(id)
   }
 
   render() {
     return (
-      <div>
-        <form onSubmit={(e) => {
-          e.preventDefault();
-          this.handleEditMessage(this.props.id, e.target.message.value)}}>
-          <label className="hidden-label" htmlFor="message">Edit Message #{this.props.index + 1}</label>
-          <input type="text" name="message" id="message" defaultValue={this.props.message}/>
-          <button type="submit">Edit Message</button>
-          <button onClick={() => this.deleteUserMessage(this.props.id)}>Delete Message</button>
-        </form>
-      </div>
+      <li>
+        <label className="hidden-label" htmlFor="message">Edit Message #{this.props.index + 1}</label>
+        <input ref={`${this.props.id}`} defaultValue={this.props.message}></input>
+        <button onClick={() => this.handleEditMessage(this.props.id)}>Edit Message</button>
+        <button onClick={() => this.deleteUserMessage(this.props.id)}>Delete Message</button>
+      </li>
     )
   }
 }
