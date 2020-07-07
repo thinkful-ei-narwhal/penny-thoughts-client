@@ -21,7 +21,6 @@ export default class UserMessages extends Component {
 
   generateUserMessages() {
     const { userMessages } = this.context
-    console.log(userMessages);
     const temp = userMessages.map((message, index) => {
       return <UserMessage key={index} id={message.id} index={index} message={message.message} />
     })
@@ -29,7 +28,6 @@ export default class UserMessages extends Component {
   }
 
   render() {
-    console.log(this.context.success);
     if (this.context.isLoading === true) {
       return (
         <BubblesLoader />
