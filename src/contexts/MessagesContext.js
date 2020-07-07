@@ -1,12 +1,18 @@
-import React, {Component } from 'react';
-
+import React, { Component } from 'react';
+import messageService from '../services/messageService'
 const MessagesContext = React.createContext({
   messages: [],
-  submittedMessage: '',
+  userMessages: [],
   error: null,
   success: null,
-  setError: () => {},
-  clearError: () => {},
+
+  setError: () => { },
+  clearError: () => { },
+  setMessages: () => { },
+  setUserMessages: () => { },
+  updateUserMessage: () => { },
+  isLoading: false,
+  toggleLoading: () => {},
   setMessages: () => {},
   changeMessage: () => {},
   setSuccess: () => {},
@@ -21,19 +27,21 @@ export class MessageProvider extends Component {
     super(props)
     this.state = {
       messages: [],
-      submittedMessage: '',
+      userMessages: [],
       error: null,
-      success: null
+      success: null,
+      isLoading: false
     }
   }
 
   setError = error => {
+    console.log(error);
     this.setState({
       success: null,
       error: error
     })
   }
-  
+
   clearError = () => {
     this.setState({
       success: null,
@@ -46,8 +54,7 @@ export class MessageProvider extends Component {
       messages: data
     })
   }
-
-
+  
   changeMessage = (data, id) => {
     let ind = this.state.messages.findIndex(el => el.id === id)
     let newArr = this.state.messages;
@@ -63,6 +70,28 @@ export class MessageProvider extends Component {
     }, () => {
       return this.state.submittedMessage
     })
+  }
+
+setUserMessages = data => {
+    this.setState({
+      userMessages: data
+    })
+  }
+
+  toggleLoading = () => {
+    this.setState({ isLoading: !this.state.isLoading })
+  }
+  
+  updateUserMessage = (id, value) => {
+    //then call the update method on the server
+    //then put the below code into the .then() of the check
+    messageService.editUserMessage(id, value)
+      
+    const userMessages = [...this.state.userMessages]
+    userMessages.find(mes => mes.id === id).message = value;
+    userMessages.find(mes => mes.id === id).flagged = false;
+    //update the new state
+    this.setState({ userMessages: userMessages, isLoading: false, error: null })
   }
 
   clearSuccess = () => {
@@ -83,12 +112,16 @@ export class MessageProvider extends Component {
   render() {
     const value = {
       messages: this.state.messages,
-      submittedMessage: this.state.submittedMessage,
+      userMessages: this.state.userMessages,
       error: this.state.error,
       success: this.state.success,
       clearError: this.clearError,
       setError: this.setError,
       setMessages: this.setMessages,
+      setUserMessages: this.setUserMessages,
+      updateUserMessage: this.updateUserMessage,
+      isLoading: this.state.isLoading,
+      toggleLoading: this.toggleLoading,
       changeMessage: this.changeMessage,
       setSubmittedMessage: this.setSubmittedMessage,
       setSuccess: this.setSuccess,
