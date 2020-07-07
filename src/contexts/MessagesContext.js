@@ -12,6 +12,7 @@ const MessagesContext = React.createContext({
   setUserMessages: () => { },
   updateUserMessage: () => { },
   isLoading: false,
+  isLoadingThink: false,
   toggleLoading: () => {},
   setMessages: () => {},
   changeMessage: () => {},
@@ -30,7 +31,8 @@ export class MessageProvider extends Component {
       userMessages: [],
       error: null,
       success: null,
-      isLoading: false
+      isLoading: false,
+      isLoadingThink: false,
     }
   }
 
@@ -80,6 +82,10 @@ setUserMessages = data => {
 
   toggleLoading = () => {
     this.setState({ isLoading: !this.state.isLoading })
+  }
+
+  toggleLoadingThink = () => {
+    this.setState({ isLoadingThink: !this.state.isLoadingThink })
   }
   
   updateUserMessage = (id, value) => {
@@ -135,7 +141,9 @@ setUserMessages = data => {
       setUserMessages: this.setUserMessages,
       updateUserMessage: this.updateUserMessage,
       isLoading: this.state.isLoading,
+      isLoadingThink: this.state.isLoadingThink,
       toggleLoading: this.toggleLoading,
+      toggleLoadingThink: this.toggleLoadingThink,
       changeMessage: this.changeMessage,
       setSubmittedMessage: this.setSubmittedMessage,
       setSuccess: this.setSuccess,

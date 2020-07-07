@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import MessageContext from '../../contexts/MessagesContext'
 import MessageService from '../../services/messageService'
-import BubblesLoader from '../Loader/BubblesLoader'
+import BubblesLoader from '../Loaders/BubbleLoader/BubblesLoader'
 import UserMessage from '../UserMessage/UserMessage'
+import ThinkingLoader from '../Loaders/ThinkingLoader/ThinkingLoader'
 export default class UserMessages extends Component {
   
   static contextType = MessageContext;
@@ -37,6 +38,7 @@ export default class UserMessages extends Component {
       
       <div>
         <section className='messages-container'>
+        {this.context.isLoadingThink && <ThinkingLoader/>}
         {this.context.error && <p className="private-home-error">{this.context.error}</p>}
         {this.context.success && <p className="private-home-success">{this.context.success}</p>}
           <p>these are your messages</p>
