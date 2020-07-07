@@ -116,13 +116,15 @@ setUserMessages = data => {
   }
 
   deleteUserMessage = (messageID) => {
-    //this.toggleLoading()
     let temp = [...this.state.userMessages].filter(msg => msg.id !== messageID)
     console.log(temp)
     messageService.deleteUserMessage(messageID)
       .then((res) => {
         if (res === 204) {
+          console.log('i got herrrrr')
+          this.setState({ userMessages: [], isLoading: false }) // I dont know why this works like this.  Too bad!
           this.setState({ userMessages: temp, isLoading: false })
+          console.log(this.state.userMessages)
         }
       })
       .catch(err => this.context.setError(err))
