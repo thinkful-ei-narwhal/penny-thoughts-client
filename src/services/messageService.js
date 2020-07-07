@@ -30,30 +30,6 @@ const messageService = {
         })
     },
 
-  getOneRandom() {
-    let error;
-    return fetch(`${config.API_ENDPOINT}/messages/single`, {
-      method: 'GET',
-      headers: {
-        'content-type': 'application/json',
-        'Authorization': `Bearer ${TokenService.getAuthToken()}`
-      }
-    })
-      .then(res => {
-        if (!res.ok) {
-          error = { code: res.status };
-        }
-        return res.json();
-      })
-      .then(data => {
-        if (error) {
-          error.message = data.message;
-          return Promise.reject(error);
-        }
-        return data
-      })
-  },
-
   getUserMessages() {
     let error;
     return fetch(`${config.API_ENDPOINT}/messages/userData`, {
@@ -78,9 +54,22 @@ const messageService = {
       })
   },
 
+  addMessage(message) {
+    return fetch(`${config.API_ENDPOINT}/messages`, {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+        'Authorization': `Bearer ${TokenService.getAuthToken()}`
+      },
+      body: JSON.stringify({ message })
+    })
+    .then(res => {
+      if (!res.ok) return res.json().then(e => Promise.reject(e))
+      return res.json()
+    })
+  },
+
   deleteUserMessage(id) {
-    // console.log(id)
-    let error;
     return fetch(`${config.API_ENDPOINT}/messages/userData`, {
       method: 'DELETE',
       body: JSON.stringify({ id }),
@@ -90,20 +79,14 @@ const messageService = {
       }
     })
       .then(res => {
+        console.log(res)
         if (!res.ok) {
-          error = { code: res.status };
+          return res.status && res.json().then(e => e)
         }
-        return res.json()
-      })
-      .then(data => {
-        console.log(data)
-        if (error) {
-          error.message = data.message;
-          return Promise.reject(error);
-        }
-        return data
+        return res.status
       })
   },
+
   editUserMessage(id, newMessage) {
     return fetch(`${config.API_ENDPOINT}/messages/userData`, {
       method: 'PATCH',
