@@ -1,0 +1,18 @@
+.modal-box{
+    position: absolute;
+    text-align: center;
+    padding: 50px;
+    width: 500px;
+    background: white;
+    border: 3px solid #ccc;
+    box-shadow: 
+    -2rem 2rem 2rem rgba(black, 0.2);
+    vertical-align: middle;
+    animation: fadeIn ease 0.3s;
+    opacity: 1;
+}
+
+@keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
