@@ -31,7 +31,7 @@ class PublicHomePage extends Component {
           <section className="user-greeting">
             <WelcomeName/>
           </section>
-          <section className="messages-container">
+          <section className="coin-messages-container">
             {this.generateMessages()}
           </section>
         </main>

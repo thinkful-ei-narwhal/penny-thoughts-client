@@ -39,12 +39,13 @@ export default class LoginForm extends Component {
       <form className="signup-form"
       onSubmit={this.handleSubmitJwtAuth}
       >
+        <h2 className="signup-here">Sign Up Here!</h2>
         <div role='alert'>{error && <p className='red'>{error}</p>}</div>
-        <div>
+        <div className="username">
           <label htmlFor="username">Username</label>
           <input placeholder="Username" autoComplete="username" type="text" name="username" id="username" />
         </div>
-        <div>
+        <div className="password">
           <label htmlFor="password">Password</label>
           <input type="password" autoComplete="current-password" name="password" id="password" />
         </div>
