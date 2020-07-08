@@ -13,11 +13,12 @@ const MessagesContext = React.createContext({
   updateUserMessage: () => { },
   isLoading: false,
   isLoadingThink: false,
-  toggleLoading: () => {},
-  changeMessage: () => {},
-  setSuccess: () => {},
-  clearSuccess: () => {},
-  deleteUserMessage: () => {}
+  toggleLoading: () => { },
+  setMessages: () => { },
+  changeMessage: () => { },
+  setSuccess: () => { },
+  clearSuccess: () => { },
+  deleteUserMessage: () => { }
 });
 
 export default MessagesContext;
@@ -55,7 +56,7 @@ export class MessageProvider extends Component {
       messages: data
     })
   }
-  
+
   changeMessage = (data, id) => {
     let ind = this.state.messages.findIndex(el => el.id === id)
     let newArr = this.state.messages;
@@ -64,7 +65,7 @@ export class MessageProvider extends Component {
       messages: newArr
     })
   }
-  
+
   setSubmittedMessage = message => {
     this.setState({
       submittedMessage: message
@@ -73,7 +74,7 @@ export class MessageProvider extends Component {
     })
   }
 
-setUserMessages = data => {
+  setUserMessages = data => {
     this.setState({
       userMessages: data
     })
@@ -86,12 +87,12 @@ setUserMessages = data => {
   toggleLoadingThink = () => {
     this.setState({ isLoadingThink: !this.state.isLoadingThink })
   }
-  
+
   updateUserMessage = (id, value) => {
     //then call the update method on the server
     //then put the below code into the .then() of the check
     messageService.editUserMessage(id, value)
-      
+
     const userMessages = [...this.state.userMessages]
     userMessages.find(mes => mes.id === id).message = value;
     userMessages.find(mes => mes.id === id).flagged = false;
@@ -122,15 +123,13 @@ setUserMessages = data => {
     messageService.deleteUserMessage(messageID)
       .then((res) => {
         if (res === 204) {
-          console.log('i got herrrrr')
-          this.setState({ userMessages: [], isLoading: false }) // I dont know why this works like this.  Too bad!
-          this.setState({ userMessages: userMessages, isLoading: false })
+          this.setState({ userMessages: temp, isLoading: false })
           console.log(this.state.userMessages)
         }
       })
       .catch(err => this.context.setError(err))
   }
-  
+
 
   render() {
     const value = {
