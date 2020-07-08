@@ -16,8 +16,7 @@ export default class UserMessages extends Component {
         this.context.setUserMessages(data)
         this.context.toggleLoading()
       })
-      .catch(err => this.context.setError(err))
-      
+      .catch(err => this.context.setError(err))  
   }
 
   generateUserMessages() {
@@ -41,7 +40,7 @@ export default class UserMessages extends Component {
         {this.context.isLoadingThink && <ThinkingLoader/>}
         {this.context.error && <p className="private-home-error">{this.context.error}</p>}
         {this.context.success && <p className="private-home-success">{this.context.success}</p>}
-          <p>these are your messages</p>
+          <h2>Your User Messages:</h2>
           <ul>
             {this.generateUserMessages()}
           </ul>

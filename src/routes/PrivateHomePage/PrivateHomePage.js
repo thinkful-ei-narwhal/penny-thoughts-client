@@ -46,7 +46,7 @@ class PublicHomePage extends Component {
   render() {
     const { messages, isLoading, error, success} = this.context
     return (
-      <div>
+      <div className="div-background">
         <section className="user-greeting">
           <WelcomeName/>
         </section>
@@ -61,7 +61,7 @@ class PublicHomePage extends Component {
           <input className="basic-input" type="text" name="message" id="message" />
           <button>Add New Message</button>
         </form>
-        <section className="messages-container">
+        <section className="coin-messages-container">
           {this.generateMessages()}
         </section>
       </div>
