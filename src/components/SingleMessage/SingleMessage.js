@@ -2,6 +2,7 @@ import React, { useContext, useState, Fragment } from 'react'
 import messageService from '../../services/messageService'
 import MessageContext from '../../contexts/MessagesContext';
 import useLongPress from '../../events/LongPress';
+import './SingleMessage.css'
 
 export default function SingleMessage(props) {
 
