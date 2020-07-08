@@ -6,15 +6,14 @@ const MessagesContext = React.createContext({
   error: null,
   success: null,
 
-  setError: () => { },
-  clearError: () => { },
-  setMessages: () => { },
+  setError: () => {},
+  clearError: () => {},
+  setMessages: () => {},
   setUserMessages: () => { },
   updateUserMessage: () => { },
   isLoading: false,
   isLoadingThink: false,
   toggleLoading: () => {},
-  setMessages: () => {},
   changeMessage: () => {},
   setSuccess: () => {},
   clearSuccess: () => {},
@@ -116,14 +115,16 @@ setUserMessages = data => {
   }
 
   deleteUserMessage = (messageID) => {
-    let temp = [...this.state.userMessages].filter(msg => msg.id !== messageID)
-    console.log(temp)
+    const userMessages = [...this.state.userMessages]
+    const ind = userMessages.findIndex(msg => msg.id === messageID);
+    userMessages.splice(ind, 1);
+    
     messageService.deleteUserMessage(messageID)
       .then((res) => {
         if (res === 204) {
           console.log('i got herrrrr')
           this.setState({ userMessages: [], isLoading: false }) // I dont know why this works like this.  Too bad!
-          this.setState({ userMessages: temp, isLoading: false })
+          this.setState({ userMessages: userMessages, isLoading: false })
           console.log(this.state.userMessages)
         }
       })

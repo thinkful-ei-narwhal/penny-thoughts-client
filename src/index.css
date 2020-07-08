@@ -1,23 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora&family=Raleway&family=Yellowtail&display=swap');
+
 body {
+  background-color: #F4C95D;
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: 'Raleway', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family: 'Raleway', sans-serif;
+}
+
+.title-logo a:link, nav a:visited {
+  color: #2E1F27;
+  text-shadow: 1px 5px #F4C95D;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.title-logo a:hover {
+  transition: 0.3s;
+  color: #F4C95D;
+  text-shadow: 1px 5px #2E1F27;
+}
+
+.header__not-logged-in, .header__logged-in {
+  font-family: 'Lora', serif;
+}
+
+.header__not-logged-in a:hover, .header__logged-in a:hover {
+  transition: 0.3s;
+  color: #F4C95D;
+  text-shadow: 1px 3px #2E1F27;
+}
+
+.user-greeting {
+  font-family: 'Lora', serif;
+  color: #E7E393;
+  background-color: #854D27;
+}
+
+.div-background {
+  background-color: #E7E393;
+}
+
+.nav-link {
+  padding: 15px;
+  font-size: 18px;
 }
 
 nav {
   display: flex;
   justify-content: space-between;
   padding: 1rem;
-  background-color: #d4aa7d;
+  background-color: #DD7230;
   padding: 1rem;
+}
+
+.header h1 {
+  text-align: center;
+  font-family: 'Yellowtail', cursive;
+  font-size: 75px;
+  padding: 0px;
+}
+
+.title-logo {
+  text-align: center;
+  margin: auto;
 }
 
 .header-logo {
@@ -28,22 +79,87 @@ nav {
 .user-greeting {
   display: flex;
   justify-content: space-around;
-  margin: 1rem;
 }
 
-.messages-container {
+.coin-messages-container {
   width: 100%;
   min-height: 30rem;
-  background-color: #90a9b7;
+  background-color: #F4C95D;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
 
+.messages-container {
+  width: 100%;
+  min-height: 30rem;
+  background-color: #F4C95D;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.messages-container h2 {
+  text-align: center;
+  font-family: 'Lora', serif;
+  font-size: 26px;
+}
+
+ul {
+  margin-left: 15%;
+  margin-right: 15%;
+  padding: 5px;
+  border: 5px double #2E1F27;
+  border-radius: 10px;
+}
+
+li {
+  display: flex;
+  flex-direction: row;
+  padding: 5px;
+  list-style-type: none;
+}
+
+.usermessage input {
+  margin: 5px;
+  width: 200px;
+  border: 1px solid #2E1F27;
+  border-radius: 4px;
+  font-style: italic;
+}
+
+.usermessage button {
+  font-family: 'Lora', serif;
+  margin: 5px;
+  color: #E7E393;
+  background-color: #DD7230;
+  border: 1px solid #2E1F27;
+  border-radius: 4px;
+}
+
+.usermessage button:hover {
+  margin: 5px;
+  color: #DD7230;
+  background-color: #E7E393;
+  border: 1px solid #2E1F27;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+
+.settings-header {
+  text-align: center;
+  font-family: 'Lora', serif;
+  font-size: 36px;
+}
+
 .coin {
-  background-image: url(./shiny-coin1.svg);
+  background-image: url('./images/coin6.png');
   background-repeat: no-repeat;
   background-size: cover;
+  font-family: 'Lora', serif;
+  font-weight: bolder;
   width: 120px;
   height: 120px;
   display: flex;
@@ -52,6 +168,96 @@ nav {
   padding: 1rem;
   text-align: center;
   margin: 2rem;
+}
+
+.signup-form {
+  text-align: center;
+  width: 50%;
+  margin: auto;
+  padding: 10px;
+}
+
+.signup-form label {
+  font-family: 'Lora', serif;
+  font-weight: bolder;
+  font-size: 26px;
+}
+
+.signup-form input{
+  font-size: 20px;
+  border: 1px solid #2E1F27;
+  border-radius: 4px;
+}
+
+.signup-form button {
+  font-weight: bolder;
+  background-color: #DD7230;
+  font-family: 'Lora', serif;
+  font-size: 22px;
+  color: #E7E393;
+  border: 1px solid #2E1F27;
+  border-radius: 4px;
+  padding: 3px;
+  margin: 3px;
+}
+
+.signup-form button:hover {
+  background-color: #E7E393;
+  color: #DD7230;
+  border: 1px solid #2E1F27;
+  transition: 0.3s;
+}
+
+.username, .password {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+}
+
+#username, #password {
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 50%;
+}
+
+.landing-desc {
+  width: 75%;
+  margin: auto;
+  text-align: center;
+}
+
+.landing-subheader {
+  font-family: 'Lora', serif;
+  font-weight: bolder;
+  font-size: 26px;
+}
+
+.landing-desc p {
+  font-size: 18px;
+  line-height: 1.5;
+  letter-spacing: 2px;
+}
+
+.get-inspired {
+  width: 50%;
+  text-align: center;
+  margin: auto;
+  font-size: 36px;
+  font-family: 'Yellowtail', cursive;
+  text-decoration: none;
+  padding: 15px;
+  border: 5px double #2E1F27;
+  border-radius: 40px;
+}
+
+.get-inspired:visited {
+  color: #2E1F27;
+}
+
+.landing-page {
+  display: flex;
+  flex-direction: row;
 }
 
 .message-form {
