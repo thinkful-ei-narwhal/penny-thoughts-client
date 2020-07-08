@@ -123,7 +123,7 @@ export class MessageProvider extends Component {
     messageService.deleteUserMessage(messageID)
       .then((res) => {
         if (res === 204) {
-          this.setState({ userMessages: temp, isLoading: false })
+          this.setState({ userMessages: userMessages, isLoading: false })
           console.log(this.state.userMessages)
         }
       })
