@@ -28,6 +28,8 @@ export default function SingleMessage(props) {
   };
 
   const onClickCoin = () => {
+    toggleReport(false)
+    toggleConfirm(false)
     updateMessage(props.id)
   }
 
@@ -45,10 +47,12 @@ export default function SingleMessage(props) {
       <div className="modal-box">
          <p>Are you sure you'd like to report this message?</p>
         <button onClick={() => {
-          // make call to server
-          updateMessage(props.id)
-          toggleConfirm(!confirm)
-          toggleReport(!report);
+          messageService.flagMessage(props.id)
+            .then(() => {
+            updateMessage(props.id)
+            toggleConfirm(!confirm)
+            toggleReport(!report);
+          })
         }}>Yes</button>
 
         <button onClick={() => {

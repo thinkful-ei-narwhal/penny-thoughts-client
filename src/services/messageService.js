@@ -102,6 +102,22 @@ const messageService = {
       res
     )
   },
+
+  flagMessage(id) {
+    return fetch(`${config.API_ENDPOINT}/messages/report`, {
+      method: 'PATCH',
+      body: JSON.stringify({ id }),
+      headers: {
+        'content-type': 'application/json',
+        'Authorization': `Bearer ${TokenService.getAuthToken()}`
+      }
+    })
+    .then(res =>
+      (!res.ok) ?
+      res.json().then(e => Promise.reject(e)) :
+      res
+    )
+  },
 }
 
 export default messageService;
