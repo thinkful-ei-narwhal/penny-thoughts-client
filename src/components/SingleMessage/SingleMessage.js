@@ -1,48 +1,80 @@
-import React, { Component } from 'react'
+import React, { useContext, useState, Fragment } from 'react'
 import messageService from '../../services/messageService'
 import MessageContext from '../../contexts/MessagesContext';
+import useLongPress from '../../events/LongPress';
 
-export default class SingleMessage extends Component {
-  
-  static contextType = MessageContext;
+export default function SingleMessage(props) {
 
+  const MessagesCon = useContext(MessageContext)
 
-  /* This was the old version of this code.  It had a bug where it did not
-  keep track of unique items.  This is the kind of problem where asynch would
-  work much better than a promise chain in my opinion -D.S.*/
+  const [report, toggleReport] = useState(false)
+  const [confirm, toggleConfirm] = useState(false)
 
-  // updateMessage(id) { 
-  //   const messages = this.context.messages;
-  //   messageService.getOneRandom(id)
-  //   .then(data => {
-  //       this.context.changeMessage(data[0], id)
-  //   })
-  //   .catch(err => this.context.setError(err))
-  // }
-
-  /* this is a newer version that uses async/await.
-  It takes the messages from the current state and maps them to their id's
-  then it makes a call and stores it as data
-  as long as it IS included in the array of id's, make a call until it's not included.
-  Then set it in the context.
-  No finally block needed here unless we were logging something. */
-
-  async updateMessage(id) { 
-    const messages = this.context.messages.map(m => m.id);
+  const updateMessage = async (id) => { 
+    const messages = MessagesCon.messages.map(m => m.id);
     try {
       let data = await messageService.getOneRandom(id)
       while (messages.includes(data[0].id)){
         data = await messageService.getOneRandom(id)
       }
-      this.context.changeMessage(data[0], id)
+      MessagesCon.changeMessage(data[0], id)
     } catch (err) {
-      this.context.setError(err)
+      MessagesCon.setError(err)
     } finally {}
+  };
+
+  const onLongPress = () => {
+    toggleReport(!report);
+  };
+
+  const onClickCoin = () => {
+    updateMessage(props.id)
   }
-  
-  render() {
+
+  const renderReport = () => {
     return (
-      <div onClick={() => this.updateMessage(this.props.id)} className="coin">{this.props.message}</div>
+      <div className="modal-box">
+        <button className="report-button"
+        onClick={() => toggleConfirm(!confirm)}>Report!</button>
+      </div>
     )
   }
+
+  const renderConfirm = () => {
+    return (
+      <div className="modal-box">
+         <p>Are you sure you'd like to report this message?</p>
+        <button onClick={() => {
+          // make call to server
+          updateMessage(props.id)
+          toggleConfirm(!confirm)
+          toggleReport(!report);
+        }}>Yes</button>
+
+        <button onClick={() => {
+          toggleConfirm(!confirm)
+          toggleReport(!report);
+        }}>No</button>
+      </div>
+    )
+  }
+
+  const defaultOptions = {
+    shouldPreventDefault: true,
+    delay: 500,
+  };
+
+  const longPressEvent = useLongPress(onLongPress, onClickCoin, defaultOptions);
+
+  return (
+    <Fragment>
+      <div 
+        {...longPressEvent}
+        className="coin">{props.message}
+      </div>
+      {report && renderReport()}
+      {confirm && renderConfirm()}
+    </Fragment>
+  )
+
 }
