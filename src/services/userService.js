@@ -28,6 +28,22 @@ const UserService = {
       return res.json()
     })
   },
+  editUser(full_name, email) {
+    console.log(full_name)
+    console.log(email)
+    return fetch(`${config.API_ENDPOINT}/users`, {
+      method: 'PATCH',
+      body: JSON.stringify({ full_name, email}),
+      headers: {
+        'content-type': 'application/json',
+        'Authorization': `Bearer ${TokenService.getAuthToken()}`
+      }
+    })
+    .then(res => {
+      if (!res.ok) return res.json().then(e => Promise.reject(e))
+      return res.json()
+    })
+  },
 }
 
 export default UserService;

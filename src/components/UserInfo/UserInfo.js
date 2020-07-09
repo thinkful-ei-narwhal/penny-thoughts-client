@@ -15,8 +15,13 @@ export class UserInfo extends Component {
       }
 
       handleSubmit = (fullName, email) => {
-        console.log(fullName)
-        console.log(email)
+        this.context.clearError()
+        UserService.editUser(fullName, email)
+          .then(data => {
+            console.log(data)
+            this.context.setUserData(data)
+          })
+          .catch(err => this.context.setError(err))
       }
  
     render() {
@@ -31,7 +36,6 @@ export class UserInfo extends Component {
                 <input type = 'text'
                  name = 'full_name'
                  id = 'full_name'
-                //  ref={`${this.props.id}`}
                  defaultValue = { this.context.userData.full_name}
           />       
           <label htmlFor = 'email' > email: </label> 
