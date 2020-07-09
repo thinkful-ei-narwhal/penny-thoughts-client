@@ -121,7 +121,7 @@ const messageService = {
     return fetch(`${config.API_ENDPOINT}/messages/flagged`, {
       method: 'PATCH',
       headers: {
-        'context-type': 'application/json',
+        'content-type': 'application/json',
         'Authorization': `Bearer ${TokenService.getAuthToken()}`
       },
       body: JSON.stringify({ id })
