@@ -10,7 +10,7 @@ export default class UserSettingsPage extends Component {
         <h2 className="settings-header">Settings</h2>
         <UserMessages/>
         <UserInfo/>
-        <DeleteAccountButton/>
+        <DeleteAccountButton {...this.props}/>
       </div>
     )
   }

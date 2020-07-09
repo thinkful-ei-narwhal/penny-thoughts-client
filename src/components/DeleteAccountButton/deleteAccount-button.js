@@ -27,8 +27,8 @@ export class deleteAccountButton extends Component {
       <div className="modal-box">
         <p>Are you sure you'd like to Delete this account?</p>
          <button onClick={() => {
-             this.toggleConfirm()
-             this.toggleDelete();
+              this.toggleConfirm()
+              this.toggleDelete();
          }}>Yes</button>
 
          <button onClick={() => {
@@ -43,9 +43,8 @@ export class deleteAccountButton extends Component {
       <div className="modal-box">
          <p>Are you sure there is no going back?</p>
         <button onClick={() => {
-          UserService.deleteAccount()
+          UserService.deleteUser()
             .then(() => {
-            this.toggleConfirm()
             this.toggleDelete();
           })
         }}>Yes</button>
@@ -63,7 +62,6 @@ export class deleteAccountButton extends Component {
     <button onClick={(e) => {
        e.preventDefault();
        this.toggleConfirm()
-      // UserService.deleteUser();
       // props.history.push('/');
     }}>
       Delete Account
