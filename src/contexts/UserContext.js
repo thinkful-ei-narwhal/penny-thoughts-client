@@ -58,6 +58,8 @@ export class UserProvider extends Component {
   }
 
   setUser = user => {
+    console.log('ran')
+    console.log(user.email)
     this.setState({ user })
   }
 

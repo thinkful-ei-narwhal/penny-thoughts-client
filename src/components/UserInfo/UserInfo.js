@@ -10,7 +10,7 @@ export class UserInfo extends Component {
     componentDidMount() {
         let user = jwtDecode(TokenService.getAuthToken())
         this.context.clearError()
-        UserService.getUser(user.id)
+        UserService.getUser(user.user_id)
           .then(data => {
             this.context.setUser(data)
           })
