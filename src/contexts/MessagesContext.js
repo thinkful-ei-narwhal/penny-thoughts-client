@@ -37,7 +37,6 @@ export class MessageProvider extends Component {
   }
 
   setError = error => {
-    console.log(error);
     this.setState({
       success: null,
       error: error
@@ -119,12 +118,11 @@ export class MessageProvider extends Component {
     const userMessages = [...this.state.userMessages]
     const ind = userMessages.findIndex(msg => msg.id === messageID);
     userMessages.splice(ind, 1);
-    
+
     messageService.deleteUserMessage(messageID)
       .then((res) => {
         if (res === 204) {
           this.setState({ userMessages: userMessages, isLoading: false })
-          console.log(this.state.userMessages)
         }
       })
       .catch(err => this.context.setError(err))

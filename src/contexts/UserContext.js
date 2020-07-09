@@ -2,20 +2,22 @@ import React, { Component} from 'react'
 import AuthApiService from '../services/auth-api-service'
 import TokenService from '../services/token-service'
 import IdleService from '../services/idle-service'
+import UserService from '../services/userService'
 
 
 const UserContext = React.createContext({
   user: {},
   userData: {},
   error: null,
+  setError: () => { },
+  clearError: () => { },
+  setUser: () => { },
+  setUserData: () => { },
+  clearUserData: () => { },
+  processLogin: () => { },
+  processLogout: () => { },
   confirm: false,
   deleteAccount: false,
-  setError: () => {},
-  clearError: () => {},
-  setUser: () => {},
-  setUserData: () => {},
-  processLogin: () => {},
-  processLogout: () => {},
   toggleConfirm: () => {},
   toggleDelete: () => {}
 })
@@ -72,11 +74,19 @@ export class UserProvider extends Component {
     this.setState({ user: data })
   }
 
-  setUserData = data => {
-    this.setState({ userData:data})
+  setUserData = () => {
+    UserService.getUser()
+      .then(data => {
+        console.log('setUserData', data)
+        this.setState({ userData: { full_name: data.full_name, email: data.email } })
+      })
+      .catch(err => this.context.setError(err))
   }
 
-
+  clearUserData = () => {
+    this.setState({ user: null, userData: null })
+    console.log('clearUserData', this.state.userData)
+  }
   processLogin = authToken => {
     TokenService.saveAuthToken(authToken)
     const jwtPayload = TokenService.parseAuthToken()
@@ -96,6 +106,7 @@ export class UserProvider extends Component {
     TokenService.clearCallbackBeforeExpiry()
     IdleService.unRegisterIdleResets()
     this.setUser({})
+    this.clearUserData()
   }
 
   logoutBecauseIdle = () => {
@@ -138,6 +149,7 @@ export class UserProvider extends Component {
       processLogout: this.processLogout,
       userData: this.state.userData,
       setUserData: this.setUserData,
+      clearUserData: this.clearUserData
       confirm: this.state.confirm,
       deleteAccount: this.state.deleteAccount,
       toggleConfirm: this.toggleConfirm,
