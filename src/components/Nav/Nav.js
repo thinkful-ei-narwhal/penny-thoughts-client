@@ -61,20 +61,20 @@ export class Nav extends Component {
   }
 
   render() {
-    return (
-      <nav className='header' >
-        <div className='title-logo'>
-          <NavLink to='/' >
-            <h1> Penny Thoughts </h1>
-          </NavLink>
-        </div>
-        <section className='navlinks' >
+    return ( 
+      <nav className = 'header' >
+        <section className = 'navlinks' > 
           {
             TokenService.hasAuthToken() ?
               this.renderLogoutLink() :
               this.renderLoginLink()
           }
         </section>
+        <div className='title-logo'>
+          <NavLink to = '/' >
+            <h1> Penny Thoughts </h1>
+          </NavLink> 
+        </div>
       </nav>
     )
   }

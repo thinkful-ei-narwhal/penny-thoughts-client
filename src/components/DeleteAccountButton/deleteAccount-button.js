@@ -1,17 +1,23 @@
-import React from 'react';
-import UsersService from '../../services/userService';
-import UserService from '../../services/userService';
+import React, { Fragment , Component} from 'react'
+import UserContext from '../../contexts/UserContext';
 
-function deleteAccountButton(props) {
- 
-  return (
-    <button onClick={() => {
-      UserService.deleteUser();
-      props.history.push('/');
+
+export class deleteAccountButton extends Component {
+
+  static contextType = UserContext;
+
+  render() {
+    return (
+      <Fragment>
+    <button onClick={(e) => {
+       e.preventDefault();
+       this.context.toggleConfirm()
     }}>
       Delete Account
     </button>
-  )
+    </Fragment>
+    )
+  }
 }
- 
-export default deleteAccountButton;
+
+export default deleteAccountButton

@@ -47,13 +47,12 @@ code {
 }
 
 .nav-link {
-  padding: 15px;
+  margin: 20px;
   font-size: 18px;
 }
 
 nav {
-  display: flex;
-  justify-content: space-between;
+  display: block;
   padding: 1rem;
   background-color: #DD7230;
   padding: 1rem;
@@ -318,6 +317,11 @@ li {
 
 .spinner .bubble3 {
   animation-delay: 0.3s;
+}
+
+.navlinks {
+  text-align: right;
+  width: 100%;
 }
 
 @keyframes pulse {
