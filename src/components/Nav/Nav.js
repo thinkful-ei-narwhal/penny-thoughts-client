@@ -11,8 +11,27 @@ export class Nav extends Component {
   }
 
   renderLogoutLink() {
-    return ( 
-      <div className = 'header__logged-in' >
+    if (TokenService.hasAuthToken().admin) {
+      return <div className = 'header__logged-in' >
+        <NavLink  
+          className='nav-link'
+          onClick = { this.handleLogoutClick }
+          to = '/' >
+            Logout 
+        </NavLink> 
+        <NavLink  
+          className='nav-link'
+          to = '/settings' >
+            Settings
+        </NavLink>
+        <NavLink  
+          className='nav-link'
+          to = '/admin' >
+            Admin
+        </NavLink> 
+      </div>
+    } else if (TokenService.hasAuthToken()) {
+      return <div className = 'header__logged-in' >
         <NavLink  
           className='nav-link'
           onClick = { this.handleLogoutClick }
@@ -25,7 +44,7 @@ export class Nav extends Component {
             Settings
         </NavLink> 
       </div>
-    )
+    }
   }
 
   renderLoginLink() {
@@ -48,11 +67,12 @@ export class Nav extends Component {
             <h1> Penny Thoughts </h1>
           </NavLink> 
         </div>
-        <section className = 'navlinks' > {
-          TokenService.hasAuthToken() ?
-          this.renderLogoutLink() :
-          this.renderLoginLink()
-        } 
+        <section className = 'navlinks' > 
+          {
+            TokenService.hasAuthToken() ?
+            this.renderLogoutLink() :
+            this.renderLoginLink()
+          }
         </section> 
       </nav>
     )

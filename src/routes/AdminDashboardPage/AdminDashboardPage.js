@@ -1,13 +1,14 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-export class AdminDashboardPage extends Component {
+class AdminDashboardPage extends React.Component {
+  
   render() {
     return (
-      <div>
-        
+      <div className="admin-container">
+        <p>This is the Admin Page</p>
       </div>
     )
   }
 }
 
-export default AdminDashboardPage
+export default AdminDashboardPage;
