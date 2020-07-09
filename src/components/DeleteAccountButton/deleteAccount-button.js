@@ -1,38 +1,24 @@
 import React, { Fragment , Component} from 'react'
 import UserService from '../../services/userService';
 import TokenService from '../../services/token-service';
+import UserContext from '../../contexts/UserContext';
 
 
 export class deleteAccountButton extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      confirm: false,
-      deleteAccount: false,
-    };
-  }
-  toggleConfirm = () => {
-    this.setState({
-      confirm: !this.state.confirm
-    });
-  }
-  toggleDelete = () => {
-    this.setState({
-      deleteAccount: !this.state.deleteAccount
-    });
-  }
+
+  static contextType = UserContext;
 
   renderConfirm = () => {
     return (
       <div className="modal-box">
         <p>Are you sure you'd like to Delete this account?</p>
          <button onClick={() => {
-              this.toggleConfirm()
-              this.toggleDelete();
+              this.context.toggleConfirm()
+              this.context.toggleDelete();
          }}>Yes</button>
 
          <button onClick={() => {
-          this.toggleConfirm()
+          this.context.toggleConfirm()
          }}>No</button>
       </div>
     )
@@ -45,14 +31,14 @@ export class deleteAccountButton extends Component {
         <button onClick={() => {
           UserService.deleteUser()
             .then(() => {
-            this.toggleDelete();
+            this.context.toggleDelete();
             TokenService.clearAuthToken();
             this.props.history.push('/');
           })
         }}>Yes</button>
 
         <button onClick={() => {
-          this.toggleDelete();
+          this.context.toggleDelete();
         }}>No</button>
       </div>
     )
@@ -63,12 +49,12 @@ export class deleteAccountButton extends Component {
       <Fragment>
     <button onClick={(e) => {
        e.preventDefault();
-       this.toggleConfirm()
+       this.context.toggleConfirm()
     }}>
       Delete Account
     </button>
-    {this.state.confirm && this.renderConfirm()}
-    {this.state.deleteAccount && this.renderDelete()}
+    {this.context.confirm && this.renderConfirm()}
+    {this.context.deleteAccount && this.renderDelete()}
     </Fragment>
     )
   }
