@@ -8,72 +8,73 @@ export class Nav extends Component {
 
   handleLogoutClick = () => {
     TokenService.clearAuthToken();
+    this.context.clearUserData();
   }
 
   renderLogoutLink() {
     if (TokenService.hasAuthToken().admin) {
-      return <div className = 'header__logged-in' >
-        <NavLink  
+      return <div className='header__logged-in' >
+        <NavLink
           className='nav-link'
-          onClick = { this.handleLogoutClick }
-          to = '/' >
-            Logout 
-        </NavLink> 
-        <NavLink  
-          className='nav-link'
-          to = '/settings' >
-            Settings
+          onClick={this.handleLogoutClick}
+          to='/' >
+          Logout
         </NavLink>
-        <NavLink  
+        <NavLink
           className='nav-link'
-          to = '/admin' >
-            Admin
-        </NavLink> 
+          to='/settings' >
+          Settings
+        </NavLink>
+        <NavLink
+          className='nav-link'
+          to='/admin' >
+          Admin
+        </NavLink>
       </div>
     } else if (TokenService.hasAuthToken()) {
-      return <div className = 'header__logged-in' >
-        <NavLink  
+      return <div className='header__logged-in' >
+        <NavLink
           className='nav-link'
-          onClick = { this.handleLogoutClick }
-          to = '/' >
-            Logout 
-        </NavLink> 
-        <NavLink  
+          onClick={this.handleLogoutClick}
+          to='/' >
+          Logout
+        </NavLink>
+        <NavLink
           className='nav-link'
-          to = '/settings' >
-            Settings
-        </NavLink> 
+          to='/settings' >
+          Settings
+        </NavLink>
       </div>
     }
   }
 
   renderLoginLink() {
-    return ( 
-      <div className = 'header__not-logged-in' >
-        <NavLink 
-        className='nav-link'
-        to = '/register' >
+    return (
+      <div className='header__not-logged-in' >
+        <NavLink
+          className='nav-link'
+          to='/register' >
           Sign Up
-        </NavLink> 
+        </NavLink>
       </div>
     )
   }
 
   render() {
-    return ( 
-      <nav className = 'header' >
+    return (
+      <nav className='header' >
         <div className='title-logo'>
-          <NavLink to = '/' >
+          <NavLink to='/' >
             <h1> Penny Thoughts </h1>
-          </NavLink> 
+          </NavLink>
         </div>
-        <section className = 'navlinks' > 
+        <section className='navlinks' >
           {
             TokenService.hasAuthToken() ?
-            this.renderLogoutLink() :
-            this.renderLoginLink()
+              this.renderLogoutLink() :
+              this.renderLoginLink()
           }
-        </section> 
+        </section>
       </nav>
     )
   }
