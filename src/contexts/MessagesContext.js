@@ -5,10 +5,8 @@ const MessagesContext = React.createContext({
   userMessages: [],
   error: null,
   success: null,
-
   userData: [],
-  setUserData: () => {},
-
+  setUserData: () => { },
   setError: () => { },
   clearError: () => { },
   setMessages: () => { },
@@ -16,11 +14,11 @@ const MessagesContext = React.createContext({
   updateUserMessage: () => { },
   isLoading: false,
   isLoadingThink: false,
-  toggleLoading: () => {},
-  changeMessage: () => {},
-  setSuccess: () => {},
-  clearSuccess: () => {},
-  deleteUserMessage: () => {}
+  toggleLoading: () => { },
+  changeMessage: () => { },
+  setSuccess: () => { },
+  clearSuccess: () => { },
+  deleteUserMessage: () => { }
 });
 
 export default MessagesContext;
@@ -58,7 +56,7 @@ export class MessageProvider extends Component {
       messages: data
     })
   }
-  
+
   changeMessage = (data, id) => {
     let ind = this.state.messages.findIndex(el => el.id === id)
     let newArr = this.state.messages;
@@ -67,7 +65,7 @@ export class MessageProvider extends Component {
       messages: newArr
     })
   }
-  
+
   setSubmittedMessage = message => {
     this.setState({
       submittedMessage: message
@@ -76,7 +74,7 @@ export class MessageProvider extends Component {
     })
   }
 
-setUserMessages = data => {
+  setUserMessages = data => {
     this.setState({
       userMessages: data
     })
@@ -89,12 +87,12 @@ setUserMessages = data => {
   toggleLoadingThink = () => {
     this.setState({ isLoadingThink: !this.state.isLoadingThink })
   }
-  
+
   updateUserMessage = (id, value) => {
     //then call the update method on the server
     //then put the below code into the .then() of the check
     messageService.editUserMessage(id, value)
-      
+
     const userMessages = [...this.state.userMessages]
     userMessages.find(mes => mes.id === id).message = value;
     userMessages.find(mes => mes.id === id).flagged = false;
@@ -118,18 +116,20 @@ setUserMessages = data => {
   }
 
   deleteUserMessage = (messageID) => {
-    //this.toggleLoading()
-    let temp = [...this.state.userMessages].filter(msg => msg.id !== messageID)
-    console.log(temp)
+    const userMessages = [...this.state.userMessages]
+    const ind = userMessages.findIndex(msg => msg.id === messageID);
+    userMessages.splice(ind, 1);
+    
     messageService.deleteUserMessage(messageID)
       .then((res) => {
         if (res === 204) {
-          this.setState({ userMessages: temp, isLoading: false })
+          this.setState({ userMessages: userMessages, isLoading: false })
+          console.log(this.state.userMessages)
         }
       })
       .catch(err => this.context.setError(err))
   }
-  
+
 
   render() {
     const value = {

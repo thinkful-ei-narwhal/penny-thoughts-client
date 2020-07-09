@@ -9,7 +9,7 @@ export class UserMessage extends Component {
 
   handleEditMessage = (id) => {
     const message = this.refs[`${id}`].value;
-    const { setError, updateUserMessage, clearError, setSuccess, success, toggleLoadingThink} = this.context
+    const { setError, updateUserMessage, clearError, setSuccess, toggleLoadingThink } = this.context
     if (!message) return setError('You must include a valid message.')
     clearError()
     toggleLoadingThink()
@@ -31,7 +31,7 @@ export class UserMessage extends Component {
 
   render() {
     return (
-      <li>
+      <li key={this.props.id} className="usermessage">
         <label className="hidden-label" htmlFor="message">Edit Message #{this.props.index + 1}</label>
         <input ref={`${this.props.id}`} defaultValue={this.props.message}></input>
         <button onClick={() => this.handleEditMessage(this.props.id)}>Edit Message</button>

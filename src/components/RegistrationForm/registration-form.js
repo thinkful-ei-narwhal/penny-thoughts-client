@@ -44,11 +44,6 @@ export default class RegistrationForm extends Component {
       admin: false
     }
 
-    const newUserLogin = { 
-      username: this.state.username,
-      password: this.state.password
-    }
-
     AuthApiService.postUser(newUser)
       .then(() => {
         this.props.history.push('/')

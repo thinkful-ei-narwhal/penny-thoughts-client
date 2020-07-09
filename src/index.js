@@ -9,11 +9,13 @@ import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <BrowserRouter>
+      <UserProvider>
       <MessageProvider>
       <UserProvider>
         <App/>
       </UserProvider>
       </MessageProvider>
+      </UserProvider>
   </BrowserRouter>,
   document.getElementById('root')
 );

@@ -26,7 +26,7 @@ class PublicHomePage extends Component {
   }
 
   handleAddMessage = (message) => {
-    const { submittedMessage, setError, setSubmittedMessage, clearError, setSuccess, success, toggleLoading} = this.context
+    const { setError, setSubmittedMessage, clearError, setSuccess, toggleLoading} = this.context
     if (!message) return setError('You must include a valid message.')
     clearError()
     toggleLoading()
@@ -43,9 +43,9 @@ class PublicHomePage extends Component {
   }
 
   render() {
-    const { messages, isLoading, error, success} = this.context
+    const { isLoading, error, success} = this.context
     return (
-      <div>
+      <div className="div-background">
         <section className="user-greeting">
           <WelcomeName/>
         </section>
@@ -60,7 +60,7 @@ class PublicHomePage extends Component {
           <input className="basic-input" type="text" name="message" id="message" />
           <button>Add New Message</button>
         </form>
-        <section className="messages-container">
+        <section className="coin-messages-container">
           {this.generateMessages()}
         </section>
       </div>
