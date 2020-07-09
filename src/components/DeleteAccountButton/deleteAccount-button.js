@@ -1,6 +1,6 @@
 import React, { Fragment , Component} from 'react'
 import UserService from '../../services/userService';
-import UserContext from '../../contexts/UserContext'
+import TokenService from '../../services/token-service';
 
 
 export class deleteAccountButton extends Component {
@@ -46,6 +46,8 @@ export class deleteAccountButton extends Component {
           UserService.deleteUser()
             .then(() => {
             this.toggleDelete();
+            TokenService.clearAuthToken();
+            this.props.history.push('/');
           })
         }}>Yes</button>
 
@@ -62,7 +64,6 @@ export class deleteAccountButton extends Component {
     <button onClick={(e) => {
        e.preventDefault();
        this.toggleConfirm()
-      // props.history.push('/');
     }}>
       Delete Account
     </button>
