@@ -1,0 +1,33 @@
+@media only screen and (max-width: 600px) {
+  .basic-button {
+    font-weight: bolder;
+    background-color: #DD7230;
+    font-family: 'Lora', serif;
+    font-size: 22px;
+    color: #E7E393;
+    border: 1px solid #2E1F27;
+    border-radius: 4px;
+    padding: 3px;
+    margin: 3px;
+  }
+  
+  .basic-button:hover {
+    background-color: #E7E393;
+    color: #DD7230;
+    border: 1px solid #2E1F27;
+    transition: 0.3s;
+  }
+  
+  .basic-input {
+    font-family: 'Lora', serif;
+    font-size: 22px;
+    border: 1px solid #2E1F27;
+    border-radius: 4px;
+    padding: 3px;
+    margin: 3px;
+  }
+
+  .basic-label {
+    font-weight: bold;
+  }
+}
