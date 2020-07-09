@@ -5,7 +5,7 @@ export default class UserSettingsPage extends Component {
   render() {
     return (
       <div>
-        <h2>Settings</h2>
+        <h2 className="settings-header">Settings</h2>
         <UserMessages/>
       </div>
     )
