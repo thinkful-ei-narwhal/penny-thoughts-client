@@ -77,7 +77,6 @@ export class UserProvider extends Component {
   setUserData = () => {
     UserService.getUser()
       .then(data => {
-        console.log('setUserData', data)
         this.setState({ userData: { full_name: data.full_name, email: data.email } })
       })
       .catch(err => this.context.setError(err))
@@ -85,7 +84,6 @@ export class UserProvider extends Component {
 
   clearUserData = () => {
     this.setState({ user: null, userData: null })
-    console.log('clearUserData', this.state.userData)
   }
   processLogin = authToken => {
     TokenService.saveAuthToken(authToken)
@@ -149,7 +147,7 @@ export class UserProvider extends Component {
       processLogout: this.processLogout,
       userData: this.state.userData,
       setUserData: this.setUserData,
-      clearUserData: this.clearUserData
+      clearUserData: this.clearUserData,
       confirm: this.state.confirm,
       deleteAccount: this.state.deleteAccount,
       toggleConfirm: this.toggleConfirm,
