@@ -13,7 +13,11 @@ export default class UserSettingsPage extends Component {
   renderConfirm = () => {
     return (
       <div className="modal-box">
-        <p>Are you sure you'd like to Delete this account?</p>
+        <p>You are about to delete your personal account.
+            Deleting your account means the removal of personal messages and data.
+            Once deleted, you will not be able to log into your account again and you will have to create a brand new account.
+        </p>
+        <p>Are you sure you want to delete your account?</p>
          <button onClick={() => {
               this.context.toggleConfirm()
               this.context.toggleDelete();
@@ -29,7 +33,7 @@ export default class UserSettingsPage extends Component {
   renderDelete = () => {
     return (
       <div className="modal-box">
-         <p>Are you sure there is no going back?</p>
+         <p>Once deleted, there is no going back.  Are you sure you'd like to continue?</p>
         <button onClick={() => {
           UserService.deleteUser()
             .then(() => {
@@ -50,7 +54,7 @@ export default class UserSettingsPage extends Component {
       <div>
         {this.context.confirm && this.renderConfirm()}
         {this.context.deleteAccount && this.renderDelete()}
-        
+
         <h2 className="settings-header">Settings</h2>
         <UserMessages/>
         <UserInfo/>

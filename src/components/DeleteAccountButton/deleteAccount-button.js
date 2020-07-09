@@ -1,6 +1,4 @@
 import React, { Fragment , Component} from 'react'
-import UserService from '../../services/userService';
-import TokenService from '../../services/token-service';
 import UserContext from '../../contexts/UserContext';
 
 
