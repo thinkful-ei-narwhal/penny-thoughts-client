@@ -11,6 +11,7 @@ import NotFoundPage from '../../routes/NotFoundPage/NotFoundPage';
 import ErrorPage from '../ErrorPage/ErrorPage';
 import PrivateRoute from '../../utils/PrivateRoute';
 import PublicOnlyRoute from '../../utils/PublicOnlyRoute';
+import AdminOnlyRoute from '../../utils/AdminOnlyRoute';
 import Navigation from '../Nav/Nav';
 import './App.css';
 
@@ -36,7 +37,7 @@ function App() {
             <PrivateRoute
               path={'/settings'}
               component={UserSettingsPage}/>
-            <PrivateRoute
+            <AdminOnlyRoute
               path={'/admin'}
               component={AdminDashboardPage}/>
             <Route
