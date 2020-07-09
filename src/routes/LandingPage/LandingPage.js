@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import LoginForm from '../../components/LoginForm/login-form'
 import {Link} from 'react-router-dom';
+import './LandingPage.css';
 
 export class LandingPage extends Component {
   render() {
