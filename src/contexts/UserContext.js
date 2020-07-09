@@ -8,12 +8,16 @@ const UserContext = React.createContext({
   user: {},
   userData: {},
   error: null,
+  confirm: false,
+  deleteAccount: false,
   setError: () => {},
   clearError: () => {},
   setUser: () => {},
   setUserData: () => {},
   processLogin: () => {},
   processLogout: () => {},
+  toggleConfirm: () => {},
+  toggleDelete: () => {}
 })
 
 export default UserContext;
@@ -21,7 +25,13 @@ export default UserContext;
 export class UserProvider extends Component {
   constructor(props) {
     super(props)
-    const state = { user: {}, error: null, userData: {} }
+    const state = { 
+      user: {},
+      error: null,
+      userData: {},
+      confirm: false,
+      deleteAccount: false
+     }
 
     const jwtPayload = TokenService.parseAuthToken()
 
@@ -108,6 +118,15 @@ export class UserProvider extends Component {
       })
   }
 
+
+  toggleConfirm = () => {
+    this.setState({ confirm: !this.state.confirm })
+  }
+
+  toggleDelete = () => {
+    this.setState({ deleteAccount: !this.state.deleteAccount });
+  }
+
   render() {
     const value = {
       user: this.state.user,
@@ -119,6 +138,10 @@ export class UserProvider extends Component {
       processLogout: this.processLogout,
       userData: this.state.userData,
       setUserData: this.setUserData,
+      confirm: this.state.confirm,
+      deleteAccount: this.state.deleteAccount,
+      toggleConfirm: this.toggleConfirm,
+      toggleDelete: this.toggleDelete
     }
     return (
       <UserContext.Provider value={value}>
