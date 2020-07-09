@@ -15,21 +15,18 @@ const UserService = {
           : res.json()
       )
   },
-  getUser(id) {
-    console.log(`${config.API_ENDPOINT}/users`)
+  getUser() {
     return fetch(`${config.API_ENDPOINT}/users`, {
       method: 'GET',
-      body: JSON.stringify({ id }),
       headers: {
         'content-type': 'application/json',
         'Authorization': `Bearer ${TokenService.getAuthToken()}`
       }
     })
-    .then(res =>
-      (!res.ok) ?
-      res.json().then(e => Promise.reject(e)) :
-      res.json()
-    )
+    .then(res => {
+      if (!res.ok) return res.json().then(e => Promise.reject(e))
+      return res.json()
+    })
   },
 }
 

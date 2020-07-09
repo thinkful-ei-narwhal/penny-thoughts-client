@@ -6,6 +6,9 @@ const MessagesContext = React.createContext({
   error: null,
   success: null,
 
+  userData: [],
+  setUserData: () => {},
+
   setError: () => { },
   clearError: () => { },
   setMessages: () => { },
@@ -14,7 +17,6 @@ const MessagesContext = React.createContext({
   isLoading: false,
   isLoadingThink: false,
   toggleLoading: () => {},
-  setMessages: () => {},
   changeMessage: () => {},
   setSuccess: () => {},
   clearSuccess: () => {},
@@ -149,6 +151,9 @@ setUserMessages = data => {
       setSuccess: this.setSuccess,
       clearSuccess: this.clearSuccess,
       deleteUserMessage: this.deleteUserMessage,
+
+      userData: this.state.userData,
+      setUserData: this.setUserData,
     }
 
     return (

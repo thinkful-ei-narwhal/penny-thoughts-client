@@ -10,7 +10,9 @@ import * as serviceWorker from './serviceWorker';
 ReactDOM.render(
   <BrowserRouter>
       <MessageProvider>
+      <UserProvider>
         <App/>
+      </UserProvider>
       </MessageProvider>
   </BrowserRouter>,
   document.getElementById('root')
