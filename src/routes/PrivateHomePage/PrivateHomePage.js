@@ -32,7 +32,6 @@ class PublicHomePage extends Component {
     toggleLoading()
     MessageService.addMessage(message)
       .then(data => {
-        
         setSubmittedMessage(data.message)
         toggleLoading()
         setSuccess();

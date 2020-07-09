@@ -11,7 +11,9 @@ ReactDOM.render(
   <BrowserRouter>
       <UserProvider>
       <MessageProvider>
+      <UserProvider>
         <App/>
+      </UserProvider>
       </MessageProvider>
       </UserProvider>
   </BrowserRouter>,
