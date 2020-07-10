@@ -7,7 +7,11 @@ export class UserInfo extends Component {
 
   componentDidMount() {
     this.context.clearError()
-    this.context.setUserData()
+    UserService.getUser()
+      .then(data => {
+        this.context.setUserData(data)
+      })
+      .catch(err => this.context.setError(err))
   }
 
   handleSubmit = (fullName, email) => {
