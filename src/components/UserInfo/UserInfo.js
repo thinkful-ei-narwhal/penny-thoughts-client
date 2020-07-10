@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import UserContext from '../../contexts/UserContext'
 import UserService from '../../services/userService'
 
@@ -25,7 +25,10 @@ export class UserInfo extends Component {
 
   render() {
     return (
+      <Fragment>
+      <h2 className="settings-subheader">Your User Information:</h2>
       <form
+        className= 'user_data'
         onSubmit={(ev) => {
           ev.preventDefault();
           this.handleSubmit(ev.target.full_name.value, ev.target.email.value);
@@ -45,6 +48,7 @@ export class UserInfo extends Component {
         />
         <button type='submit' value='Submit'>Submit</button>
       </form>
+      </Fragment>
     )
   }
 }
