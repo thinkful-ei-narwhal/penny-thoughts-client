@@ -54,6 +54,17 @@ export class Nav extends Component {
   }
 
   renderLoginLink() {
+    if (this.props.location.pathname === '/register') {
+      return (
+        <div className='header__not-logged-in' >
+          <NavLink
+            className='nav-link'
+            to='/' >
+            Sign In
+          </NavLink>
+        </div>
+      )
+    }
     return (
       <div className='header__not-logged-in' >
         <NavLink
@@ -64,6 +75,8 @@ export class Nav extends Component {
       </div>
     )
   }
+
+  renderLogin
 
   render() {
     return ( 

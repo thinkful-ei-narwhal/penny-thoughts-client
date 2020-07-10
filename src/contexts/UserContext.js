@@ -72,7 +72,6 @@ export class UserProvider extends Component {
     this.setState({ user: data })
   }
 
-
   setUserData = data => {
     this.setState({ userData:data})
   }
