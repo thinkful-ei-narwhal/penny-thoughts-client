@@ -22,7 +22,8 @@ const MessagesContext = React.createContext({
   clearSuccess: () => { },
   deleteUserMessage: () => { },
   unflagMessage: () => { },
-  archiveMessage: () => { }
+  archiveMessage: () => { },
+  setFilterMessages: () => { }
 });
 
 export default MessagesContext;
@@ -95,6 +96,11 @@ export class MessageProvider extends Component {
       flaggedMessages: this.state.flaggedMessages.filter(message => message.id !== id)
     })
   }
+  setFilterMessages = id =>{
+    this.setState({
+      userMessages: this.state.userMessages.filter(message => message.id !== id)
+    })
+  }
 
   archiveMessage = id => {
     this.setState({
@@ -148,7 +154,7 @@ export class MessageProvider extends Component {
           this.setState({ userMessages: userMessages, isLoading: false })
         }
       })
-      .catch(err => this.context.setError(err))
+      .catch(err => this.setError(err))
   }
 
 
@@ -176,9 +182,9 @@ export class MessageProvider extends Component {
       deleteUserMessage: this.deleteUserMessage,
       unflagMessage: this.unflagMessage,
       archiveMessage: this.archiveMessage,
-
       userData: this.state.userData,
       setUserData: this.setUserData,
+      setFilterMessages: this.setFilterMessages,
     }
 
     return (
