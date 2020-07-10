@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import messageService from '../services/messageService'
 const MessagesContext = React.createContext({
   messages: [],
+  flaggedMessages: [],
   userMessages: [],
   error: null,
   success: null,
@@ -10,6 +11,7 @@ const MessagesContext = React.createContext({
   setError: () => { },
   clearError: () => { },
   setMessages: () => { },
+  setFlaggedMessages: () => { },
   setUserMessages: () => { },
   updateUserMessage: () => { },
   isLoading: false,
@@ -18,7 +20,9 @@ const MessagesContext = React.createContext({
   changeMessage: () => { },
   setSuccess: () => { },
   clearSuccess: () => { },
-  deleteUserMessage: () => { }
+  deleteUserMessage: () => { },
+  unflagMessage: () => { },
+  archiveMessage: () => { }
 });
 
 export default MessagesContext;
@@ -28,6 +32,7 @@ export class MessageProvider extends Component {
     super(props)
     this.state = {
       messages: [],
+      flaggedMessages: [],
       userMessages: [],
       error: null,
       success: null,
@@ -56,6 +61,12 @@ export class MessageProvider extends Component {
     })
   }
 
+  setFlaggedMessages = data => {
+    this.setState({
+      flaggedMessages: [...data]
+    })
+  }
+
   changeMessage = (data, id) => {
     let ind = this.state.messages.findIndex(el => el.id === id)
     let newArr = this.state.messages;
@@ -76,6 +87,18 @@ export class MessageProvider extends Component {
   setUserMessages = data => {
     this.setState({
       userMessages: data
+    })
+  }
+
+  unflagMessage = id => {
+    this.setState({
+      flaggedMessages: this.state.flaggedMessages.filter(message => message.id !== id)
+    })
+  }
+
+  archiveMessage = id => {
+    this.setState({
+      flaggedMessages: this.state.flaggedMessages.filter(message => message.id !== id)
     })
   }
 
@@ -132,12 +155,14 @@ export class MessageProvider extends Component {
   render() {
     const value = {
       messages: this.state.messages,
+      flaggedMessages: this.state.flaggedMessages,
       userMessages: this.state.userMessages,
       error: this.state.error,
       success: this.state.success,
       clearError: this.clearError,
       setError: this.setError,
       setMessages: this.setMessages,
+      setFlaggedMessages: this.setFlaggedMessages,
       setUserMessages: this.setUserMessages,
       updateUserMessage: this.updateUserMessage,
       isLoading: this.state.isLoading,
@@ -149,6 +174,8 @@ export class MessageProvider extends Component {
       setSuccess: this.setSuccess,
       clearSuccess: this.clearSuccess,
       deleteUserMessage: this.deleteUserMessage,
+      unflagMessage: this.unflagMessage,
+      archiveMessage: this.archiveMessage,
 
       userData: this.state.userData,
       setUserData: this.setUserData,
