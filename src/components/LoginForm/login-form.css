@@ -11,7 +11,7 @@
     flex-direction: row;
     width: 80%;
     margin: auto;
-    padding: 10px;
+    padding: 0; /* setting this to zero actually pushes the link off the bottom of the screen */
   }
 
   .username,

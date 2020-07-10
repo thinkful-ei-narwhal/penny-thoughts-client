@@ -333,3 +333,41 @@ li {
   }
 }
 /* end bubblesLoader component */
+
+
+
+/* Logan's form css */
+
+.Input,
+.Textarea {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 550px;
+  margin: 9px;
+  padding: 15px;
+  color: rgb(65, 225, 204);
+  background-color: rgba(91, 4, 131, 0.568);
+  border: 1px solid magenta;
+  border-radius: 22px;
+  font-weight: bold;
+  font-size: 1.1em;
+  margin-bottom: 10px;
+  padding: 10px;
+  text-align: left;
+  width: 100%;
+  border-radius: 4px;
+}
+
+.Input::placeholder,
+.Textarea::placeholder {
+  color: rgb(65, 225, 204);
+}
+.Input::placeholder,
+.Textarea::placeholder:focus {
+  color: rgb(65, 225, 204);
+}
+.Textarea {
+  resize: vertical;
+}
