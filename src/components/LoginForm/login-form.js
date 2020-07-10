@@ -50,7 +50,7 @@ export default class LoginForm extends Component {
         </div>
         <button type="submit">Log In</button>
         <p>Not A Member? </p>
-        <Link to='/register'>Register Here:</Link>
+        <Link to='/register'>Register Here</Link>
       </form>
     );
   };
