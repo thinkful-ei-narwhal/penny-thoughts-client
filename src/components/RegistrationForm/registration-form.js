@@ -67,7 +67,7 @@ export default class RegistrationForm extends Component {
 
           <label htmlFor='RegisterEmail'>
             E-Mail:
-            <input onChange={(e) => this.handleEmailChange(e)} type='text' name='RegisterEmail'/>
+            <input onChange={(e) => this.handleEmailChange(e)} type='email' name='RegisterEmail'/>
           </label>
 
           <label htmlFor='RegisterUsername'>
@@ -77,7 +77,13 @@ export default class RegistrationForm extends Component {
 
           <label htmlFor='RegisterPassword'>
             Password:
-            <input type="password" onChange={(e) => this.handlePasswordChange(e)} name='RegisterPassword'/>
+            <input 
+            type="password" 
+            minLength="7" 
+            maxLength="25" 
+            required 
+            onChange={(e) => this.handlePasswordChange(e)} 
+            name='RegisterPassword'/>
           </label>
 
           <input type='submit' value="Create Account" />

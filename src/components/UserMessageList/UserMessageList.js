@@ -80,7 +80,6 @@ export default class UserMessages extends Component {
       )
     }
     return (
-      
       <div>
         <section className='messages-container'>
           {this.context.isLoadingThink && <ThinkingLoader/>}

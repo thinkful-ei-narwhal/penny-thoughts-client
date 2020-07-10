@@ -57,8 +57,8 @@ export default class UserSettingsPage extends Component {
         {this.context.deleteAccount && this.renderDelete()}
 
         <h2 className="settings-header">Settings</h2>
-        <UserMessageList/>
         <UserInfo/>
+        <UserMessageList/>
         <DeleteAccountButton {...this.props}/>
       </div>
     )

@@ -8,8 +8,9 @@ export class deleteAccountButton extends Component {
 
   render() {
     return (
-      <Fragment>
-    <button onClick={(e) => {
+    <Fragment>
+    <button className= 'delete-button'
+    onClick={(e) => {
        e.preventDefault();
        this.context.toggleConfirm()
     }}>

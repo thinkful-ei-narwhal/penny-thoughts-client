@@ -25,7 +25,11 @@ export class UserMessage extends Component {
   }
 
   deleteUserMessage = (id) => {
-    this.context.deleteUserMessage(id)
+    MessageService.deleteUserMessage(id)
+      .then(() => {
+        this.context.setFilterMessages(id)
+      })
+      .catch(err => this.context.setError(err))
   }
 
   render() {
