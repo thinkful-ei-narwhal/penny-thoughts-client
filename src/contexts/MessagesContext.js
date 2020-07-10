@@ -92,12 +92,14 @@ export class MessageProvider extends Component {
 
   unflagMessage = id => {
     this.setState({
-      flaggedMessages: this.state.flaggedMessages.filter(message => message.id === id)
+      flaggedMessages: this.state.flaggedMessages.filter(message => message.id !== id)
     })
   }
 
   archiveMessage = id => {
-
+    this.setState({
+      flaggedMessages: this.state.flaggedMessages.filter(message => message.id !== id)
+    })
   }
 
   toggleLoading = () => {

@@ -117,22 +117,32 @@ const messageService = {
     })
   },
   unflagMessage(id) {
-    
     return fetch(`${config.API_ENDPOINT}/messages/flagged`, {
       method: 'PATCH',
       headers: {
-        'context-type': 'application/json',
+        'content-type': 'application/json',
         'Authorization': `Bearer ${TokenService.getAuthToken()}`
       },
       body: JSON.stringify({ id })
     })
     .then(res => {
       if (!res.ok) return res.json().then(e => Promise.reject(e))
-      return res.json()
+      return res
     })
   },
   archiveMessage(id) {
-
+    return fetch(`${config.API_ENDPOINT}/messages/archive`, {
+      method: 'PATCH',
+      headers: {
+        'content-type': 'application/json',
+        'Authorization': `Bearer ${TokenService.getAuthToken()}`
+      },
+      body: JSON.stringify({ id })
+    })
+    .then(res => {
+      if (!res.ok) return res.json().then(e => Promise.reject(e))
+      return res
+    })
   }
 }
 

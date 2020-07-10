@@ -8,17 +8,22 @@ export class FlaggedMessage extends Component {
 
   handleUnflagMessage = (id) => {
     messageService.unflagMessage(id)
-      .then(res => this.context.unflagMessage(id))
+      .then(res => {
+        this.context.unflagMessage(id)
+      })
   }
 
   handleArchiveMessage = (id) => {
-    this.context.archiveMessage(id)
+    messageService.archiveMessage(id)
+      .then(res => {
+        this.context.archiveMessage(id)
+      })
   }
 
   render() {
     return (
       <li key={this.props.id} className="usermessage">
-        <label className="hidden-label" htmlFor="message">Edit Message #{this.props.index + 1}</label>
+        <label className="hidden-label" htmlFor="message">Message #{this.props.index + 1}</label>
         <input ref={`${this.props.id}`} defaultValue={this.props.message}></input>
         <button onClick={() => this.handleUnflagMessage(this.props.id)}>Unflag Message</button>
         <button onClick={() => this.handleArchiveMessage(this.props.id)}>Archive Message</button>
