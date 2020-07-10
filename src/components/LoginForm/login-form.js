@@ -25,7 +25,6 @@ export default class LoginForm extends Component {
       password.value = ''
       TokenService.saveAuthToken(res.authToken)
       this.props.history.push('/home')
-      
     })
     .catch(res => {
       this.setState({error: res.error})

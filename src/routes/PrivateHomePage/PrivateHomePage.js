@@ -1,9 +1,10 @@
-import React, { Component } from 'react'
-import MessageContext from '../../contexts/MessagesContext'
-import MessageService from '../../services/messageService'
-import SingleMessage from '../../components/SingleMessage/SingleMessage'
+import React, { Component } from 'react';
+import MessageContext from '../../contexts/MessagesContext';
+import MessageService from '../../services/messageService';
+import SingleMessage from '../../components/SingleMessage/SingleMessage';
 import WelcomeName from '../../components/WelcomeName/WelcomeName';
 import ThinkingLoader from '../../components/Loaders/ThinkingLoader/ThinkingLoader';
+import './privateHome.css'
 
 class PublicHomePage extends Component {
   static contextType = MessageContext;

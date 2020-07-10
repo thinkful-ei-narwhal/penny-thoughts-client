@@ -1,19 +1,25 @@
-import React, { Component } from 'react'
+import React, { Component} from 'react'
 import AuthApiService from '../services/auth-api-service'
 import TokenService from '../services/token-service'
 import IdleService from '../services/idle-service'
+import UserService from '../services/userService'
 
 
 const UserContext = React.createContext({
   user: {},
   userData: {},
   error: null,
-  setError: () => {},
-  clearError: () => {},
-  setUser: () => {},
-  setUserData: () => {},
-  processLogin: () => {},
-  processLogout: () => {},
+  setError: () => { },
+  clearError: () => { },
+  setUser: () => { },
+  setUserData: () => { },
+  clearUserData: () => { },
+  processLogin: () => { },
+  processLogout: () => { },
+  confirm: false,
+  deleteAccount: false,
+  toggleConfirm: () => {},
+  toggleDelete: () => {}
 })
 
 export default UserContext;
@@ -21,7 +27,13 @@ export default UserContext;
 export class UserProvider extends Component {
   constructor(props) {
     super(props)
-    const state = { user: {}, error: null, userData: {} }
+    const state = { 
+      user: {},
+      error: null,
+      userData: {},
+      confirm: false,
+      deleteAccount: false
+     }
 
     const jwtPayload = TokenService.parseAuthToken()
 
@@ -62,6 +74,7 @@ export class UserProvider extends Component {
     this.setState({ user: data })
   }
 
+
   setUserData = data => {
     this.setState({ 
       userData: {
@@ -71,7 +84,9 @@ export class UserProvider extends Component {
     })
   }
 
-
+  clearUserData = () => {
+    this.setState({ user: null, userData: null })
+  }
   processLogin = authToken => {
     TokenService.saveAuthToken(authToken)
     const jwtPayload = TokenService.parseAuthToken()
@@ -91,6 +106,7 @@ export class UserProvider extends Component {
     TokenService.clearCallbackBeforeExpiry()
     IdleService.unRegisterIdleResets()
     this.setUser({})
+    this.clearUserData()
   }
 
   logoutBecauseIdle = () => {
@@ -113,6 +129,15 @@ export class UserProvider extends Component {
       })
   }
 
+
+  toggleConfirm = () => {
+    this.setState({ confirm: !this.state.confirm })
+  }
+
+  toggleDelete = () => {
+    this.setState({ deleteAccount: !this.state.deleteAccount });
+  }
+
   render() {
     const value = {
       user: this.state.user,
@@ -124,6 +149,11 @@ export class UserProvider extends Component {
       processLogout: this.processLogout,
       userData: this.state.userData,
       setUserData: this.setUserData,
+      clearUserData: this.clearUserData,
+      confirm: this.state.confirm,
+      deleteAccount: this.state.deleteAccount,
+      toggleConfirm: this.toggleConfirm,
+      toggleDelete: this.toggleDelete
     }
     return (
       <UserContext.Provider value={value}>

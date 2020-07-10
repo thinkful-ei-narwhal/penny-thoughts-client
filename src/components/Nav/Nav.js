@@ -9,6 +9,7 @@ export class Nav extends Component {
 
   handleLogoutClick = () => {
     TokenService.clearAuthToken();
+    this.context.clearUserData();
   }
 
   renderLogoutLink() {
@@ -53,13 +54,13 @@ export class Nav extends Component {
   }
 
   renderLoginLink() {
-    return ( 
-      <div className = 'header__not-logged-in' >
-        <NavLink 
-        className='nav-link'
-        to = '/register' >
+    return (
+      <div className='header__not-logged-in' >
+        <NavLink
+          className='nav-link'
+          to='/register' >
           Sign Up
-        </NavLink> 
+        </NavLink>
       </div>
     )
   }
@@ -67,18 +68,18 @@ export class Nav extends Component {
   render() {
     return ( 
       <nav className = 'header' >
+        <section className = 'navlinks' > 
+          {
+            TokenService.hasAuthToken() ?
+              this.renderLogoutLink() :
+              this.renderLoginLink()
+          }
+        </section>
         <div className='title-logo'>
           <NavLink to = '/' >
             <h1> Penny Thoughts </h1>
           </NavLink> 
         </div>
-        <section className = 'navlinks' > 
-          {
-            TokenService.hasAuthToken() ?
-            this.renderLogoutLink() :
-            this.renderLoginLink()
-          }
-        </section> 
       </nav>
     )
   }
