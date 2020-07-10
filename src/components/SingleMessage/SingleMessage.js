@@ -30,6 +30,7 @@ export default function SingleMessage(props) {
   };
 
   const onClickCoin = () => {
+    flipCoin() // this starts the coin flip animation?
     updateMessage(props.id)
   }
 
@@ -105,19 +106,58 @@ export default function SingleMessage(props) {
 
   const longPressEvent = useLongPress(onLongPress, onClickCoin, defaultOptions);
 
+  /* --- Coin Stuff --- */
+
+  
+
+  const coinRef = React.useRef();
+  const dilutedFrames = [2, 3, 8, 10, 11, 13, 19];
+  const finalFrames = [16, 6];
+
+  React.useEffect(() => {
+    flipCoin();
+    // eslint-disable-next-line
+  }, []);
+
+const nextFrame = (target, frame, speed) => {
+  if (speed < 20 + target && dilutedFrames.includes(frame)) {
+    nextFrame(target, frame + 1, speed);
+  } else if (speed > 60 + target && finalFrames.includes(frame)) {
+    console.log(frame);
+    coinRef.current.style.backgroundImage = `url(images/coin${frame}.png)`;
+    coinRef.current.classList.remove("spinning");
+    coinRef.current.classList.add("finished");
+  } else {
+    coinRef.current.style.backgroundImage = `url(images/coin${frame}.png)`;
+    setTimeout(
+      () => nextFrame(target, frame < 20 ? frame + 1 : 1, ++speed),
+      speed
+    );
+  }
+};
+
+const flipCoin = () => {
+  const target = Math.floor(Math.random() * 50);
+
+  coinRef.current.classList.add("spinning");
+  nextFrame(target, 0, 0);
+};
+
   return (
-    <Fragment>
-      <div
-        role="button"
-        tabindex='0'
-        {...longPressEvent}
-        onKeyDown={(e) => handleKeyPress(e)}
-        className="coin">{props.message}
-      </div>
-      {report && renderReport()}
-      {confirm && renderConfirm()}
-      {success && renderSuccess()}
-    </Fragment>
+      <Fragment>
+        <div
+          ref={coinRef}
+          id="coin"
+          role="button"
+          tabIndex='0'
+          {...longPressEvent}
+          onKeyDown={(e) => handleKeyPress(e)}
+          className="coin">{props.message}
+        </div>
+        {report && renderReport()}
+        {confirm && renderConfirm()}
+        {success && renderSuccess()}
+      </Fragment>
   )
 
 }
