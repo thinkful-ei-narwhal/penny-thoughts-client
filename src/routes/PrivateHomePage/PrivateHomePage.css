@@ -1,4 +1,16 @@
 @media only screen and (max-width: 600px) {
+  .user-greeting {
+    position: fixed;
+    top: 183px;
+    width: 100%;
+  }
+
+  .message-form {
+    position: fixed;
+    top: 254px;
+    background-color: #E7E393;
+  }
+
   .basic-button {
     font-weight: bolder;
     background-color: #DD7230;
@@ -29,6 +41,10 @@
 
   .basic-label {
     font-weight: bold;
+  }
+
+  .coin-messages-container {
+    padding-top: 338px;
   }
 }
 

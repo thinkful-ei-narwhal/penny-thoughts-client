@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import jwtDecode from 'jwt-decode';
 import TokenService from '../../services/token-service'
+import './WelcomeName.css'
 
 export class WelcomeName extends Component {
 
@@ -21,7 +22,7 @@ export class WelcomeName extends Component {
 
   render() {
     return (
-      <Fragment>{this.renderUserWelcome()}</Fragment>
+      <div className="welcome">{this.renderUserWelcome()}</div>
     )
   }
 }
