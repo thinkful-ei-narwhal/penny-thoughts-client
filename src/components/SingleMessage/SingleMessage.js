@@ -10,6 +10,7 @@ export default function SingleMessage(props) {
 
   const [report, toggleReport] = useState(false)
   const [confirm, toggleConfirm] = useState(false)
+  const [success, toggleSuccess] = useState(false)
 
   const updateMessage = async (id) => { 
     const messages = MessagesCon.messages.map(m => m.id);
@@ -29,16 +30,34 @@ export default function SingleMessage(props) {
   };
 
   const onClickCoin = () => {
-    toggleReport(false)
-    toggleConfirm(false)
     updateMessage(props.id)
+  }
+
+  const handleKeyPress = (event) => {
+    if(event.key === 'Enter') {
+      onClickCoin()
+    }
+
+    if(event.key === ' ') {
+      onLongPress()
+    }
   }
 
   const renderReport = () => {
     return (
       <div className="modal-box">
+        <p>You're about to report this message for inappropriate 
+        or unfriendly content. Sometimes, Penny can't quite pick
+        up on modern Internet lingo and some things slip through it's
+        filter.</p>
+        <p>Do you wish you continue?</p>
         <button className="report-button"
-        onClick={() => toggleConfirm(!confirm)}>Report!</button>
+        onClick={() => {
+          toggleReport(!report)
+          toggleConfirm(!confirm)}
+        }>Yes, Report!</button>
+        <button className="cancel-button"
+        onClick={() => toggleReport(!report)}>Cancel</button>
       </div>
     )
   }
@@ -51,15 +70,30 @@ export default function SingleMessage(props) {
           messageService.flagMessage(props.id)
             .then(() => {
             updateMessage(props.id)
-            toggleConfirm(!confirm)
-            toggleReport(!report);
+            toggleConfirm(false)
+            toggleReport(false);
+            toggleSuccess(true)
           })
         }}>Yes</button>
 
         <button onClick={() => {
-          toggleConfirm(!confirm)
-          toggleReport(!report);
+          toggleConfirm(false)
+          toggleReport(false);
         }}>No</button>
+      </div>
+    )
+  }
+
+  const renderSuccess = () => {
+    return (
+      <div className="modal-box">
+         <p>Your Message Was Successfully Reported!</p>
+  
+        <button onClick={() => {
+          toggleConfirm(false)
+          toggleReport(false);
+          toggleSuccess(false);
+        }}>OK</button>
       </div>
     )
   }
@@ -73,12 +107,16 @@ export default function SingleMessage(props) {
 
   return (
     <Fragment>
-      <div tabindex="0"
+      <div
+        role="button"
+        tabindex='0'
         {...longPressEvent}
+        onKeyDown={(e) => handleKeyPress(e)}
         className="coin">{props.message}
       </div>
       {report && renderReport()}
       {confirm && renderConfirm()}
+      {success && renderSuccess()}
     </Fragment>
   )
 
