@@ -205,22 +205,6 @@ li {
   font-size: 36px;
 }
 
-.coin {
-  background-image: url('./images/coin6.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-  font-family: 'Lora', serif;
-  font-weight: bolder;
-  width: 120px;
-  height: 120px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1rem;
-  text-align: center;
-  margin: 2rem;
-}
-
 .signup-form {
   text-align: center;
   width: 50%;
