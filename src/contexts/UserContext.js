@@ -74,12 +74,7 @@ export class UserProvider extends Component {
 
 
   setUserData = data => {
-    this.setState({ 
-      userData: {
-        full_name: data.full_name,
-        email: data.email
-      }
-    })
+    this.setState({ userData:data})
   }
 
   clearUserData = () => {
