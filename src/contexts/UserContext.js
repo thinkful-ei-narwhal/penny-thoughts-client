@@ -1,4 +1,4 @@
-import React, { Component} from 'react'
+import React, { Component } from 'react'
 import AuthApiService from '../services/auth-api-service'
 import TokenService from '../services/token-service'
 import IdleService from '../services/idle-service'
@@ -16,8 +16,8 @@ const UserContext = React.createContext({
   processLogout: () => { },
   confirm: false,
   deleteAccount: false,
-  toggleConfirm: () => {},
-  toggleDelete: () => {}
+  toggleConfirm: () => { },
+  toggleDelete: () => { }
 })
 
 export default UserContext;
@@ -25,13 +25,13 @@ export default UserContext;
 export class UserProvider extends Component {
   constructor(props) {
     super(props)
-    const state = { 
+    const state = {
       user: {},
       error: null,
       userData: {},
       confirm: false,
       deleteAccount: false
-     }
+    }
 
     const jwtPayload = TokenService.parseAuthToken()
 
