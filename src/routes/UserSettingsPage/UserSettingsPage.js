@@ -38,6 +38,7 @@ export default class UserSettingsPage extends Component {
           UserService.deleteUser()
             .then(() => {
             this.context.toggleDelete();
+            this.context.clearUserData();
             TokenService.clearAuthToken();
             this.props.history.push('/');
           })
