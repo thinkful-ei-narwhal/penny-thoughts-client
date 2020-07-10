@@ -73,7 +73,7 @@ export default function SingleMessage(props) {
 
   return (
     <Fragment>
-      <div 
+      <div tabindex="0"
         {...longPressEvent}
         className="coin">{props.message}
       </div>
