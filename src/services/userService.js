@@ -9,11 +9,10 @@ const UserService = {
         'authorization': `bearer ${TokenService.getAuthToken()}`
       }
     })
-      .then(res =>
-        (!res.ok)
-          ? res.json().then(e => Promise.reject(e))
-          : res.json()
-      )
+    .then(res => {
+      if (!res.ok) return res.json().then(e => Promise.reject(e))
+      return res.json()
+    })
   },
   getUser() {
     return fetch(`${config.API_ENDPOINT}/users`, {
@@ -23,10 +22,10 @@ const UserService = {
         'Authorization': `Bearer ${TokenService.getAuthToken()}`
       }
     })
-      .then(res => {
-        if (!res.ok) return res.json().then(e => Promise.reject(e))
-        return res.json()
-      })
+    .then(res => {
+      if (!res.ok) return res.json().then(e => Promise.reject(e))
+      return res.json()
+    })
   },
   editUser(full_name, email) {
     return fetch(`${config.API_ENDPOINT}/users`, {
@@ -37,10 +36,10 @@ const UserService = {
         'Authorization': `Bearer ${TokenService.getAuthToken()}`
       }
     })
-      .then(res => {
-        if (!res.ok) return res.json().then(e => Promise.reject(e))
-        return res.json()
-      })
+    .then(res => {
+      if (!res.ok) return res.json().then(e => Promise.reject(e))
+      return res.json()
+    })
   },
 }
 

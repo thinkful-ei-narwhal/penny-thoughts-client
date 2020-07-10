@@ -74,12 +74,13 @@ export class UserProvider extends Component {
     this.setState({ user: data })
   }
 
-  setUserData = () => {
-    UserService.getUser()
-      .then(data => {
-        this.setState({ userData: { full_name: data.full_name, email: data.email } })
-      })
-      .catch(err => this.context.setError(err))
+  setUserData = data => {
+    this.setState({ 
+      userData: {
+        full_name: data.full_name,
+        email: data.email
+      }
+    })
   }
 
   clearUserData = () => {

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import UserMessages from '../../components/UserMessageList/UserMessageList'
+import UserMessageList from '../../components/UserMessageList/UserMessageList'
 import UserInfo from '../../components/UserInfo/UserInfo'
 import DeleteAccountButton from '../../components/DeleteAccountButton/deleteAccount-button'
 import UserService from '../../services/userService';
@@ -56,7 +56,7 @@ export default class UserSettingsPage extends Component {
         {this.context.deleteAccount && this.renderDelete()}
 
         <h2 className="settings-header">Settings</h2>
-        <UserMessages/>
+        <UserMessageList/>
         <UserInfo/>
         <DeleteAccountButton {...this.props}/>
       </div>

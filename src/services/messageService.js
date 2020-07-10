@@ -31,7 +31,6 @@ const messageService = {
   },
 
   getUserMessages() {
-    let error;
     return fetch(`${config.API_ENDPOINT}/messages/userData`, {
       method: 'GET',
       headers: {
@@ -40,18 +39,22 @@ const messageService = {
       }
     })
       .then(res => {
-        if (!res.ok) {
-          error = { code: res.status };
-        }
-        return res.json();
+        if (!res.ok) return res.json().then(e => Promise.reject(e))
+        return res.json()
       })
-      .then(data => {
-        if (error) {
-          error.message = data.message;
-          return Promise.reject(error);
-        }
-        return data
-      })
+  },
+
+  getFlaggedMessages() {
+    return fetch(`${config.API_ENDPOINT}/messages/flagged`, {
+      method: 'GET',
+      headers: {
+        'Authorization': `Bearer ${TokenService.getAuthToken()}`
+      }
+    })
+    .then(res => {
+      if (!res.ok) return res.json().then(e => Promise.reject(e))
+      return res.json()
+    })
   },
 
   addMessage(message) {
@@ -79,11 +82,9 @@ const messageService = {
       }
     })
       .then(res => {
-        if (!res.ok) {
-          return res.status && res.json().then(e => e)
-        }
-        return res.status
-      })
+      if (!res.ok) return res.json().then(e => Promise.reject(e))
+      return res.json()
+    })
   },
 
   editUserMessage(id, newMessage) {
@@ -95,11 +96,10 @@ const messageService = {
         'Authorization': `Bearer ${TokenService.getAuthToken()}`
       }
     })
-      .then(res =>
-        (!res.ok) ?
-          res.json().then(e => Promise.reject(e)) :
-          res
-      )
+    .then(res => {
+      if (!res.ok) return res.json().then(e => Promise.reject(e))
+      return res
+    })
   },
 
   flagMessage(id) {
@@ -111,12 +111,29 @@ const messageService = {
         'Authorization': `Bearer ${TokenService.getAuthToken()}`
       }
     })
-      .then(res =>
-        (!res.ok) ?
-          res.json().then(e => Promise.reject(e)) :
-          res
-      )
+    .then(res => {
+      if (!res.ok) return res.json().then(e => Promise.reject(e))
+      return res
+    })
   },
+  unflagMessage(id) {
+    
+    return fetch(`${config.API_ENDPOINT}/messages/flagged`, {
+      method: 'PATCH',
+      headers: {
+        'context-type': 'application/json',
+        'Authorization': `Bearer ${TokenService.getAuthToken()}`
+      },
+      body: JSON.stringify({ id })
+    })
+    .then(res => {
+      if (!res.ok) return res.json().then(e => Promise.reject(e))
+      return res.json()
+    })
+  },
+  archiveMessage(id) {
+
+  }
 }
 
 export default messageService;
