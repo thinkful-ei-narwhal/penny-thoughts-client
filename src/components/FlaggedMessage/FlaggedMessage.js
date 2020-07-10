@@ -8,11 +8,16 @@ export class FlaggedMessage extends Component {
 
   handleUnflagMessage = (id) => {
     messageService.unflagMessage(id)
-      .then(res => this.context.unflagMessage(id))
+      .then(res => {
+        this.context.unflagMessage(id)
+      })
   }
 
   handleArchiveMessage = (id) => {
-    this.context.archiveMessage(id)
+    messageService.archiveMessage(id)
+      .then(res => {
+        this.context.archiveMessage(id)
+      })
   }
 
   render() {
