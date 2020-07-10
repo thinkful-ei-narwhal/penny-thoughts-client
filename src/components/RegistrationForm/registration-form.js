@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import AuthApiService from '../../services/auth-api-service';
+import './registration-form.css';
 
 export default class RegistrationForm extends Component {
   constructor(props) {
@@ -60,27 +61,27 @@ export default class RegistrationForm extends Component {
         <h2>Register</h2>
         <form onSubmit={(e) => this.handleSubmit(e)} className='RegistrationForm'>
 
-          <label htmlFor='RegisterName'>
+          <label className="register-label" htmlFor='RegisterName'>
             Full Name:
-            <input onChange={(e) => this.handleNameChange(e)} type='text' name='RegisterName'/>
+            <input className="register-input" onChange={(e) => this.handleNameChange(e)} type='text' name='RegisterName'/>
           </label>
 
-          <label htmlFor='RegisterEmail'>
+          <label className="register-label" htmlFor='RegisterEmail'>
             E-Mail:
-            <input onChange={(e) => this.handleEmailChange(e)} type='text' name='RegisterEmail'/>
+            <input className="register-input" onChange={(e) => this.handleEmailChange(e)} type='text' name='RegisterEmail'/>
           </label>
 
-          <label htmlFor='RegisterUsername'>
+          <label className="register-label" htmlFor='RegisterUsername'>
             Username:
-            <input onChange={(e) => this.handleUsernameChange(e)} type='text' name='RegisterUsername'/>
+            <input className="register-input" onChange={(e) => this.handleUsernameChange(e)} type='text' name='RegisterUsername'/>
           </label>
 
-          <label htmlFor='RegisterPassword'>
+          <label className="register-label" htmlFor='RegisterPassword'>
             Password:
-            <input type="password" onChange={(e) => this.handlePasswordChange(e)} name='RegisterPassword'/>
+            <input className="register-input" type="password" onChange={(e) => this.handlePasswordChange(e)} name='RegisterPassword'/>
           </label>
 
-          <input type='submit' value="Create Account" />
+          <input className="basic-button" type='submit' value="Create Account" />
         </form>
       </section>
     )
