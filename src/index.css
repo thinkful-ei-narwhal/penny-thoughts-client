@@ -398,3 +398,57 @@ li {
   }
 }
 /* end bubblesLoader component */
+
+
+/* --- Coin stuff --- */
+
+#coin {
+  background-repeat: no-repeat;
+  background-position: center;
+  font-family: 'Lora', serif;
+  font-weight: bolder;
+  width: 170px;
+  height: 170px;
+  display: flex;
+  margin: 20px;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  outline: none;
+}
+
+#coin {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+#coin.spinning {
+  -webkit-animation: flip 4s infinite linear;
+  animation: flip 4s infinite linear;
+}
+@-webkit-keyframes flip {
+  from {
+    -webkit-transform: rotateZ(0deg);
+    transform: rotateZ(0deg);
+  }
+  to {
+    -webkit-transform: rotateZ(-360deg);
+    transform: rotateZ(-360deg);
+  }
+}
+@keyframes flip {
+  from {
+    -webkit-transform: rotateZ(0deg);
+    transform: rotateZ(0deg);
+  }
+  to {
+    -webkit-transform: rotateZ(-360deg);
+    transform: rotateZ(-360deg);
+  }
+}
+#coin.finished {
+  -webkit-transform: rotateZ(0deg);
+  transform: rotateZ(0deg);
+}
