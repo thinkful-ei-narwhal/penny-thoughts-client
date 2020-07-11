@@ -59,7 +59,7 @@ class PublicHomePage extends Component {
         }}>
           <label htmlFor="message">Share Positive Message</label>
           <input className="basic-input" type="text" name="message" id="message" />
-          <button>Add New Message</button>
+          <button className="submit-message">Add New Message</button>
         </form>
         <section className="coin-messages-container">
           {this.generateMessages()}
