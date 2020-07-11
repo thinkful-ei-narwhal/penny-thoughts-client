@@ -108,8 +108,6 @@
     display: none;
 }
 
-
-
 .coin-text.finished {
     display: inline;
     -webkit-animation:pop-in 0.5s;

@@ -76,7 +76,7 @@ export class Nav extends Component {
     )
   }
 
-  renderLogin
+  /* title functionality */
 
   render() {
     return ( 
@@ -90,7 +90,7 @@ export class Nav extends Component {
         </section>
         <div className='title-logo'>
           <NavLink to = '/' >
-            <h1> Penny Thoughts </h1>
+            <h1 className="jiggle"> Penny Thoughts </h1>
           </NavLink> 
         </div>
       </nav>
