@@ -47,7 +47,7 @@ export default function SingleMessage(props) {
   const renderReport = () => {
     return (
       <div className="modal-box">
-        <p>You're about to report this message for inappropriate 
+        <p>You're about to report the message '{props.message}' for inappropriate 
         or unfriendly content. Sometimes, Penny can't quite pick
         up on modern Internet lingo and some things slip through it's
         filter.</p>
@@ -67,7 +67,9 @@ export default function SingleMessage(props) {
     return (
       <div className="modal-box">
          <p>Are you sure you'd like to report this message?</p>
-        <button onClick={() => {
+        <button 
+        className="yes-no-ok"
+        onClick={() => {
           messageService.flagMessage(props.id)
             .then(() => {
             updateMessage(props.id)
@@ -77,7 +79,9 @@ export default function SingleMessage(props) {
           })
         }}>Yes</button>
 
-        <button onClick={() => {
+        <button
+         className="yes-no-ok"
+         onClick={() => {
           toggleConfirm(false)
           toggleReport(false);
         }}>No</button>
@@ -90,7 +94,9 @@ export default function SingleMessage(props) {
       <div className="modal-box">
          <p>Your Message Was Successfully Reported!</p>
   
-        <button onClick={() => {
+        <button
+        className="yes-no-ok"
+         onClick={() => {
           toggleConfirm(false)
           toggleReport(false);
           toggleSuccess(false);
