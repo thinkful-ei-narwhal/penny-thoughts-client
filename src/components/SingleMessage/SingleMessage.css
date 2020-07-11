@@ -134,6 +134,7 @@
 
 .coin-text {
     display: none;
+    width: 50%;
 }
 
 .coin-text.finished {
