@@ -134,7 +134,17 @@
 
 .coin-text {
     display: none;
-    width: 50%;
+    width: 45%;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px #E7E393;
+}
+
+.coin-text::before {
+    content: open-quote;
+}
+
+.coin-text::after {
+    content: close-quote;
 }
 
 .coin-text.finished {
