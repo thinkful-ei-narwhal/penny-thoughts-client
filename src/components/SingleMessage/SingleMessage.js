@@ -111,6 +111,7 @@ export default function SingleMessage(props) {
   
 
   const coinRef = React.useRef();
+  const textRef = React.useRef();
   const dilutedFrames = [2, 3, 8, 10, 11, 13, 19];
   const finalFrames = [16, 6];
 
@@ -128,6 +129,11 @@ const nextFrame = (target, frame, speed) => {
       coinRef.current.classList.remove("spinning");
       coinRef.current.classList.add("finished");
     }
+    if (textRef.current){
+      
+      textRef.current.classList.remove("spinning");
+      textRef.current.classList.add("finished");
+    }
     
   } else {
 
@@ -144,7 +150,8 @@ const nextFrame = (target, frame, speed) => {
 
 const flipCoin = () => {
   const target = Math.floor(Math.random() * 50);
-
+  textRef.current.classList.remove("finished");
+  textRef.current.classList.add("spinning");
   coinRef.current.classList.add("spinning");
   nextFrame(target, 0, 0);
 };
@@ -158,7 +165,11 @@ const flipCoin = () => {
           tabIndex='0'
           {...longPressEvent}
           onKeyDown={(e) => handleKeyPress(e)}
-          className="coin">{props.message}
+          className="coin">
+          <p 
+          ref={textRef}
+          className="coin-text">{props.message}
+          </p>
         </div>
         {report && renderReport()}
         {confirm && renderConfirm()}
