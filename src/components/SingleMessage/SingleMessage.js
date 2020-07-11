@@ -123,16 +123,22 @@ const nextFrame = (target, frame, speed) => {
   if (speed < 20 + target && dilutedFrames.includes(frame)) {
     nextFrame(target, frame + 1, speed);
   } else if (speed > 60 + target && finalFrames.includes(frame)) {
-    console.log(frame);
-    coinRef.current.style.backgroundImage = `url(images/coin${frame}.png)`;
-    coinRef.current.classList.remove("spinning");
-    coinRef.current.classList.add("finished");
+    if (coinRef.current){
+      coinRef.current.style.backgroundImage = `url(images/coin${frame}.png)`;
+      coinRef.current.classList.remove("spinning");
+      coinRef.current.classList.add("finished");
+    }
+    
   } else {
-    coinRef.current.style.backgroundImage = `url(images/coin${frame}.png)`;
+
+    if (coinRef.current) {
+      coinRef.current.style.backgroundImage = `url(images/coin${frame}.png)`;
     setTimeout(
       () => nextFrame(target, frame < 20 ? frame + 1 : 1, ++speed),
       speed
     );
+    }
+    
   }
 };
 
