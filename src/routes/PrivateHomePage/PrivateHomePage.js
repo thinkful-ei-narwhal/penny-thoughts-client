@@ -51,7 +51,7 @@ class PublicHomePage extends Component {
           <WelcomeName/>
         </section>
         {isLoading && <ThinkingLoader/>}
-        { error && <p className="private-home-error">{error}</p> }
+        { error && <p className="private-home-error shake-horizontal">{error}</p> }
         { success && <p className="private-home-success">{success}</p> }
         <form className="message-form" onSubmit={ev => {
           ev.preventDefault()
