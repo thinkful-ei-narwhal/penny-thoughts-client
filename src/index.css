@@ -152,6 +152,7 @@ li {
 
 .delete-button{
   display: block;
+  font-size: 26px;
   margin: 20px auto 20px auto;
   font-family: 'Lora', serif;
   color: #E7E393;
