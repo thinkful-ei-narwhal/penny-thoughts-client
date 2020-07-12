@@ -225,7 +225,7 @@ li {
   border-radius: 4px;
 }
 
-.signup-form button {
+.signup-form button, .RegistrationForm button{
   font-weight: bolder;
   background-color: #DD7230;
   font-family: 'Lora', serif;
@@ -237,7 +237,7 @@ li {
   margin: 3px;
 }
 
-.signup-form button:hover {
+.signup-form button:hover, .RegistrationForm button:hover{
   background-color: #E7E393;
   color: #DD7230;
   border: 1px solid #2E1F27;

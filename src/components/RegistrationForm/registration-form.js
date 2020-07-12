@@ -85,8 +85,8 @@ export default class RegistrationForm extends Component {
             onChange={(e) => this.handlePasswordChange(e)} 
             name='RegisterPassword'/>
           </label>
-
-          <input type='submit' value="Create Account" />
+          
+          <button type='submit'>Create Account </button>
         </form>
       </section>
     )
