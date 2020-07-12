@@ -18,12 +18,16 @@ export default class UserSettingsPage extends Component {
             Once deleted, you will not be able to log into your account again and you will have to create a brand new account.
         </p>
         <p>Are you sure you want to delete your account?</p>
-         <button onClick={() => {
+         <button 
+         className="yes-no-ok"
+         onClick={() => {
               this.context.toggleConfirm()
               this.context.toggleDelete();
          }}>Yes</button>
 
-         <button onClick={() => {
+         <button 
+         className="yes-no-ok"
+         onClick={() => {
           this.context.toggleConfirm()
          }}>No</button>
       </div>
@@ -34,7 +38,9 @@ export default class UserSettingsPage extends Component {
     return (
       <div className="modal-box">
          <p>Once deleted, there is no going back.  Are you sure you'd like to continue?</p>
-        <button onClick={() => {
+        <button 
+        className="yes-no-ok"
+        onClick={() => {
           UserService.deleteUser()
             .then(() => {
             this.context.toggleDelete();
@@ -44,7 +50,9 @@ export default class UserSettingsPage extends Component {
           })
         }}>Yes</button>
 
-        <button onClick={() => {
+        <button 
+        className="yes-no-ok"
+        onClick={() => {
           this.context.toggleDelete();
         }}>No</button>
       </div>

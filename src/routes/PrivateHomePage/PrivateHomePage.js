@@ -51,7 +51,7 @@ class PublicHomePage extends Component {
           <WelcomeName/>
         </section>
         {isLoading && <ThinkingLoader/>}
-        { error && <p className="private-home-error">{error}</p> }
+        { error && <p className="private-home-error shake-horizontal">{error}</p> }
         { success && <p className="private-home-success">{success}</p> }
         <form className="message-form" onSubmit={ev => {
           ev.preventDefault()
@@ -59,7 +59,7 @@ class PublicHomePage extends Component {
         }}>
           <label htmlFor="message">Share Positive Message</label>
           <input className="basic-input" type="text" name="message" id="message" />
-          <button>Add New Message</button>
+          <button className="submit-message">Add New Message</button>
         </form>
         <section className="coin-messages-container">
           {this.generateMessages()}
