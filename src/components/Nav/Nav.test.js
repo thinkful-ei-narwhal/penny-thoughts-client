@@ -1,17 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
-import App from './App';
+import Nav from './Nav';
 
 
-describe('<App />', () => {
+describe('<Nav />', () => {
     it('renders without crashing', () => {
+      const location = { pathname: '/register/' };
       const div = document.createElement('div');
       ReactDOM.render(
       <BrowserRouter>
-      <App/>
+      <Nav location={ location }/>
       </BrowserRouter>
       , div);
       ReactDOM.unmountComponentAtNode(div);
     });
-    });
+});

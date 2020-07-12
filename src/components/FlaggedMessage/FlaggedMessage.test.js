@@ -1,17 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
-import App from './App';
+import FlaggedMessage from './FlaggedMessage';
 
-
-describe('<App />', () => {
+describe('<FlaggedMessage />', () => {
     it('renders without crashing', () => {
       const div = document.createElement('div');
       ReactDOM.render(
-      <BrowserRouter>
-      <App/>
-      </BrowserRouter>
+      <FlaggedMessage/>
       , div);
       ReactDOM.unmountComponentAtNode(div);
     });
-    });
+});
