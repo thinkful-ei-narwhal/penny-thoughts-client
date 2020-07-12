@@ -1,15 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
-import App from './App';
+import LoginForm from './login-form';
 
 
-describe('<App />', () => {
+describe('<LoginForm />', () => {
     it('renders without crashing', () => {
       const div = document.createElement('div');
       ReactDOM.render(
       <BrowserRouter>
-      <App/>
+      <LoginForm/>
       </BrowserRouter>
       , div);
       ReactDOM.unmountComponentAtNode(div);
