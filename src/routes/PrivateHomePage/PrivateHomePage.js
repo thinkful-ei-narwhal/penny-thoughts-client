@@ -5,7 +5,6 @@ import SingleMessage from '../../components/SingleMessage/SingleMessage';
 import WelcomeName from '../../components/WelcomeName/WelcomeName';
 import ThinkingLoader from '../../components/Loaders/ThinkingLoader/ThinkingLoader';
 import './privateHome.css'
-import Footer from '../../components/Footer/Footer';
 
 class PublicHomePage extends Component {
   static contextType = MessageContext;
@@ -74,7 +73,6 @@ class PublicHomePage extends Component {
         <section className="coin-messages-container">
           {this.generateMessages()}
         </section>
-        <Footer/>
       </div>
     )
   }

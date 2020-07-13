@@ -3,7 +3,6 @@ import MessageContext from '../../contexts/MessagesContext'
 import MessageService from '../../services/messageService'
 import SingleMessage from '../../components/SingleMessage/SingleMessage'
 import WelcomeName from '../../components/WelcomeName/WelcomeName';
-import Footer from '../../components/Footer/Footer';
 
 class PublicHomePage extends Component {
   static contextType = MessageContext;
@@ -36,7 +35,6 @@ class PublicHomePage extends Component {
             {this.generateMessages()}
           </section>
         </main>
-        <Footer/>
       </div>
     )
   }
