@@ -9,6 +9,7 @@ export class deleteAccountButton extends Component {
   render() {
     return (
     <Fragment>
+    <h2 className="settings-subheader">Delete Your Account:</h2>
     <button className= 'delete-button'
     onClick={(e) => {
        e.preventDefault();

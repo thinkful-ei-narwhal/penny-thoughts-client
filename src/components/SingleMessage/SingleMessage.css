@@ -1,5 +1,9 @@
 .modal-box{
     position: fixed;
+    color: #E7E393;
+    font-size: 18px;
+    font-weight: bolder;
+    text-shadow: 1px 1px #2E1F27;
     z-index: 10;
     right: 0;
     left: 0;
@@ -8,13 +12,37 @@
     text-align: center;
     padding: 50px;
     width: 500px;
-    background: white;
-    border: 3px solid #ccc;
+    background:  #DD7230;
+    border: 3px solid #2E1F27; 
+    border-radius: 10px;
     box-shadow: 
-    -2rem 2rem 2rem rgba(black, 0.2);
+    -2rem 2rem 2rem rgba(#2E1F27, 0.2);
     vertical-align: middle;
     animation: fadeIn ease 0.3s;
     opacity: 1;
+}
+
+.report-button, .cancel-button, .yes-no-ok{
+    font-family: 'Lora', serif;
+    margin: 5px;
+    color: #E7E393;
+    font-size: 18px;
+    font-weight: bolder;
+    text-shadow: 1px 1px #2E1F27;
+    background-color: #854D27;
+    border: 2px solid #2E1F27;
+    border-radius: 4px;
+  }
+
+.report-button:hover, .cancel-button:hover, .yes-no-ok:hover {
+    transition: 0.3s;
+    color: #DD7230;
+    font-size: 18px;
+    font-weight: bolder;
+    text-shadow: 1px 1px #2E1F27;
+    background-color: #E7E393;
+    border: 2px solid #2E1F27;
+    border-radius: 4px;
 }
 
 @keyframes fadeIn {
@@ -27,7 +55,6 @@
 #coin {
     background-repeat: no-repeat;
     background-position: center;
-    font-family: 'Lora', serif;
     font-weight: bolder;
     width: 170px;
     height: 170px;
@@ -39,8 +66,8 @@
     text-align: center;
     outline: none;
   }
-
-#coin {
+  
+  #coin {
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -74,3 +101,65 @@
     -webkit-transform: rotateZ(0deg);
     transform: rotateZ(0deg);
   }
+
+/* --- Text animation things --- */ 
+
+/* by Andy Feliciotti https://drawne.com/pop-in-effect-with-css3-keyframe-animation/ */
+
+@-webkit-keyframes pop-in {
+    0% { opacity: 0; -webkit-transform: scale(0.5); }
+    100% { opacity: 1; -webkit-transform: scale(1); }
+    }
+    @-moz-keyframes pop-in {
+    0% { opacity: 0; -moz-transform: scale(0.5); }
+    100% { opacity: 1; -moz-transform: scale(1); }
+    }
+    @keyframes pop-in {
+    0% { opacity: 0; transform: scale(0.5); }
+    100% { opacity: 1; transform: scale(1); }
+    }
+
+@-webkit-keyframes pop-out {
+    0% { opacity: 1; -webkit-transform: scale(1); }
+    100% { opacity: 0; -webkit-transform: scale(0.5); }
+    }
+    @-moz-keyframes pop-out {
+    0% { opacity: 1; -moz-transform: scale(1); }
+    100% { opacity: 0; -moz-transform: scale(0.5); }
+    }
+    @keyframes pop-out {
+    0% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(0.5); }
+}
+
+.coin-text {
+    display: none;
+    width: 45%;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px #E7E393;
+}
+
+.coin-text::before {
+    content: open-quote;
+}
+
+.coin-text::after {
+    content: close-quote;
+}
+
+.coin-text.finished {
+    display: inline;
+    -webkit-animation:pop-in 0.5s;
+    -moz-animation:pop-in 0.5s;
+    -ms-animation:pop-in 0.5s;
+}
+
+.coin-text.spinning {
+    display: none;
+}
+
+.coin-text.popout {
+    -webkit-animation:pop-out 0.5s;
+    -moz-animation:pop-out 0.5s;
+    -ms-animation:pop-out 0.5s;
+}

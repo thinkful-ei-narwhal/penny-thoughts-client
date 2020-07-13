@@ -56,7 +56,7 @@ export default class RegistrationForm extends Component {
   render() {
     return (
       <section>
-      {this.state.error && <p>{this.state.error}</p>}
+      {this.state.error && <p className='private-home-error shake-horizontal'>{this.state.error}</p>}
         <form onSubmit={(e) => this.handleSubmit(e)} className='RegistrationForm'>
           <h2>Register</h2>
 
@@ -85,8 +85,8 @@ export default class RegistrationForm extends Component {
             onChange={(e) => this.handlePasswordChange(e)} 
             name='RegisterPassword'/>
           </label>
-
-          <input type='submit' value="Create Account" />
+          
+          <button type='submit'>Create Account </button>
         </form>
       </section>
     )

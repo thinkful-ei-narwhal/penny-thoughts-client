@@ -82,10 +82,10 @@ export default class UserMessages extends Component {
     return (
       <div>
         <section className='messages-container'>
-          {this.context.isLoadingThink && <ThinkingLoader/>}
-          {this.context.error && <p className="private-home-error">{this.context.error.message}</p>}
-          {this.context.success && <p className="private-home-success">{this.context.success.message}</p>}
-          <h2>Your User Messages:</h2>
+        {this.context.isLoadingThink && <ThinkingLoader/>}
+        {this.context.error && <p className="private-home-error shake-horizontal">{this.context.error}</p>}
+        {this.context.success && <p className="private-home-success">{this.context.success}</p>}
+          <h2 className="settings-subheader">Your User Messages:</h2>
           <ul>
             {this.generateUserMessages()}
           </ul>
