@@ -87,7 +87,7 @@ export class MessageProvider extends Component {
 
   setUserMessages = data => {
     this.setState({
-      userMessages: data
+      userMessages: [...data]
     })
   }
 

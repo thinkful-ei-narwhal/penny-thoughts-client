@@ -30,8 +30,22 @@ const messageService = {
       })
   },
 
-  getUserMessages() {
-    return fetch(`${config.API_ENDPOINT}/messages/userData`, {
+  getUserMessages(page) {
+    return fetch(`${config.API_ENDPOINT}/messages/userData/${page}`, {
+      method: 'GET',
+      headers: {
+        'content-type': 'application/json',
+        'Authorization': `Bearer ${TokenService.getAuthToken()}`
+      }
+    })
+      .then(res => {
+        if (!res.ok) return res.json().then(e => Promise.reject(e))
+        return res.json()
+      })
+  },
+
+  getUserMessagePageCount() {
+    return fetch(`${config.API_ENDPOINT}/messages/pageCount`, {
       method: 'GET',
       headers: {
         'content-type': 'application/json',
