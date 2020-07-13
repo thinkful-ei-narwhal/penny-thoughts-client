@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import LoginForm from '../../components/LoginForm/login-form'
 import {Link} from 'react-router-dom';
+import Footer from '../../components/Footer/Footer';
 
 export class LandingPage extends Component {
   render() {
@@ -14,6 +15,7 @@ export class LandingPage extends Component {
           <h2 className="landing-sub-subheader">Or...</h2>
         </div>
         <LoginForm {...this.props}/>
+        <Footer/>
       </div>
     )
   }

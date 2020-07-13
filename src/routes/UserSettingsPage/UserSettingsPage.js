@@ -5,6 +5,7 @@ import DeleteAccountButton from '../../components/DeleteAccountButton/deleteAcco
 import UserService from '../../services/userService';
 import TokenService from '../../services/token-service';
 import UserContext from '../../contexts/UserContext';
+import Footer from '../../components/Footer/Footer';
 
 export default class UserSettingsPage extends Component {
 
@@ -68,6 +69,7 @@ export default class UserSettingsPage extends Component {
         <UserInfo/>
         <UserMessageList/>
         <DeleteAccountButton {...this.props}/>
+        <Footer/>
       </div>
     )
   }

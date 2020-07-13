@@ -310,6 +310,8 @@ li {
 }
 
 .get-inspired:hover {
+  font-weight: bolder;
+
   background-color: #E7E393;
   color: #DD7230;
   border: 5px double #2E1F27;
@@ -355,6 +357,19 @@ li {
   margin: auto;
   text-align: center;
   width: 50%;
+}
+
+.footer {
+  background-color: #DD7230;
+  font-size: 18px;
+  font-weight: bolder;
+  color: #2E1F27;
+  text-align: center;
+  padding: 20px;
+}
+
+.footer a {
+  color: #F4C95D;
 }
 
 /* for bubblesLoader component */

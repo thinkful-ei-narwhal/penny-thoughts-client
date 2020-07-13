@@ -3,6 +3,7 @@ import MessageContext from '../../contexts/MessagesContext'
 import MessageService from '../../services/messageService'
 import FlaggedMessage from '../../components/FlaggedMessage/FlaggedMessage'
 import BubblesLoader from '../../components/Loaders/BubbleLoader/BubblesLoader'
+import Footer from '../../components/Footer/Footer'
 
 class AdminDashboardPage extends React.Component {
   
@@ -44,6 +45,7 @@ class AdminDashboardPage extends React.Component {
             {this.context.flaggedMessages.length > 0 ? this.generateFlaggedMessages() : <p>There are no flagged messages!</p>}
           </ul>
         </section>
+        <Footer/>
       </div>
     )
   }
