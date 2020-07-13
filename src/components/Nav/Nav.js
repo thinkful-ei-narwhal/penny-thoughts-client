@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import TokenService from '../../services/token-service';
 import UserContext from '../../contexts/UserContext';
-import jwtDecode from 'jwt-decode'
+import jwtDecode from 'jwt-decode';
+import './Nav.css';
+
 
 export class Nav extends Component {
   static contextType = UserContext;
@@ -80,15 +82,15 @@ export class Nav extends Component {
 
   render() {
     return ( 
-      <nav className = 'header' >
-        <section className = 'navlinks' > 
+      <nav className="header" >
+        <section className="navlinks" > 
           {
             TokenService.hasAuthToken() ?
               this.renderLogoutLink() :
               this.renderLoginLink()
           }
         </section>
-        <div className='title-logo'>
+        <div className="title-logo">
           <NavLink to = '/' >
             <h1 className="jiggle"> Penny Thoughts </h1>
           </NavLink> 

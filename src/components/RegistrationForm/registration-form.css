@@ -1,0 +1,38 @@
+@media only screen and (max-width: 600px) {
+  h2 {
+    text-align: center;
+  }
+
+  .RegistrationForm {
+    border: 1px solid #DD7230;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    margin: 3rem;
+    height: 50vh;
+  }
+
+  .basic-button {
+    font-weight: bolder;
+    background-color: #DD7230;
+    font-family: 'Lora', serif;
+    font-size: 22px;
+    color: #E7E393;
+    border: 1px solid #2E1F27;
+    border-radius: 4px;
+    padding: 3px;
+    margin: 3px;
+  }
+
+  .register-label {
+    font-size: 20px;
+  }
+  
+  .register-input {
+    font-size: 16px;
+    width: 200px;
+    padding: 5px;
+    display: block;
+  }
+}
