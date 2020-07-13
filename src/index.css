@@ -53,12 +53,13 @@ code {
 
 nav {
   display: block;
-  padding: 1rem;
+  padding: 0.7rem;
   background-color: #DD7230;
-  padding: 1rem;
+  padding: 0.7rem;
 }
 
 .header h1 {
+  margin: 0;
   text-align: center;
   font-family: 'Yellowtail', cursive;
   font-size: 75px;
@@ -222,7 +223,7 @@ li {
 .signup-form {
   text-align: center;
   width: 50%;
-  margin: auto;
+  margin-top: 0;
   padding: 10px;
 }
 
@@ -321,6 +322,8 @@ li {
 }
 
 .message-form {
+  margin: 0;
+  padding: 0;
   text-align: center;
 }
 
@@ -345,6 +348,13 @@ li {
   text-align: center;
   color: green;
   font-weight: bold;
+}
+
+.penny-intro {
+  padding: 20px;
+  margin: auto;
+  text-align: center;
+  width: 50%;
 }
 
 /* for bubblesLoader component */
