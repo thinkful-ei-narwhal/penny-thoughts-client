@@ -4,6 +4,7 @@ import MessageService from '../../services/messageService'
 import BubblesLoader from '../Loaders/BubbleLoader/BubblesLoader'
 import UserMessage from '../UserMessage/UserMessage'
 import ThinkingLoader from '../Loaders/ThinkingLoader/ThinkingLoader'
+import messageService from '../../services/messageService'
 export default class UserMessages extends Component {
   
   static contextType = MessageContext;
@@ -26,11 +27,17 @@ export default class UserMessages extends Component {
       })
       .then(() => {
         MessageService.getUserMessagePageCount()
-          .then(pageCount => {
-            this.setState({ pageCount: pageCount })
+          .then(messages => {
+            this.setState({ pageCount: this.countPages(messages)})
           })
       })
       .catch(err => this.context.setError(err))  
+  }
+
+  countPages(messages) {
+    let numberOfMessages = parseInt(messages[0].count)
+    let pages = Math.ceil(numberOfMessages/10)
+    return pages
   }
 
   generateUserMessages() {
@@ -60,7 +67,14 @@ export default class UserMessages extends Component {
     })
     .catch(err => this.context.setError(err))  
   }
-  onLast = () => {}
+  onLast = () => {
+    this.setState({ page: this.state.pageCount })
+    MessageService.getUserMessages(this.state.pageCount)
+    .then(data => {
+      this.context.setUserMessages(data)
+    })
+    .catch(err => this.context.setError(err)) 
+  }
   onGo = (ev) => {
     ev.preventDefault();
     const { goToPage } = ev.target;
@@ -72,8 +86,16 @@ export default class UserMessages extends Component {
       .catch(err => this.context.setError(err))  
   }
 
+  renderNext = () => {
+    if (this.state.page === this.state.pageCount) {
+      return false
+    }
+    return true
+  }
+
   render() {
-    console.log(this.state.pageCount)
+    let lastButton = 'Last' + ' (' + this.state.pageCount + ')'
+
     if (this.context.isLoading === true) {
       return (
         <BubblesLoader />
@@ -90,11 +112,11 @@ export default class UserMessages extends Component {
             {this.generateUserMessages()}
           </ul>
           <form onSubmit={(ev) => this.onGo(ev)} className='message-page-navigator'>
-            <input onClick={() => this.onPrevious()} className='previous' type='button' value='Previous'/>
-            <input onClick={() => this.onNext()} className='next' type='button' value='Next'/>
+            {(this.state.page > 1) && <input onClick={() => this.onPrevious()} className='previous' type='button' value='Previous'/>}
+            {(this.renderNext()) && <input onClick={() => this.onNext()} className='next' type='button' value='Next'/>}
             <input className='go' type='submit' value='Go'/>
             <input type='text' name='goToPage'/>
-            <input onClick={() => this.onLast()} className='last' type='button' value='Last'/>
+            {(this.renderNext()) && <input onClick={() => this.onLast()} className='last' type='button' value={lastButton}/>}
           </form>
         </section>
       </div>

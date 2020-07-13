@@ -45,7 +45,7 @@ const messageService = {
   },
 
   getUserMessagePageCount() {
-    return fetch(`${config.API_ENDPOINT}/messages/userData/page`, {
+    return fetch(`${config.API_ENDPOINT}/messages/pageCount`, {
       method: 'GET',
       headers: {
         'content-type': 'application/json',
