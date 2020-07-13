@@ -1,0 +1,27 @@
+@media only screen and (max-width: 600px) {
+  .header h1 {
+    margin: 1.5rem;
+  }
+
+  .signup-here {
+    margin: 0 auto 1rem;
+  }
+
+  .signup-form {
+    flex-direction: row;
+    width: 80%;
+    margin: auto;
+    padding: 0; /* setting this to zero actually pushes the link off the bottom of the screen */
+  }
+
+  .username,
+  .password {
+    display: inline-block;
+  width: 45%;
+  }
+
+  #username,
+  #password {
+    width: 70%;
+  }
+}
