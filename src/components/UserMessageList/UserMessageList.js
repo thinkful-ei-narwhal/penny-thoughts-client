@@ -4,6 +4,7 @@ import MessageService from '../../services/messageService'
 import BubblesLoader from '../Loaders/BubbleLoader/BubblesLoader'
 import UserMessage from '../UserMessage/UserMessage'
 import ThinkingLoader from '../Loaders/ThinkingLoader/ThinkingLoader'
+import './UserMessageList.css'
 export default class UserMessages extends Component {
   
   static contextType = MessageContext;

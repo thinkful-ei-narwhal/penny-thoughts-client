@@ -1,0 +1,10 @@
+@media only screen and (max-width: 600px) {
+  .messages-container {
+    margin: 0 auto;
+  }
+
+  .messages-container ul {
+    margin: 0 auto;
+    width: 95%;
+  }
+}
