@@ -32,6 +32,7 @@
 
   .message-form {
     position: fixed;
+    padding: 10px;
     top: 254px;
     background-color: #E7E393;
     z-index: 1;
