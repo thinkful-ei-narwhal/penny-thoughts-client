@@ -4,7 +4,7 @@ import MessageService from '../../services/messageService';
 import SingleMessage from '../../components/SingleMessage/SingleMessage';
 import WelcomeName from '../../components/WelcomeName/WelcomeName';
 import ThinkingLoader from '../../components/Loaders/ThinkingLoader/ThinkingLoader';
-import './privateHome.css'
+import './PrivateHomePage.css'
 
 class PublicHomePage extends Component {
   static contextType = MessageContext;
@@ -57,7 +57,7 @@ class PublicHomePage extends Component {
           ev.preventDefault()
           this.handleAddMessage(ev.target.message.value)
         }}>
-          <label htmlFor="message">Share Positive Message</label>
+          <label className="basic-label" htmlFor="message">Share Positive Message</label>
           <input className="basic-input" type="text" name="message" id="message" />
           <button className="submit-message">Add New Message</button>
         </form>
