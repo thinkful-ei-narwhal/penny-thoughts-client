@@ -41,7 +41,7 @@ class AdminDashboardPage extends React.Component {
         {this.context.success && <p className="private-home-success">{this.context.success}</p>}
           <h2>Flagged User Messages:</h2>
           <ul>
-            {this.generateFlaggedMessages()}
+            {this.context.flaggedMessages.length > 0 ? this.generateFlaggedMessages() : <p>There are no flagged messages!</p>}
           </ul>
         </section>
       </div>

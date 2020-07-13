@@ -40,8 +40,8 @@ export default class UserMessages extends Component {
         {this.context.error && <p className="private-home-error shake-horizontal">{this.context.error}</p>}
         {this.context.success && <p className="private-home-success">{this.context.success}</p>}
           <h2 className="settings-subheader">Your User Messages:</h2>
-          <ul>
-            {this.generateUserMessages()}
+          <ul className="message-list">
+            {this.context.userMessages.length > 0 ? this.generateUserMessages() : <p>There are no messages! Make some on the home page!</p>}
           </ul>
         </section>
       </div>

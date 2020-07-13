@@ -43,6 +43,15 @@ class PublicHomePage extends Component {
       })
   }
 
+  renderIntro() {
+    const {error, success} = this.context
+    return (
+      <div>
+      {(error || success) ? null : <p className="penny-intro">Hi, I'm Penny!  Share your kind thoughts down below!  I'll think about your message and approve it if it's OK!</p>}
+      </div>)
+    
+  }
+
   render() {
     const { isLoading, error, success} = this.context
     return (
@@ -50,8 +59,8 @@ class PublicHomePage extends Component {
         <section className="user-greeting">
           <WelcomeName/>
         </section>
-        {isLoading && <ThinkingLoader/>}
-        { error && <p className="private-home-error shake-horizontal">{error}</p> }
+        {isLoading ? <ThinkingLoader/> : this.renderIntro()}
+        { error && <p className="private-home-error shake-horizontal">{error} </p> }
         { success && <p className="private-home-success">{success}</p> }
         <form className="message-form" onSubmit={ev => {
           ev.preventDefault()
