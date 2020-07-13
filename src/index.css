@@ -222,7 +222,7 @@ li {
 
 .signup-form {
   text-align: center;
-  width: 50%;
+  width: 100%;
   margin-top: 0;
   padding: 10px;
 }
@@ -272,8 +272,8 @@ li {
 }
 
 .landing-desc {
-  width: 75%;
-  margin: auto;
+  width: 50%;
+  margin: 10px;
   text-align: center;
 }
 
@@ -319,6 +319,7 @@ li {
 .landing-page {
   display: flex;
   flex-direction: row;
+  margin: auto;
 }
 
 .message-form {
@@ -352,8 +353,88 @@ li {
 
 .penny-intro {
   padding: 20px;
-  margin: auto;
+  margin: 10px;
   text-align: center;
+  width: 50%;
+}
+
+.penny-desc {
+  display: flex;
+  flex-direction: row;
+}
+
+.penny-happy {
+  background-image: url('../src/images/Penny-Happy.png');
+  background-size: 75px 75px;
+  background-repeat: no-repeat;
+  background-position: top right;
+  width: 200px;
+  height: 200px;
+  margin: 5px;
+  padding: 5px;
+}
+
+.penny-thinking {
+  background-image: url('../src/images/Penny-Thinking.png');
+  background-size: 75px 75px;
+  background-repeat: no-repeat;
+  background-position: top right;
+  width: 200px;
+  height: 200px;
+  margin: 5px;
+  padding: 5px;
+}
+
+.penny-neutral {
+  background-image: url('../src/images/Penny-Neutral.png');
+  background-size: 75px 75px;
+  background-repeat: no-repeat;
+  background-position: top right;
+  width: 200px;
+  height: 200px;
+  margin: 5px;
+  padding: 5px;
+}
+
+.penny-sad {
+  background-image: url('../src/images/Penny-Sad.png');
+  background-size: 75px 75px;
+  background-repeat: no-repeat;
+  background-position: top right;
+  width: 200px;
+  height: 200px;
+  margin: 5px;
+  padding: 5px;
+}
+
+.penny {
+  background-image: url('../src/images/Penny.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 200px;
+  height: 410px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+.penny-container {
+  display: flex;
+  flex-direction: row;
+  width: 55%;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: space-around;
+  align-content: center;
+  height: 100px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.right-side {
   width: 50%;
 }
 

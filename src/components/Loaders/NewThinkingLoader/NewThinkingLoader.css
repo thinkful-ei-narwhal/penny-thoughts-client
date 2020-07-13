@@ -1,0 +1,9 @@
+.new-thinking-loader {
+  background-image: url('../../../images/Vanilla-2.3s-284px.svg');
+  background-repeat: no-repeat;
+  background-position: top right;
+  width: 250px;
+  height: 200px;
+  margin: 5px;
+  padding: 5px;
+}
