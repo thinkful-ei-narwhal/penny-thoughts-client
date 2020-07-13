@@ -41,7 +41,7 @@ export default class UserMessages extends Component {
         {this.context.success && <p className="private-home-success">{this.context.success}</p>}
           <h2 className="settings-subheader">Your User Messages:</h2>
           <ul>
-            {this.generateUserMessages()}
+            {this.context.userMessages.length > 0 ? this.generateUserMessages() : <p>There are no messages! Make some on the home page!</p>}
           </ul>
         </section>
       </div>
