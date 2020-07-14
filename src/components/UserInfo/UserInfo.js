@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import UserContext from '../../contexts/UserContext'
 import UserService from '../../services/userService'
+import './UserInfo.css'
 
 export class UserInfo extends Component {
   static contextType = UserContext;

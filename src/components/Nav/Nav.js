@@ -17,7 +17,7 @@ export class Nav extends Component {
   renderLogoutLink() {
     if (jwtDecode(TokenService.getAuthToken()).admin) {
       return (
-        <div className = 'header__logged-in' >
+        <>
           <NavLink  
             className='nav-link'
             onClick = { this.handleLogoutClick }
@@ -34,11 +34,11 @@ export class Nav extends Component {
             to = '/admin' >
               Admin
           </NavLink> 
-        </div>
+        </>
       )
     } else {
       return (
-        <div className = 'header__logged-in' >
+        <>
           <NavLink  
             className='nav-link'
             onClick = { this.handleLogoutClick }
@@ -50,7 +50,7 @@ export class Nav extends Component {
             to = '/settings' >
               Settings
           </NavLink> 
-        </div>
+        </>
       )
     }
   }
@@ -58,23 +58,23 @@ export class Nav extends Component {
   renderLoginLink() {
     if (this.props.location.pathname === '/register') {
       return (
-        <div className='header__not-logged-in' >
+        <>
           <NavLink
             className='nav-link'
             to='/' >
             Sign In
           </NavLink>
-        </div>
+        </>
       )
     }
     return (
-      <div className='header__not-logged-in' >
+      <>
         <NavLink
           className='nav-link'
           to='/register' >
           Sign Up
         </NavLink>
-      </div>
+      </>
     )
   }
 
@@ -92,7 +92,7 @@ export class Nav extends Component {
         </section>
         <div className="title-logo">
           <NavLink to = '/' >
-            <h1 className="jiggle"> Penny Thoughts </h1>
+            <h1 className="app-name">Penny Thoughts</h1>
           </NavLink> 
         </div>
       </nav>

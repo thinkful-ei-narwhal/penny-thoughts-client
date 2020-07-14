@@ -1,27 +1,37 @@
-@media only screen and (max-width: 600px) {
-  .header h1 {
-    margin: 1.5rem;
-  }
+.signup-form {
+  text-align: center;
+  width: 100%;
+  margin-top: 0;
+  padding: 10px;
+}
 
-  .signup-here {
-    margin: 0 auto 1rem;
-  }
+.form-field {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  margin-top: 1rem;
+}
 
-  .signup-form {
-    flex-direction: row;
-    width: 80%;
-    margin: auto;
-    padding: 0; /* setting this to zero actually pushes the link off the bottom of the screen */
-  }
+.signup-form label {
+  font-family: 'Lora', serif;
+  font-weight: bolder;
+  font-size: 20px;
+}
 
-  .username,
-  .password {
-    display: inline-block;
-  width: 45%;
-  }
+.signup-form input{
+  font-size: 20px;
+  border: 1px solid #2E1F27;
+  border-radius: 4px;
+  margin: 10px auto;
+  padding: 3px 5px;
+  width: 50%;
+}
 
-  #username,
-  #password {
-    width: 70%;
-  }
+.redirect-user {
+  margin: 1rem auto;
+}
+
+
+@media only screen and (min-width: 600px) {
+  
 }

@@ -2,6 +2,10 @@
   padding: 20px;
 }
 
+.div-background {
+  background-color: #E7E393;
+}
+
 .submit-message {
   text-align: center;
   margin: 20px;
@@ -20,6 +24,30 @@
   color: #854D27;
   border: 5px double #2E1F27;
   transition: 0.3s;
+}
+
+.message-form {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.basic-label {
+  font-size: 20px;
+}
+
+.basic-input {
+  font-size: 16px;
+  width: 200px;
+  padding: 5px;
+  /* display: block; */
+}
+
+.penny-intro {
+  padding: 20px;
+  margin: auto;
+  text-align: center;
+  width: 50%;
 }
 
 @media only screen and (max-width: 600px) {

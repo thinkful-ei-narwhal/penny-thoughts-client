@@ -89,7 +89,7 @@ export default class RegistrationForm extends Component {
             name='RegisterPassword'/>
           </label>
           
-          <button className="basic-button" type='submit'>Create Account </button>
+          <button className="solid-orange-btn" type='submit'>Create Account </button>
         </form>
       </section>
     )

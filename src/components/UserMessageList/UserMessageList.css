@@ -1,0 +1,8 @@
+.message-list {
+  text-align: center;
+  margin-left: 15%;
+  margin-right: 15%;
+  padding: 5px;
+  border: 5px double #2E1F27;
+  border-radius: 10px;
+}

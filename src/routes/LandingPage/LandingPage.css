@@ -1,11 +1,54 @@
-@media only screen and (max-width: 600px) {
-  .landing-page {
-    margin: 1rem;
-    margin-bottom: 1rem;
-    flex-direction: column;
-  }
+.landing-page {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  padding-top: 8rem;
+}
 
-  .landing-description {
-    margin-bottom: 1.5rem;
-  }
+.landing-desc {
+  width: 85%;
+  margin: auto;
+  text-align: center;
+}
+
+.landing-subheader {
+  font-family: 'Lora', serif;
+  font-weight: bolder;
+  font-size: 26px;
+}
+
+.landing-sub-subheader{
+  margin-top: 1rem;
+}
+
+.landing-description {
+  font-size: 18px;
+  line-height: 1.5;
+  letter-spacing: 2px;
+  margin: 1rem;
+}
+
+.get-inspired {
+  display: block;
+  width: 275px;
+  text-align: center;
+  font-size: 36px;
+  font-family: 'Yellowtail', cursive;
+  padding: 15px;
+  margin: 3rem auto 0 auto;
+  border-radius: 40px;
+  color: #E7E393;
+  background-color: #DD7230;
+  border: 5px double  #2E1F27;
+}
+
+.get-inspired:hover {
+  background-color: #E7E393;
+  color: #DD7230;
+  border: 5px double #2E1F27;
+  transition: 0.3s;
+}
+
+@media only screen and (min-width: 600px) {
+
 }
