@@ -55,20 +55,22 @@ class PublicHomePage extends Component {
   render() {
     const { isLoading, error, success} = this.context
     return (
-      <div className="div-background">
+      <div className="home">
         <section className="user-greeting">
           <WelcomeName/>
         </section>
-        {isLoading ? <NewThinkingLoader/> : this.renderIntro()}
-        { error && <div className="penny-container"><div className="penny-sad"/><p className="private-home-error shake-horizontal">{error} </p></div> }
-        { success && <div className="penny-container"><div className="penny-happy"/><p className="private-home-success">{success}</p></div> }
+        
         <form className="message-form" onSubmit={ev => {
           ev.preventDefault()
           this.handleAddMessage(ev.target.message.value)
         }}>
-          <label className="basic-label" htmlFor="message">Share Positive Message</label>
-          <input className="basic-input" type="text" name="message" id="message" maxLength='50'/>
+          <label className="basic-label" htmlFor="message">
+            <input className="basic-input" type="text" name="message" id="message" placeholder="Share Positive Message" />
+          </label>
           <button className="submit-message">Add New Message</button>
+        {isLoading ? <NewThinkingLoader/> : this.renderIntro()}
+        { error && <div className="penny-container"><div className="penny-sad"/><p className="private-home-error shake-horizontal">{error} </p></div> }
+        { success && <div className="penny-container"><div className="penny-happy"/><p className="private-home-success">{success}</p></div> }
         </form>
         <section className="coin-messages-container">
           {this.generateMessages()}

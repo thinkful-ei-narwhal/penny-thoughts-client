@@ -10,8 +10,8 @@
     margin-right: auto;
     margin-left: auto;
     text-align: center;
-    padding: 50px;
-    width: 500px;
+    padding: 30px;
+    width: 300px;
     background:  #DD7230;
     border: 3px solid #2E1F27; 
     border-radius: 10px;
@@ -134,7 +134,7 @@
 
 .coin-text {
     display: none;
-    width: 45%;
+    width: 80%;
     letter-spacing: 2px;
     text-shadow: 1px 1px #E7E393;
 }
@@ -163,3 +163,11 @@
     -moz-animation:pop-out 0.5s;
     -ms-animation:pop-out 0.5s;
 }
+
+@media only screen and (min-width: 600px) {
+  .modal-box{
+    padding: 50px;
+    width: 500px;
+  }
+}
+

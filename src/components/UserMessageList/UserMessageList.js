@@ -1,13 +1,11 @@
-import React, { Component } from 'react'
-import MessageContext from '../../contexts/MessagesContext'
-import MessageService from '../../services/messageService'
-import BubblesLoader from '../Loaders/BubbleLoader/BubblesLoader'
-import UserMessage from '../UserMessage/UserMessage'
-import ThinkingLoader from '../Loaders/ThinkingLoader/ThinkingLoader'
-
-import './UserMessageList.css'
-
-import messageService from '../../services/messageService'
+import React, { Component } from 'react';
+import MessageContext from '../../contexts/MessagesContext';
+import MessageService from '../../services/messageService';
+import BubblesLoader from '../Loaders/BubbleLoader/BubblesLoader';
+import UserMessage from '../UserMessage/UserMessage';
+import NewThinkingLoader from '../Loaders/NewThinkingLoader/NewThinkingLoader';
+import messageService from '../../services/messageService';
+import './UserMessageList.css';
 
 export default class UserMessages extends Component {
   
@@ -122,9 +120,9 @@ export default class UserMessages extends Component {
     return (
       <div>
         <section className='messages-container'>
-        {this.context.isLoadingThink && <ThinkingLoader/>}
-        {this.context.error && <p className="private-home-error shake-horizontal">{this.context.error}</p>}
-        {this.context.success && <p className="private-home-success">{this.context.success}</p>}
+        {this.context.isLoadingThink && <NewThinkingLoader/>}
+        { this.context.error && <div className="penny-container"><div className="penny-sad"/><p className="private-home-error shake-horizontal">{this.context.error} </p></div> }
+        { this.context.success && <div className="penny-container"><div className="penny-happy"/><p className="private-home-success">{this.context.success}</p></div> }
           <h2 className="settings-subheader">Your User Messages:</h2>
           <ul className="message-list">
             {this.context.userMessages.length > 0 ? this.generateUserMessages() : <p>There are no messages! Make some on the home page!</p>}
