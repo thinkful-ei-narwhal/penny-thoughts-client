@@ -1,11 +1,12 @@
-import React, { Component } from 'react'
-import MessageContext from '../../contexts/MessagesContext'
-import MessageService from '../../services/messageService'
-import BubblesLoader from '../Loaders/BubbleLoader/BubblesLoader'
-import UserMessage from '../UserMessage/UserMessage'
-import ThinkingLoader from '../Loaders/ThinkingLoader/ThinkingLoader'
-import messageService from '../../services/messageService'
-import './UserMessageList.css'
+import React, { Component } from 'react';
+import MessageContext from '../../contexts/MessagesContext';
+import MessageService from '../../services/messageService';
+import BubblesLoader from '../Loaders/BubbleLoader/BubblesLoader';
+import UserMessage from '../UserMessage/UserMessage';
+import ThinkingLoader from '../Loaders/ThinkingLoader/ThinkingLoader';
+import messageService from '../../services/messageService';
+import './UserMessageList.css';
+
 export default class UserMessages extends Component {
   
   static contextType = MessageContext;

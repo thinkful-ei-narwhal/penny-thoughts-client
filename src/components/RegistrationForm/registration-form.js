@@ -59,7 +59,7 @@ export default class RegistrationForm extends Component {
     return (
       <section className="registration">
       {this.state.error && <p className='private-home-error shake-horizontal'>{this.state.error}</p>}
-        <form onSubmit={(e) => this.handleSubmit(e)} className='RegistrationForm'>
+        <form onSubmit={(e) => this.handleSubmit(e)} className="RegistrationForm">
           <h2>Register</h2>
 
           <label htmlFor='RegisterName'>

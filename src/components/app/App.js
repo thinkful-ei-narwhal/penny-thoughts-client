@@ -14,6 +14,7 @@ import PublicOnlyRoute from '../../utils/PublicOnlyRoute';
 import AdminOnlyRoute from '../../utils/AdminOnlyRoute';
 import Navigation from '../Nav/Nav';
 import './App.css';
+import Footer from '../Footer/Footer';
 
 function App() {
   return (
@@ -46,6 +47,7 @@ function App() {
           </Switch>
         </ErrorPage>
       </main>
+      <Route path='/' component={Footer} />
     </Fragment>
   );
 }

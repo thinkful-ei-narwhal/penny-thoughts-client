@@ -112,6 +112,7 @@ a {
   transition: 0.3s;
 }
 
+
 .solid-orange-btn {
   font-weight: bolder;
   background-color: #DD7230;
@@ -146,6 +147,108 @@ a {
   color: green;
   font-weight: bold;
 }
+
+
+.penny-intro {
+  padding: 20px;
+  margin: 10px;
+  text-align: center;
+  width: 50%;
+}
+
+
+.penny-desc {
+  display: flex;
+  flex-direction: row;
+}
+
+.penny-happy {
+  background-image: url('../src/images/Penny-Happy.png');
+  background-size: 75px 75px;
+  background-repeat: no-repeat;
+  background-position: top right;
+  width: 200px;
+  height: 200px;
+  margin: 5px;
+  padding: 5px;
+}
+
+.penny-thinking {
+  background-image: url('../src/images/Penny-Thinking.png');
+  background-size: 75px 75px;
+  background-repeat: no-repeat;
+  background-position: top right;
+  width: 200px;
+  height: 200px;
+  margin: 5px;
+  padding: 5px;
+}
+
+.penny-neutral {
+  background-image: url('../src/images/Penny-Neutral.png');
+  background-size: 75px 75px;
+  background-repeat: no-repeat;
+  background-position: top right;
+  width: 200px;
+  height: 200px;
+  margin: 5px;
+  padding: 5px;
+}
+
+.penny-sad {
+  background-image: url('../src/images/Penny-Sad.png');
+  background-size: 75px 75px;
+  background-repeat: no-repeat;
+  background-position: top right;
+  width: 200px;
+  height: 200px;
+  margin: 5px;
+  padding: 5px;
+}
+
+.penny {
+  background-image: url('../src/images/Penny.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 200px;
+  height: 410px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+.penny-container {
+  display: flex;
+  flex-direction: row;
+  width: 55%;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: space-around;
+  align-content: center;
+  height: 100px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.right-side {
+  width: 50%;
+
+.footer {
+  background-color: #DD7230;
+  font-size: 16px;
+  font-weight: bolder;
+  color: #2E1F27;
+  text-align: center;
+  padding: 20px;
+}
+
+.footer a {
+  color: #F4C95D;
+}
+
 
 @media only screen and (min-width: 600px) {
   .user-greeting {

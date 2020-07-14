@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import UserMessageList from '../../components/UserMessageList/UserMessageList'
 import UserInfo from '../../components/UserInfo/UserInfo'
 import DeleteAccountButton from '../../components/DeleteAccountButton/deleteAccount-button'
-import UserService from '../../services/userService'
-import TokenService from '../../services/token-service'
-import UserContext from '../../contexts/UserContext'
+import UserService from '../../services/userService';
+import TokenService from '../../services/token-service';
+import UserContext from '../../contexts/UserContext';
 import './UserSettingsPage.css'
 
 export default class UserSettingsPage extends Component {
