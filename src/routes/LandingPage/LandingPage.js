@@ -15,15 +15,12 @@ export class LandingPage extends Component {
           <div className="penny-desc">
             <p className="landing-description">Hello!  My name is Penny!  I'm an Artificial Intelligence built to filter messages so that we can all share our positive motivations safely!  I'm made using TensorFlow.js and a pre-built Toxcitity model, but I'm not perfect!  Sometimes things slip through, so appologies in advance!</p> 
           </div>
-          
+        </div>
+        <div className="landing-login-container">
           <Link className="get-inspired" to='/browse'>Get Inspired Here!</Link>
           <h2 className="landing-sub-subheader">Or...</h2>
-        </div>
-        
           <LoginForm {...this.props}/>
-          
-        
-        
+        </div>
       </div>
     )
   }

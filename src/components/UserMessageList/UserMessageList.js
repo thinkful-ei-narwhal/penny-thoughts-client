@@ -4,7 +4,6 @@ import MessageService from '../../services/messageService';
 import BubblesLoader from '../Loaders/BubbleLoader/BubblesLoader';
 import UserMessage from '../UserMessage/UserMessage';
 import NewThinkingLoader from '../Loaders/NewThinkingLoader/NewThinkingLoader';
-import messageService from '../../services/messageService';
 import './UserMessageList.css';
 
 export default class UserMessages extends Component {
@@ -110,7 +109,7 @@ export default class UserMessages extends Component {
   }
 
   render() {
-    let lastButton = 'Last' + ' (' + this.state.pageCount + ')'
+    let lastButton = 'Last (' + this.state.pageCount + ')'
 
     if (this.context.isLoading === true) {
       return (
