@@ -18,13 +18,14 @@
   font-size: 20px;
 }
 
-.signup-form input{
+.signup-form input {
   font-size: 20px;
   border: 1px solid #2E1F27;
   border-radius: 4px;
   margin: 10px auto;
   padding: 3px 5px;
   width: 50%;
+  max-width: 250px;
 }
 
 .redirect-user {

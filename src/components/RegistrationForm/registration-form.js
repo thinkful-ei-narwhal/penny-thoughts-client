@@ -57,30 +57,29 @@ export default class RegistrationForm extends Component {
 
   render() {
     return (
-      <section>
+      <section className="registration">
       {this.state.error && <p className='private-home-error shake-horizontal'>{this.state.error}</p>}
         <form onSubmit={(e) => this.handleSubmit(e)} className='RegistrationForm'>
           <h2>Register</h2>
 
-          <label className="register-label" htmlFor='RegisterName'>
+          <label htmlFor='RegisterName'>
             Full Name:
-            <input className="register-input" onChange={(e) => this.handleNameChange(e)} type='text' name='RegisterName'/>
+            <input onChange={(e) => this.handleNameChange(e)} type='text' name='RegisterName'/>
           </label>
 
-          <label className="register-label" htmlFor='RegisterEmail'>
+          <label htmlFor='RegisterEmail'>
             E-Mail:
-            <input className="register-input" onChange={(e) => this.handleEmailChange(e)} type='email' name='RegisterEmail'/>
+            <input onChange={(e) => this.handleEmailChange(e)} type='email' name='RegisterEmail'/>
           </label>
 
-          <label className="register-label" htmlFor='RegisterUsername'>
+          <label htmlFor='RegisterUsername'>
             Username:
-            <input className="register-input" onChange={(e) => this.handleUsernameChange(e)} type='text' name='RegisterUsername'/>
+            <input onChange={(e) => this.handleUsernameChange(e)} type='text' name='RegisterUsername'/>
           </label>
 
-          <label className="register-label" htmlFor='RegisterPassword'>
+          <label htmlFor='RegisterPassword'>
             Password:
             <input 
-            className="register-input"
             type="password" 
             minLength="7" 
             maxLength="25" 
@@ -89,7 +88,11 @@ export default class RegistrationForm extends Component {
             name='RegisterPassword'/>
           </label>
           
-          <button className="solid-orange-btn" type='submit'>Create Account </button>
+          <button 
+            className="solid-orange-btn" 
+            type='submit'>
+            Create Account
+          </button>
         </form>
       </section>
     )
