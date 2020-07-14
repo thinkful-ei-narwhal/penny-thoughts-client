@@ -39,7 +39,7 @@ class PublicHomePage extends Component {
       })
       .catch(err => {
         toggleLoading()
-        setError(err)
+        setError(err.error)
       })
   }
 
