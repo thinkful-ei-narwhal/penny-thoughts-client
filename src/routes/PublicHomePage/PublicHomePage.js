@@ -32,7 +32,7 @@ class PublicHomePage extends Component {
           <section className="user-greeting">
             <WelcomeName/>
           </section>
-          <section className="coin-messages-container">
+          <section className="coin-messages-container public">
             {this.generateMessages()}
           </section>
         </main>
