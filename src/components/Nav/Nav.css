@@ -11,7 +11,7 @@
   display: flex;
   justify-content: flex-end;
   width: 100%;
-  padding: .5rem;
+  padding: 2px;
 }
 
 .nav-link:link,
@@ -62,7 +62,7 @@
   }
 
   .nav-link {
-    margin: 20px;
+    margin: 10px;
     font-size: 18px;
   }
 }

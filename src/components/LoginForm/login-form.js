@@ -40,7 +40,7 @@ export default class LoginForm extends Component {
       <form className="signup-form"
       onSubmit={this.handleSubmitJwtAuth}
       >
-        <h2 className="signup-here">Sign Up Here!</h2>
+        <h2 className="signup-here">Sign In Here!</h2>
         <div role='alert'>{error && <p className='private-home-error shake-horizontal'>{error}</p>}</div>
         <div className="form-field">
           <label htmlFor="username">Username</label>
