@@ -20,7 +20,7 @@ export class UserMessage extends Component {
       })
       .catch(err => {
         toggleLoadingThink()
-        setError(err)
+        setError(err.error)
       })
   }
 
