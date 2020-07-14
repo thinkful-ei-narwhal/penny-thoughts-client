@@ -63,6 +63,7 @@ export default class UserMessages extends Component {
       })
       .catch(err => this.context.setError(err))
   }
+
   onNext = () => {
     this.setState({ page: this.state.page + 1 })
     MessageService.getUserMessages(this.state.page + 1)
@@ -71,6 +72,7 @@ export default class UserMessages extends Component {
     })
     .catch(err => this.context.setError(err))  
   }
+
   onLast = () => {
     this.setState({ page: this.state.pageCount })
     MessageService.getUserMessages(this.state.pageCount)
@@ -79,15 +81,23 @@ export default class UserMessages extends Component {
     })
     .catch(err => this.context.setError(err)) 
   }
-  onGo = (ev) => {
-    ev.preventDefault();
-    const { goToPage } = ev.target;
-    this.setState({ page: parseInt(goToPage.value)})
-    MessageService.getUserMessages(parseInt(goToPage.value))
+
+  onClickPageNumber = (ev) => {
+    ev.preventDefault()
+    this.setState({ page: parseInt(ev.target.value)})
+    MessageService.getUserMessages(parseInt(ev.target.value))
       .then(data => {
         this.context.setUserMessages(data)
       })
       .catch(err => this.context.setError(err))  
+  }
+
+  renderPageNumbers = () => {
+    for(let i = 0; i <= this.state.pageCount; i++) {
+      return (
+        <button value={i} onClick={(ev) => this.onClickPageNumber(ev)}>{i}</button>
+      )
+    }
   }
 
   renderNext = () => {
@@ -117,9 +127,8 @@ export default class UserMessages extends Component {
           </ul>
           <form onSubmit={(ev) => this.onGo(ev)} className='message-page-navigator'>
             {(this.state.page > 1) && <input onClick={() => this.onPrevious()} className='previous' type='button' value='Previous'/>}
+            {this.renderPageNumbers()}
             {(this.renderNext()) && <input onClick={() => this.onNext()} className='next' type='button' value='Next'/>}
-            <input className='go' type='submit' value='Go'/>
-            <input type='text' name='goToPage'/>
             {(this.renderNext()) && <input onClick={() => this.onLast()} className='last' type='button' value={lastButton}/>}
           </form>
         </section>
