@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import UserContext from '../../contexts/UserContext'
 import UserService from '../../services/userService'
+import './UserInfo.css'
 
 export class UserInfo extends Component {
   static contextType = UserContext;
@@ -35,13 +36,13 @@ export class UserInfo extends Component {
         }
         }>
         <label htmlFor='full_name' > Full Name: </label>
-        <input type='text'
+        <input className="user-input" type='text'
           name='full_name'
           id='full_name'
           defaultValue={(this.context.userData) ? this.context.userData.full_name : null}
         />
         <label htmlFor='email' > email: </label>
-        <input type='email'
+        <input className="user-input" type='email'
           name='email'
           id='email'
           defaultValue={(this.context.userData) ? this.context.userData.email : null}

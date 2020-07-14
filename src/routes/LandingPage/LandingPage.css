@@ -1,6 +1,7 @@
 @media only screen and (max-width: 600px) {
   .landing-page {
     margin: 1rem;
+    padding-top: 180px;
     margin-bottom: 1rem;
     flex-direction: column;
   }

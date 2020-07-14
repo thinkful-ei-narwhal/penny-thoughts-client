@@ -4,7 +4,11 @@ import MessageService from '../../services/messageService'
 import BubblesLoader from '../Loaders/BubbleLoader/BubblesLoader'
 import UserMessage from '../UserMessage/UserMessage'
 import ThinkingLoader from '../Loaders/ThinkingLoader/ThinkingLoader'
+
+import './UserMessageList.css'
+
 import messageService from '../../services/messageService'
+
 export default class UserMessages extends Component {
   
   static contextType = MessageContext;

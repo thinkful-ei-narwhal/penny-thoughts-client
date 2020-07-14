@@ -5,6 +5,7 @@ import DeleteAccountButton from '../../components/DeleteAccountButton/deleteAcco
 import UserService from '../../services/userService';
 import TokenService from '../../services/token-service';
 import UserContext from '../../contexts/UserContext';
+import './UserSettingsPage.css'
 
 export default class UserSettingsPage extends Component {
 
@@ -60,7 +61,7 @@ export default class UserSettingsPage extends Component {
   }
   render() {
     return (
-      <div>
+      <div className="settings-container">
         {this.context.confirm && this.renderConfirm()}
         {this.context.deleteAccount && this.renderDelete()}
 
