@@ -3,7 +3,7 @@ import MessageContext from '../../contexts/MessagesContext';
 import MessageService from '../../services/messageService';
 import SingleMessage from '../../components/SingleMessage/SingleMessage';
 import WelcomeName from '../../components/WelcomeName/WelcomeName';
-import ThinkingLoader from '../../components/Loaders/ThinkingLoader/ThinkingLoader';
+import NewThinkingLoader from '../../components/Loaders/NewThinkingLoader/NewThinkingLoader';
 import './PrivateHomePage.css'
 
 class PublicHomePage extends Component {
@@ -47,10 +47,10 @@ class PublicHomePage extends Component {
     const {error, success} = this.context
     return (
       <div>
-      {(error || success) ? null : <p className="penny-intro">Hi, I'm Penny!  Share your kind thoughts down below!  I'll think about your message and approve it if it's OK!</p>}
+      {(error || success) ? null : <div className="penny-container"><div className="penny-neutral"/><p className="penny-intro">Hi, I'm Penny!  Share your kind thoughts down below!  I'll think about your message and approve it if it's OK!</p></div>}
       </div>)
-    
   }
+
 
   render() {
     const { isLoading, error, success} = this.context
@@ -59,9 +59,9 @@ class PublicHomePage extends Component {
         <section className="user-greeting">
           <WelcomeName/>
         </section>
-        {isLoading ? <ThinkingLoader/> : this.renderIntro()}
-        { error && <p className="private-home-error shake-horizontal">{error} </p> }
-        { success && <p className="private-home-success">{success}</p> }
+        {isLoading ? <NewThinkingLoader/> : this.renderIntro()}
+        { error && <div className="penny-container"><div className="penny-sad"/><p className="private-home-error shake-horizontal">{error} </p></div> }
+        { success && <div className="penny-container"><div className="penny-happy"/><p className="private-home-success">{success}</p></div> }
         <form className="message-form" onSubmit={ev => {
           ev.preventDefault()
           this.handleAddMessage(ev.target.message.value)
