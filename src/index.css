@@ -43,18 +43,27 @@ a {
   display: flex;
   justify-content: space-around;
   position: fixed;
-  top: 117px;
+  top: 106px;
   width: 100%;
   z-index: 1;
 }
 
 .coin-messages-container {
   width: 100%;
-  min-height: 30rem;
+  min-height: 0rem;
+  height: 100%;
   background-color: #F4C95D;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  padding-top: 170px;
+  padding-bottom: 20px;
+}
+
+@media only screen and (min-width: 600px) {
+  .coin-messages-container.public {
+    margin-top: 100px;
+  }
 }
 
 .messages-container {
@@ -133,17 +142,20 @@ a {
 }
 
 .private-home-error {
+  padding: 20px;
+  margin: 10px;
+  text-align: center;
   text-align: center;
   color: red;
   font-weight: bold;
   font-size: 14px;
-  padding: 5px 5px 15px;
-  width: 95%;
-  margin: 0 auto;
 }
 
 .private-home-success {
+  padding: 20px;
+  margin: 10px;
   text-align: center;
+  width: 50%;
   color: green;
   font-weight: bold;
 }
@@ -223,7 +235,7 @@ a {
 .penny-container {
   display: flex;
   flex-direction: row;
-  width: 100%;
+  width: 50%;
   font-size: 14px;
   margin-left: auto;
   margin-right: auto;
@@ -254,11 +266,15 @@ a {
 
 @media only screen and (min-width: 600px) {
   .user-greeting {
-    top: 198px;
+    top: 164px;
   }
 
   .coin-messages-container {
     margin-top: 2rem;
+  }
+
+  .penny-container {
+    margin-top: 0px;
   }
 }
 

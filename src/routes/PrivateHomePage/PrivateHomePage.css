@@ -37,7 +37,7 @@
   width: 100%;
   text-align: center;
   position: fixed;
-  top: 148px;
+  top: 144px;
   background-color: #E7E393;
   z-index: 1;
 }
@@ -60,7 +60,7 @@
 
 @media only screen and (min-width: 600px) {
   .message-form {
-    top: 229px;
+    top: 202px;
   }
 
 }
