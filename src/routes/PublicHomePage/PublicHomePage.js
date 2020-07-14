@@ -3,7 +3,7 @@ import MessageContext from '../../contexts/MessagesContext'
 import MessageService from '../../services/messageService'
 import SingleMessage from '../../components/SingleMessage/SingleMessage'
 import WelcomeName from '../../components/WelcomeName/WelcomeName';
-
+import './PublicHomePage.css'
 class PublicHomePage extends Component {
   static contextType = MessageContext;
 
@@ -31,7 +31,7 @@ class PublicHomePage extends Component {
           <section className="user-greeting">
             <WelcomeName/>
           </section>
-          <section className="coin-messages-container">
+          <section className="coin-messages-container public">
             {this.generateMessages()}
           </section>
         </main>

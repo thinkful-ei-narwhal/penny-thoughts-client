@@ -1,0 +1,5 @@
+@media only screen and (max-width: 600px) {
+  .coin-messages-container.public {
+    padding-top: 280px;
+  }
+}
