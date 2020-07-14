@@ -55,7 +55,7 @@ class PublicHomePage extends Component {
   render() {
     const { isLoading, error, success} = this.context
     return (
-      <div className="div-background">
+      <div className="home">
         <section className="user-greeting">
           <WelcomeName/>
         </section>
@@ -66,8 +66,9 @@ class PublicHomePage extends Component {
           ev.preventDefault()
           this.handleAddMessage(ev.target.message.value)
         }}>
-          <label className="basic-label" htmlFor="message">Share Positive Message</label>
-          <input className="basic-input" type="text" name="message" id="message" />
+          <label className="basic-label" htmlFor="message">
+            <input className="basic-input" type="text" name="message" id="message" placeholder="Share Positive Message" />
+          </label>
           <button className="submit-message">Add New Message</button>
         </form>
         <section className="coin-messages-container">
