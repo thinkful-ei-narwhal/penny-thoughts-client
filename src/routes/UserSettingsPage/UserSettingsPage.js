@@ -61,7 +61,7 @@ export default class UserSettingsPage extends Component {
   }
   render() {
     return (
-      <div className="settings-container">
+      <div className="settings">
         {this.context.confirm && this.renderConfirm()}
         {this.context.deleteAccount && this.renderDelete()}
 

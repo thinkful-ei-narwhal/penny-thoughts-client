@@ -1,13 +1,11 @@
-import React, { Component } from 'react'
-import MessageContext from '../../contexts/MessagesContext'
-import MessageService from '../../services/messageService'
-import BubblesLoader from '../Loaders/BubbleLoader/BubblesLoader'
-import UserMessage from '../UserMessage/UserMessage'
-import ThinkingLoader from '../Loaders/ThinkingLoader/ThinkingLoader'
-
-import './UserMessageList.css'
-
-import messageService from '../../services/messageService'
+import React, { Component } from 'react';
+import MessageContext from '../../contexts/MessagesContext';
+import MessageService from '../../services/messageService';
+import BubblesLoader from '../Loaders/BubbleLoader/BubblesLoader';
+import UserMessage from '../UserMessage/UserMessage';
+import ThinkingLoader from '../Loaders/ThinkingLoader/ThinkingLoader';
+import messageService from '../../services/messageService';
+import './UserMessageList.css';
 
 export default class UserMessages extends Component {
   
@@ -118,7 +116,7 @@ export default class UserMessages extends Component {
           <form onSubmit={(ev) => this.onGo(ev)} className='message-page-navigator'>
             {(this.state.page > 1) && <input onClick={() => this.onPrevious()} className='previous' type='button' value='Previous'/>}
             {(this.renderNext()) && <input onClick={() => this.onNext()} className='next' type='button' value='Next'/>}
-            <input className='go' type='submit' value='Go'/>
+            <input className='go' type='submit' value='Go' className="go-btn"/>
             <input type='text' name='goToPage'/>
             {(this.renderNext()) && <input onClick={() => this.onLast()} className='last' type='button' value={lastButton}/>}
           </form>

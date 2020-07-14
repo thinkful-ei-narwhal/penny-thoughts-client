@@ -1,34 +1,22 @@
-li {
-  display: flex;
-  flex-direction: row;
-  padding: 5px;
-  list-style-type: none;
-}
-
-.hidden-label{
-  margin: 5px;
-}
-
 .usermessage {
   display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.usermessage input {
-  margin: 5px;
-  width: 200px;
+.basic-input {
+  padding: 5px;
+  display: block;
+  font-family: 'Lora', serif;
   border: 1px solid #2E1F27;
+  font-size: 16px;
   border-radius: 4px;
-  font-style: italic;
+  padding: 3px 5px;
+  margin: 10px auto 0;
 }
 
 .usermessage button {
-  font-family: 'Lora', serif;
-  margin: 5px;
-  color: #E7E393;
-  background-color: #DD7230;
-  border: 1px solid #2E1F27;
-  border-radius: 4px;
+  padding: 3px 6px;
+  width: 200px;
 }

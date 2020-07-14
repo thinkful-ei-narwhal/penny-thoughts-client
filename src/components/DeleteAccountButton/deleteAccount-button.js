@@ -1,6 +1,6 @@
 import React, { Fragment , Component} from 'react'
 import UserContext from '../../contexts/UserContext';
-
+import './deleteAccount-button.css'
 
 export class deleteAccountButton extends Component {
 

@@ -1,5 +1,5 @@
 import React from 'react'
-
+import './BubblesLoader.css'
 
 export default function BubblesLoader() {
   return (

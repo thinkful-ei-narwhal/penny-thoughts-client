@@ -4,6 +4,7 @@ import MessageService from '../../services/messageService'
 import SingleMessage from '../../components/SingleMessage/SingleMessage'
 import WelcomeName from '../../components/WelcomeName/WelcomeName';
 import './PublicHomePage.css'
+
 class PublicHomePage extends Component {
   static contextType = MessageContext;
 
