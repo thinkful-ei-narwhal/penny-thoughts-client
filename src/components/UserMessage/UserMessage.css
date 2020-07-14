@@ -1,0 +1,22 @@
+.usermessage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.basic-input {
+  padding: 5px;
+  display: block;
+  font-family: 'Lora', serif;
+  border: 1px solid #2E1F27;
+  font-size: 16px;
+  border-radius: 4px;
+  padding: 3px 5px;
+  margin: 10px auto 0;
+}
+
+.usermessage button {
+  padding: 3px 6px;
+  width: 200px;
+}

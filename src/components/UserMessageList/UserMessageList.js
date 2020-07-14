@@ -115,7 +115,7 @@ export default class UserMessages extends Component {
           <form onSubmit={(ev) => this.onGo(ev)} className='message-page-navigator'>
             {(this.state.page > 1) && <input onClick={() => this.onPrevious()} className='previous' type='button' value='Previous'/>}
             {(this.renderNext()) && <input onClick={() => this.onNext()} className='next' type='button' value='Next'/>}
-            <input className='go' type='submit' value='Go'/>
+            <input className='go' type='submit' value='Go' className="go-btn"/>
             <input type='text' name='goToPage'/>
             {(this.renderNext()) && <input onClick={() => this.onLast()} className='last' type='button' value={lastButton}/>}
           </form>

@@ -6,3 +6,23 @@
   border: 5px double #2E1F27;
   border-radius: 10px;
 }
+
+.message-page-navigator input {
+  padding: 5px;
+  font-family: 'Lora', serif;
+  border: 1px solid #2E1F27;
+  font-size: 16px;
+  border-radius: 4px;
+  padding: 3px 5px;
+  margin: 10px auto 0;
+}
+
+.go-btn {
+  font-family: 'Lora', serif;
+  display: inline-block;
+  margin: 10px 5px;
+  color: #2E1F27;
+  background-color: transparent;
+  border: 2px solid #DD7230;
+  border-radius: 4px;
+}

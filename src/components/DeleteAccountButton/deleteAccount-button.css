@@ -7,6 +7,7 @@
   background-color: #DD7230;
   border: 1px solid #2E1F27;
   border-radius: 4px;
+  padding: 5px 10px;
 }
 
 .delete-button:hover {

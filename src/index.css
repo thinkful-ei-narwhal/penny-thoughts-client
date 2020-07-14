@@ -71,7 +71,8 @@ a {
 .settings-subheader {
   text-align: center;
   font-family: 'Lora', serif;
-  font-size: 26px;
+  font-size: 18px;
+  padding: 5px 0;
 }
 
 .hidden-label {
