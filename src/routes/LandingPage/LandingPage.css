@@ -22,7 +22,7 @@
 }
 
 .landing-description {
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.5;
   letter-spacing: 2px;
   margin: 1rem;
@@ -52,5 +52,8 @@
 @media only screen and (min-width: 600px) {
   .landing-page {
     padding-top: 14rem;
+  }
+  .landing-description {
+  font-size: 18px;
   }
 }
