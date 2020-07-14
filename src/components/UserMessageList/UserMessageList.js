@@ -92,12 +92,16 @@ export default class UserMessages extends Component {
       .catch(err => this.context.setError(err))  
   }
 
+  renderPageButton = (pageNumber) => {
+    return <button value={pageNumber} onClick={(ev) => this.onClickPageNumber(ev)}>{pageNumber}</button>
+  }
+
   renderPageNumbers = () => {
-    for(let i = 0; i <= this.state.pageCount; i++) {
-      return (
-        <button value={i} onClick={(ev) => this.onClickPageNumber(ev)}>{i}</button>
-      )
+    const pageArray = []
+    for(let i = 1; i <= this.state.pageCount; i++) {
+      pageArray.push(i)
     }
+    return pageArray
   }
 
   renderNext = () => {
@@ -125,12 +129,12 @@ export default class UserMessages extends Component {
           <ul className="message-list">
             {this.context.userMessages.length > 0 ? this.generateUserMessages() : <p>There are no messages! Make some on the home page!</p>}
           </ul>
-          <form onSubmit={(ev) => this.onGo(ev)} className='message-page-navigator'>
-            {(this.state.page > 1) && <input onClick={() => this.onPrevious()} className='previous' type='button' value='Previous'/>}
-            {this.renderPageNumbers()}
-            {(this.renderNext()) && <input onClick={() => this.onNext()} className='next' type='button' value='Next'/>}
-            {(this.renderNext()) && <input onClick={() => this.onLast()} className='last' type='button' value={lastButton}/>}
-          </form>
+          <div className='message-page-navigator'>
+            {(this.state.page > 1) && <button onClick={() => this.onPrevious()} className='previous' value='Previous'>Previous</button>}
+            {this.renderPageNumbers().map((pageNumber) => {return <button key={pageNumber} value={pageNumber} onClick={(ev) => this.onClickPageNumber(ev)}>{pageNumber}</button>})}
+            {(this.renderNext()) && <button onClick={() => this.onNext()} className='next' value='Next'>Next</button>}
+            {(this.renderNext()) && <button onClick={() => this.onLast()} className='last' value={lastButton}>{lastButton}</button>}
+          </div>
         </section>
       </div>
     )

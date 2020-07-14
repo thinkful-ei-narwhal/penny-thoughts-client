@@ -67,7 +67,7 @@ class PublicHomePage extends Component {
           this.handleAddMessage(ev.target.message.value)
         }}>
           <label className="basic-label" htmlFor="message">Share Positive Message</label>
-          <input className="basic-input" type="text" name="message" id="message" />
+          <input className="basic-input" type="text" name="message" id="message" maxLength='50'/>
           <button className="submit-message">Add New Message</button>
         </form>
         <section className="coin-messages-container">
