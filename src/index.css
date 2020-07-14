@@ -212,18 +212,19 @@ a {
   background-repeat: no-repeat;
   background-position: center;
   width: 200px;
-  height: 410px;
+  height: 375px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 20px;
   margin-bottom: 20px;
-  padding: 20px;
+  padding: 40px;
 }
 
 .penny-container {
   display: flex;
   flex-direction: row;
-  width: 55%;
+  width: 100%;
+  font-size: 14px;
   margin-left: auto;
   margin-right: auto;
   justify-content: space-around;
