@@ -42,6 +42,10 @@ a {
   background-color: #854D27;
   display: flex;
   justify-content: space-around;
+  position: fixed;
+  top: 117px;
+  width: 100%;
+  z-index: 1;
 }
 
 .coin-messages-container {
@@ -130,6 +134,10 @@ a {
   text-align: center;
   color: red;
   font-weight: bold;
+  font-size: 14px;
+  padding: 5px 5px 15px;
+  width: 95%;
+  margin: 0 auto;
 }
 
 .private-home-success {
@@ -137,6 +145,17 @@ a {
   color: green;
   font-weight: bold;
 }
+
+@media only screen and (min-width: 600px) {
+  .user-greeting {
+    top: 198px;
+  }
+
+  .coin-messages-container {
+    margin-top: 2rem;
+  }
+}
+
 
 @keyframes bounce {
   0% {transform: scale(1);}

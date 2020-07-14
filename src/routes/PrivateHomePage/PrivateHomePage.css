@@ -1,16 +1,21 @@
-.message-form {
-  padding: 20px;
+.home {
+  background-color: #E7E393;
+  padding-top: 16rem;
 }
 
-.div-background {
-  background-color: #E7E393;
+.penny-intro {
+  padding: 1rem;
+  margin: auto;
+  text-align: center;
+  width: 90vw;
 }
 
 .submit-message {
   text-align: center;
-  margin: 20px;
-  font-size: 26px;
+  margin: 10px;
+  font-size: 18px;
   font-family: 'Yellowtail', cursive;
+  letter-spacing: 1px;
   text-decoration: none;
   padding: 5px;
   border-radius: 40px;
@@ -29,7 +34,12 @@
 .message-form {
   margin: 0;
   padding: 0;
+  width: 100%;
   text-align: center;
+  position: fixed;
+  top: 148px;
+  background-color: #E7E393;
+  z-index: 1;
 }
 
 .basic-label {
@@ -37,55 +47,22 @@
 }
 
 .basic-input {
-  font-size: 16px;
   width: 200px;
   padding: 5px;
-  /* display: block; */
+  display: block;
+  font-family: 'Lora', serif;
+  border: 1px solid #2E1F27;
+  font-size: 16px;
+  border-radius: 4px;
+  padding: 3px 5px;
+  margin: 10px auto 0;
 }
 
-.penny-intro {
-  padding: 20px;
-  margin: auto;
-  text-align: center;
-  width: 50%;
-}
 
-@media only screen and (max-width: 600px) {
-  .user-greeting {
-    position: fixed;
-    top: 183px;
-    width: 100%;
-    z-index: 1;
-  }
 
+@media only screen and (min-width: 600px) {
   .message-form {
-    position: fixed;
-    top: 254px;
-    background-color: #E7E393;
-    z-index: 1;
+    top: 229px;
   }
 
-  .submit-message {
-    font-weight: bolder;
-    padding: 5px;
-    margin: 3px;
-  }
-  
-  .basic-input {
-    font-family: 'Lora', serif;
-    font-size: 22px;
-    border: 1px solid #2E1F27;
-    border-radius: 4px;
-    padding: 3px;
-    margin: 3px;
-  }
-
-  .basic-label {
-    font-weight: bold;
-    margin-right: .5rem;
-  }
-
-  .coin-messages-container {
-    padding-top: 380px;
-  }
 }
