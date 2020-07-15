@@ -37,7 +37,7 @@ class AdminDashboardPage extends React.Component {
 
     return (
       <div>
-        <section className='messages-container'>
+        <section className='admin-messages-container'>
         {this.context.error && <p className="private-home-error">{this.context.error}</p>}
         {this.context.success && <p className="private-home-success">{this.context.success}</p>}
           <h2>Flagged User Messages:</h2>

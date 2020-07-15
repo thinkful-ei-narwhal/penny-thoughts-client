@@ -1,3 +1,7 @@
+.messages-container {
+  margin-top: 40px;
+}
+
 .message-list {
   text-align: center;
   margin-left: 15%;
@@ -43,4 +47,13 @@
   border: 1px solid #2E1F27;
   border-radius: 4px;
   transition: 0.3s;
+}
+
+@media screen and (min-width: 1000px) {
+  .message-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 50px 0;
+  }
 }

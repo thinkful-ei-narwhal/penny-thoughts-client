@@ -47,7 +47,7 @@ export class UserInfo extends Component {
           id='email'
           defaultValue={(this.context.userData) ? this.context.userData.email : null}
         />
-        <button type='submit' value='Submit'>Submit</button>
+        <button type='submit' value='Submit' className='user-info-submit'>Submit</button>
       </form>
       </Fragment>
     )

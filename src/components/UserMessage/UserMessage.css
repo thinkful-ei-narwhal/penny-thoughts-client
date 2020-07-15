@@ -3,9 +3,13 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: rgba(46, 31, 39, 0.7);
+  border-radius: 5px;
+  margin: 20px;
+  padding: 20px;
 }
 
-.basic-input {
+.basic-textarea {
   padding: 5px;
   display: block;
   font-family: 'Lora', serif;
@@ -13,10 +17,41 @@
   font-size: 16px;
   border-radius: 4px;
   padding: 3px 5px;
-  margin: 10px auto 0;
+  margin: 10px auto;
+  min-width: 220px;
+}
+
+.usermessage label {
+  color: white;
 }
 
 .usermessage button {
   padding: 3px 6px;
-  width: 200px;
+  width: 100px;
+}
+
+.edit-message-buttons {
+  display: flex;
+}
+
+@media screen and (min-width: 750px) {
+  .basic-textarea {
+    width: 350px;
+  }
+
+  .usermessage button {
+    padding: 6px 10px;
+    width: 170px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .basic-textarea {
+    width: 210px;
+  }
+
+  .usermessage button {
+    padding: 3px 6px;
+    width: 100px;
+  }
 }

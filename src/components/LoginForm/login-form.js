@@ -44,11 +44,11 @@ export default class LoginForm extends Component {
         <div role='alert'>{error && <p className='private-home-error shake-horizontal'>{error}</p>}</div>
         <div className="form-field">
           <label htmlFor="username">Username</label>
-          <input placeholder="Username" autoComplete="username" type="text" name="username" id="username" />
+          <input placeholder="Username" autoComplete="username" type="text" name="username" id="username" placeholder="Username" />
         </div>
         <div className="form-field">
           <label htmlFor="password">Password</label>
-          <input type="password" autoComplete="current-password" name="password" id="password" />
+          <input type="password" autoComplete="current-password" name="password" id="password" placeholder="Password" />
         </div>
         <button type="submit" className="solid-orange-btn">Log In</button>
         <p className="redirect-user">Not A Member? </p>
