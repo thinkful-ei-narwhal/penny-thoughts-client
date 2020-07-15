@@ -1,10 +1,21 @@
 .admin-messages-container {
-    padding-top: 170px;
+  padding-top: 170px;
+}
 
+.admin-messages-container h2 {
+  text-align: center;
+}
+
+.admin-notification {
+  margin-top: 100px;
+  text-align: center;
+  font-size: 1.15rem;
+  font-weight: bold;
+  color: red;
 }
 
 @media only screen and (min-width: 600px) {
-    .admin-messages-container {
-        margin-top: 2rem;
-    }
+  .admin-messages-container {
+    margin-top: 2rem; 
+  }
 }

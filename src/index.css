@@ -15,6 +15,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+main {
+  min-height: 94vh;
+}
+
 code {
   font-family: "Raleway", sans-serif;
 }
@@ -132,9 +136,7 @@ input.basic-input {
   color: #e25700;
   text-shadow: 0px 0px 1px #2e1f27;
 }
-#message.basic-input {
-  width: 500px;
-}
+
 input:focus {
   background-color: #dbda86;
 }
@@ -161,7 +163,7 @@ select:-webkit-autofill:focus {
   display: flex;
   justify-content: space-around;
   position: fixed;
-  top: 106px;
+  top: 105px;
   width: 100%;
   z-index: 1;
 }
@@ -278,7 +280,7 @@ select:-webkit-autofill:focus {
 }
 
 .penny-intro {
-  padding: 20px;
+  padding: 0 10px 0 20px;
   margin: 10px;
   text-align: center;
   width: 50%;

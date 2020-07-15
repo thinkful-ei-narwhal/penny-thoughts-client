@@ -47,7 +47,7 @@
 }
 
 .basic-input {
-  width: 200px;
+  width: 280px;
   padding: 5px;
   display: block;
   font-family: 'Lora', serif;
@@ -63,4 +63,7 @@
     top: 202px;
   }
 
+  .basic-input {
+    width: 450px;
+  }
 }
