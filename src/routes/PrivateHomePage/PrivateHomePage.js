@@ -47,7 +47,7 @@ class PublicHomePage extends Component {
     const {error, success} = this.context
     return (
       <div>
-      {(error || success) ? null : <div className="penny-container"><div className="penny-neutral"/><p className="penny-intro">Hi, I'm Penny!  Share your kind thoughts down below!  I'll think about your message and approve it if it's OK!</p></div>}
+      {(error || success) ? null : <div className="penny-container"><div className="penny-neutral"/><p className="penny-intro">Hi, I'm Penny!  Share your kind thoughts in the form above! I'll think about your message and approve it if it's OK!</p></div>}
       </div>)
   }
 

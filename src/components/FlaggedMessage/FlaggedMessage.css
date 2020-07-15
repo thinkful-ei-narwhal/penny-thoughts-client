@@ -1,0 +1,70 @@
+.admin-usermessage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(46, 31, 39, 0.7);
+  border-radius: 5px;
+  margin: 20px auto;
+  padding: 20px;
+  width: 400px;
+}
+
+.admin-usermessage label {
+  color: white;
+}
+
+.admin-buttons {
+  display: flex;
+  justify-content: space-around;
+}
+
+.admin-usermessage button {
+  font-family: "Lora", serif;
+  font-size: 16px;
+  margin: 5px;
+  color: #e7e393;
+  background-color: #dd7230;
+  border: 1px solid #2e1f27;
+  border-radius: 4px;
+  padding: 3px 6px;
+  width: 100px;
+}
+
+.admin-usermessage button:hover {
+  margin: 5px;
+  color: #dd7230;
+  background-color: #e7e393;
+  border: 1px solid #2e1f27;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+
+.admin-usermessage textarea {
+  font-family: "Lora", serif;
+  margin: 5px;
+  width: 200px;
+  border: 1px solid #2e1f27;
+  border-radius: 4px;
+  font-style: italic;
+}
+
+/* .admin-btn{
+  font-weight: bolder;
+  background-color: #dd7230;
+  font-family: "Lora", serif;
+  font-size: 22px;
+  color: #e7e393;
+  border: 1px solid #2e1f27;
+  border-radius: 4px;
+  padding: 3px;
+  margin: 3px;
+} */
+
+@media only screen and (min-width: 600px) {
+
+}
+
+@media only screen and (min-width: 1000px) {
+
+}
