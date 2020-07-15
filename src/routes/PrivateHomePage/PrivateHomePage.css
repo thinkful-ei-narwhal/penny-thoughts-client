@@ -1,5 +1,5 @@
 .home {
-  background-color: #e7e393;
+  background-color: #E7E393;
   padding-top: 16rem;
 }
 
@@ -14,20 +14,20 @@
   text-align: center;
   margin: 10px;
   font-size: 18px;
-  font-family: "Yellowtail", cursive;
+  font-family: 'Yellowtail', cursive;
   letter-spacing: 1px;
   text-decoration: none;
   padding: 5px;
   border-radius: 40px;
-  color: #e7e393;
-  background-color: #dd7230;
-  border: 5px double #2e1f27;
+  color: #E7E393;
+  background-color: #DD7230;
+  border: 5px double  #2E1F27;
 }
 
 .submit-message:hover {
-  background-color: #f4c95d;
-  color: #854d27;
-  border: 5px double #2e1f27;
+  background-color: #F4C95D;
+  color: #854D27;
+  border: 5px double #2E1F27;
   transition: 0.3s;
 }
 
@@ -38,7 +38,7 @@
   text-align: center;
   position: fixed;
   top: 144px;
-  background-color: #e7e393;
+  background-color: #E7E393;
   z-index: 1;
 }
 
@@ -50,8 +50,8 @@
   width: 200px;
   padding: 5px;
   display: block;
-  font-family: "Lora", serif;
-  border: 1px solid #000000;
+  font-family: 'Lora', serif;
+  border: 1px solid #2E1F27;
   font-size: 16px;
   border-radius: 4px;
   padding: 3px 5px;
@@ -62,4 +62,5 @@
   .message-form {
     top: 202px;
   }
+
 }
