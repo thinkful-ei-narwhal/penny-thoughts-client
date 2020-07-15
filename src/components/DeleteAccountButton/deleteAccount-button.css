@@ -1,3 +1,7 @@
+.settings-subheader {
+  margin-top: 50px;
+}
+
 .delete-button {
   display: block;
   font-size: 26px;
@@ -8,6 +12,7 @@
   border: 1px solid #2E1F27;
   border-radius: 4px;
   padding: 5px 10px;
+  margin-bottom: 60px;
 }
 
 .delete-button:hover {
@@ -18,4 +23,5 @@
   border: 1px solid #2E1F27;
   border-radius: 4px;
   transition: 0.3s;
+  margin-bottom: 60px;
 }

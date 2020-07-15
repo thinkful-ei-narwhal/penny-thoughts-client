@@ -12,6 +12,17 @@
   border-radius: 10px;
 }
 
+.user-info-container input {
+  font-size: 16px;
+  border: 1px solid #2E1F27;
+  border-radius: 4px;
+}
+
+#full_name,
+#email {
+  width: 90%;
+}
+
 .user_data button {
   font-family: 'Lora', serif;
   margin: 15px;
@@ -31,6 +42,21 @@
   transition: 0.3s;
 }
 
+@media screen and (min-width: 450px) {
+  .user-info-container {
+    margin: 0 auto;
+    width: 460px;
+  }
+
+  .user-info-container input {
+    font-size: 16px;
+    border: 1px solid #2E1F27;
+    border-radius: 4px;
+    margin: 5px auto;
+    padding: 10px 60px 10px 10px;
+  }
+}
+
 @media screen and (min-width: 750px) {
   .user_data button {
     font-family: 'Lora', serif;
@@ -40,5 +66,9 @@
     border: 1px solid #2E1F27;
     border-radius: 4px;
     padding: 8px 40px;
+  }
+
+  .user-info-container {
+    width: 660px;
   }
 }

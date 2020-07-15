@@ -26,30 +26,30 @@ export class UserInfo extends Component {
 
   render() {
     return (
-      <Fragment>
-      <h2 className="settings-subheader">Your User Information:</h2>
-      <form
-        className= 'user_data'
-        onSubmit={(ev) => {
-          ev.preventDefault();
-          this.handleSubmit(ev.target.full_name.value, ev.target.email.value);
-        }
-        }>
-        <label htmlFor='full_name' > Full Name: </label>
-        <input className="user-input" type='text'
-          name='full_name'
-          id='full_name'
-          defaultValue={(this.context.userData) ? this.context.userData.full_name : null}
-        />
-        <label htmlFor='email' > email: </label>
-        <input className="user-input" type='email'
-          name='email'
-          id='email'
-          defaultValue={(this.context.userData) ? this.context.userData.email : null}
-        />
-        <button type='submit' value='Submit' className='user-info-submit'>Submit</button>
-      </form>
-      </Fragment>
+      <div className="user-info-container">
+        <h2 className="settings-subheader">Edit Your User Information:</h2>
+        <form
+          className= 'user_data'
+          onSubmit={(ev) => {
+            ev.preventDefault();
+            this.handleSubmit(ev.target.full_name.value, ev.target.email.value);
+          }
+          }>
+          <label htmlFor='full_name'>Full Name: </label>
+          <input className="user-input" type='text'
+            name='full_name'
+            id='full_name'
+            defaultValue={(this.context.userData) ? this.context.userData.full_name : null}
+          />
+          <label htmlFor='email'>Email: </label>
+          <input className="user-input" type='email'
+            name='email'
+            id='email'
+            defaultValue={(this.context.userData) ? this.context.userData.email : null}
+          />
+          <button type='submit' value='Submit' className='user-info-submit'>Submit</button>
+        </form>
+      </div>
     )
   }
 }
