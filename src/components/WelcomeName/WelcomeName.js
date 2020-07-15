@@ -1,6 +1,7 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component, Fragment} from 'react';
 import jwtDecode from 'jwt-decode';
 import TokenService from '../../services/token-service'
+import {Link} from 'react-router-dom';
 
 export class WelcomeName extends Component {
 
@@ -14,7 +15,7 @@ export class WelcomeName extends Component {
       )
     } else {
       return (
-        <h2>{`Click the Login Button to Log In!`}</h2>
+        <h2>{`Click the Login Button to `}<Link to='/'>Log In!</Link></h2>
       )
     }
   }

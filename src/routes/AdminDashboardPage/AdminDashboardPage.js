@@ -3,6 +3,7 @@ import MessageContext from '../../contexts/MessagesContext'
 import MessageService from '../../services/messageService'
 import FlaggedMessage from '../../components/FlaggedMessage/FlaggedMessage'
 import BubblesLoader from '../../components/Loaders/BubbleLoader/BubblesLoader'
+import './AdminDashboardPage.css'
 
 class AdminDashboardPage extends React.Component {
   

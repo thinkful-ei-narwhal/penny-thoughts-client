@@ -235,7 +235,6 @@ a {
 .penny-container {
   display: flex;
   flex-direction: row;
-  width: 50%;
   font-size: 14px;
   margin-left: auto;
   margin-right: auto;
@@ -275,6 +274,7 @@ a {
 
   .penny-container {
     margin-top: 0px;
+    width: 50%;
   }
 }
 

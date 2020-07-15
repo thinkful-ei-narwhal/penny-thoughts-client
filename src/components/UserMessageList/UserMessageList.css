@@ -26,3 +26,21 @@
   border: 2px solid #DD7230;
   border-radius: 4px;
 }
+
+.message-page-navigator button{
+  font-family: 'Lora', serif;
+  margin: 3px;
+  padding: 5px;
+  color: #E7E393;
+  background-color: #DD7230;
+  border: 1px solid #2E1F27;
+  border-radius: 4px;
+}
+
+.message-page-navigator button:hover {
+  color: #DD7230;
+  background-color: #E7E393;
+  border: 1px solid #2E1F27;
+  border-radius: 4px;
+  transition: 0.3s;
+}
