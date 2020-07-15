@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lora&family=Raleway&family=Yellowtail&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lora&family=Raleway&family=Yellowtail&display=swap");
 
 * {
   margin: 0;
@@ -7,22 +7,22 @@
 }
 
 body {
-  background-color: #F4C95D;
+  background-color: #f4c95d;
   padding: 0;
   margin: 0;
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
 }
 
 nav {
   display: block;
   padding: 0.7rem;
-  background-color: #DD7230;
+  background-color: #dd7230;
 }
 
 li {
@@ -32,14 +32,134 @@ li {
   list-style-type: none;
 }
 
+/* >>ADDED THIS CODE FOR STYLING ALL THE INPUTS SIMULTANEOUSLY>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
 a {
   text-decoration: none;
+  color: #dd7230;
+}
+a:hover {
+  animation: bounce 1s both;
+  color: #f4c95d;
+}
+input {
+  color: #e25700;
+  background-color: #f5e9b1;
+  /* opacity: 100%; */
+  border: 3px solid #854d27;
+  border-radius: 5px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  padding: 15px;
+  text-align: left;
+  font-size: 16px;
+  padding: 5px;
+  display: block;
+}
+input[type="text"] {
+  color: #e25700;
+  background-color: #f5e9b1;
+  /* opacity: 100%; */
+  border: 3px solid #854d27;
+  border-radius: 5px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  padding: 15px;
+  text-align: left;
+  font-size: 16px;
+  padding: 5px;
+  display: block;
+}
+input[type="password"] {
+  color: #e25700;
+  background-color: #f5e9b1;
+  border: 3px solid #854d27;
+  border-radius: 5px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  padding: 10px;
+  text-align: left;
+  font-size: 16px;
+  padding: 5px;
+  display: block;
 }
 
+input.basic-input {
+  color: #e25700;
+  background-color: #f5e9b1;
+  border: 3px solid #854d27;
+  border-radius: 5px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  padding: 10px 60px 10px 10px;
+  text-align: left;
+  font-size: 16px;
+  padding: 5px;
+  display: block;
+}
+#email.user-input {
+  color: #e25700;
+  background-color: #f5e9b1;
+  border: 3px solid #854d27;
+  border-radius: 5px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  padding: 10px 60px 10px 10px;
+  text-align: left;
+  font-size: 16px;
+  padding: 5px;
+  display: block;
+}
+#full_name.user-input {
+  color: #e25700;
+  background-color: #f5e9b1;
+  border: 3px solid #854d27;
+  border-radius: 5px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  padding: 10px 60px 10px 10px;
+  text-align: left;
+  font-size: 16px;
+  padding: 5px;
+  display: block;
+}
+/* label {
+  display: none;
+} */
+::selection {
+  color: whitesmoke;
+  background-color: rgb(29, 116, 216);
+}
+::placeholder {
+  color: #e25700;
+  text-shadow: 0px 0px 1px #2e1f27;
+}
+#message.basic-input {
+  width: 500px;
+}
+input:focus {
+  background-color: #dbda86;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  padding: 10px 60px 10px 10px;
+  -webkit-text-fill-color: #e25700;
+  -webkit-box-shadow: 0 0 0px 1000px #dbda86 inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+/* <<<<<<<<<<<<<<<<<<<END ADDED SECTION>>>>>>>>>>>>>>>>>>>>>>>> */
+
 .user-greeting {
-  font-family: 'Lora', serif;
-  color: #E7E393;
-  background-color: #854D27;
+  font-family: "Lora", serif;
+  color: #e7e393;
+  background-color: #854d27;
   display: flex;
   justify-content: space-around;
   position: fixed;
@@ -52,7 +172,7 @@ a {
   width: 100%;
   min-height: 0rem;
   height: 100%;
-  background-color: #F4C95D;
+  background-color: #f4c95d;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -68,7 +188,7 @@ a {
 
 .messages-container {
   width: 100%;
-  background-color: #F4C95D;
+  background-color: #f4c95d;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -76,10 +196,10 @@ a {
   justify-content: space-evenly;
 }
 
-.messages-container h2 , 
+.messages-container h2,
 .settings-subheader {
   text-align: center;
-  font-family: 'Lora', serif;
+  font-family: "Lora", serif;
   font-size: 18px;
   padding: 5px 0;
 }
@@ -98,46 +218,45 @@ a {
 .usermessage input {
   margin: 5px;
   width: 200px;
-  border: 1px solid #2E1F27;
+  border: 1px solid #2e1f27;
   border-radius: 4px;
   font-style: italic;
 }
 
 .usermessage button {
-  font-family: 'Lora', serif;
+  font-family: "Lora", serif;
   margin: 5px;
-  color: #E7E393;
-  background-color: #DD7230;
-  border: 1px solid #2E1F27;
+  color: #e7e393;
+  background-color: #dd7230;
+  border: 1px solid #2e1f27;
   border-radius: 4px;
 }
 
 .usermessage button:hover {
   margin: 5px;
-  color: #DD7230;
-  background-color: #E7E393;
-  border: 1px solid #2E1F27;
+  color: #dd7230;
+  background-color: #e7e393;
+  border: 1px solid #2e1f27;
   border-radius: 4px;
   transition: 0.3s;
 }
 
-
 .solid-orange-btn {
   font-weight: bolder;
-  background-color: #DD7230;
-  font-family: 'Lora', serif;
+  background-color: #dd7230;
+  font-family: "Lora", serif;
   font-size: 22px;
-  color: #E7E393;
-  border: 1px solid #2E1F27;
+  color: #e7e393;
+  border: 1px solid #2e1f27;
   border-radius: 4px;
   padding: 3px;
   margin: 3px;
 }
 
 .solid-orange-btn:hover {
-  background-color: #E7E393;
-  color: #DD7230;
-  border: 1px solid #2E1F27;
+  background-color: #e7e393;
+  color: #dd7230;
+  border: 1px solid #2e1f27;
   transition: 0.3s;
 }
 
@@ -160,7 +279,6 @@ a {
   font-weight: bold;
 }
 
-
 .penny-intro {
   padding: 20px;
   margin: 10px;
@@ -168,14 +286,13 @@ a {
   width: 50%;
 }
 
-
 .penny-desc {
   display: flex;
   flex-direction: row;
 }
 
 .penny-happy {
-  background-image: url('../src/images/Penny-Happy.png');
+  background-image: url("../src/images/Penny-Happy.png");
   background-size: 75px 75px;
   background-repeat: no-repeat;
   background-position: top right;
@@ -186,7 +303,7 @@ a {
 }
 
 .penny-thinking {
-  background-image: url('../src/images/Penny-Thinking.png');
+  background-image: url("../src/images/Penny-Thinking.png");
   background-size: 75px 75px;
   background-repeat: no-repeat;
   background-position: top right;
@@ -197,7 +314,7 @@ a {
 }
 
 .penny-neutral {
-  background-image: url('../src/images/Penny-Neutral.png');
+  background-image: url("../src/images/Penny-Neutral.png");
   background-size: 75px 75px;
   background-repeat: no-repeat;
   background-position: top right;
@@ -208,7 +325,7 @@ a {
 }
 
 .penny-sad {
-  background-image: url('../src/images/Penny-Sad.png');
+  background-image: url("../src/images/Penny-Sad.png");
   background-size: 75px 75px;
   background-repeat: no-repeat;
   background-position: top right;
@@ -219,7 +336,7 @@ a {
 }
 
 .penny {
-  background-image: url('../src/images/Penny.png');
+  background-image: url("../src/images/Penny.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -250,18 +367,17 @@ a {
 }
 
 .footer {
-  background-color: #DD7230;
+  background-color: #dd7230;
   font-size: 16px;
   font-weight: bolder;
-  color: #2E1F27;
+  color: #2e1f27;
   text-align: center;
   padding: 20px;
 }
 
 .footer a {
-  color: #F4C95D;
+  color: #f4c95d;
 }
-
 
 @media only screen and (min-width: 600px) {
   .user-greeting {
@@ -278,18 +394,28 @@ a {
   }
 }
 
-
 @keyframes bounce {
-  0% {transform: scale(1);}
-  30% {transform: scaleX(1.25) scaleY(0.75);}
-  40% {transform: scaleX(0.75) scaleY(1.25);}
-  60% {transform: scaleX(1.25) scaleY(0.75);}
-  100% {transform: scale(1);}
+  0% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scaleX(1.25) scaleY(0.75);
+  }
+  40% {
+    transform: scaleX(0.75) scaleY(1.25);
+  }
+  60% {
+    transform: scaleX(1.25) scaleY(0.75);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 .shake-horizontal {
-	-webkit-animation: shake-horizontal 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
-	        animation: shake-horizontal 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+  -webkit-animation: shake-horizontal 0.8s
+    cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
+  animation: shake-horizontal 0.8s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
 }
 
 /* ----------------------------------------------
@@ -308,28 +434,28 @@ a {
   0%,
   100% {
     -webkit-transform: translateX(0);
-            transform: translateX(0);
+    transform: translateX(0);
   }
   10%,
   30%,
   50%,
   70% {
     -webkit-transform: translateX(-10px);
-            transform: translateX(-10px);
+    transform: translateX(-10px);
   }
   20%,
   40%,
   60% {
     -webkit-transform: translateX(10px);
-            transform: translateX(10px);
+    transform: translateX(10px);
   }
   80% {
     -webkit-transform: translateX(8px);
-            transform: translateX(8px);
+    transform: translateX(8px);
   }
   90% {
     -webkit-transform: translateX(-8px);
-            transform: translateX(-8px);
+    transform: translateX(-8px);
   }
 }
 
@@ -337,27 +463,27 @@ a {
   0%,
   100% {
     -webkit-transform: translateX(0);
-            transform: translateX(0);
+    transform: translateX(0);
   }
   10%,
   30%,
   50%,
   70% {
     -webkit-transform: translateX(-10px);
-            transform: translateX(-10px);
+    transform: translateX(-10px);
   }
   20%,
   40%,
   60% {
     -webkit-transform: translateX(10px);
-            transform: translateX(10px);
+    transform: translateX(10px);
   }
   80% {
     -webkit-transform: translateX(8px);
-            transform: translateX(8px);
+    transform: translateX(8px);
   }
   90% {
     -webkit-transform: translateX(-8px);
-            transform: translateX(-8px);
+    transform: translateX(-8px);
   }
 }
