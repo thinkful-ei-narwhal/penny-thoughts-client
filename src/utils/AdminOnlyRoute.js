@@ -9,8 +9,15 @@ export default function AdminOnlyRoute({ component, ...props }) {
     <Route
       {...props}
       render={componentProps => (
-        jwtDecode(TokenService.getAuthToken()).admin
-          ? <Component {...componentProps} />
+        TokenService.hasAuthToken()
+          ? jwtDecode(TokenService.getAuthToken()).admin
+            ? <Component {...componentProps} />
+            : <Redirect
+                to={{
+                  pathname: '/home',
+                  state: { from: componentProps.location }
+                }}
+              />
           : <Redirect
               to={{
                 pathname: '/',
