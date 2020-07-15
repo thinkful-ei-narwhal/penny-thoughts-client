@@ -114,6 +114,7 @@ export default class UserMessages extends Component {
     if (this.context.isLoading === true) {
       return (
         <BubblesLoader />
+        hello
       )
     }
     return (
