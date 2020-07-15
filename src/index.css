@@ -32,7 +32,6 @@ li {
   list-style-type: none;
 }
 
-/* >>ADDED THIS CODE FOR STYLING ALL THE INPUTS SIMULTANEOUSLY>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
 a {
   text-decoration: none;
   color: #dd7230;
@@ -41,6 +40,7 @@ a:hover {
   animation: bounce 1s both;
   color: #f4c95d;
 }
+
 input,
 textarea {
   color: #e25700;
@@ -153,7 +153,6 @@ select:-webkit-autofill:focus {
   -webkit-box-shadow: 0 0 0px 1000px #dbda86 inset;
   transition: background-color 5000s ease-in-out 0s;
 }
-/* <<<<<<<<<<<<<<<<<<<END ADDED SECTION>>>>>>>>>>>>>>>>>>>>>>>> */
 
 .user-greeting {
   font-family: "Lora", serif;

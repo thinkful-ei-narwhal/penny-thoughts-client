@@ -13,7 +13,7 @@
 }
 
 .signup-form label {
-  font-family: 'Lora', serif;
+  font-family: "Lora", serif;
   font-weight: bolder;
   font-size: 20px;
   display: none;
@@ -30,13 +30,20 @@
 .solid-orange-btn {
   margin-top: 25px;
   padding: 12px 60px;
+  font-size: 20px;
+  border: 1px solid #2e1f27;
+  border-radius: 4px;
+  margin: 10px auto;
+  padding: 10px 60px 10px 10px;
+  max-width: 250px;
 }
 
 .redirect-user {
   margin: 1rem auto;
 }
-
-
+.solid-orange-btn {
+  margin-top: 25px;
+  padding: 12px 60px;
+}
 @media only screen and (min-width: 600px) {
-  
 }
