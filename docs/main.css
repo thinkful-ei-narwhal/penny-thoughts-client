@@ -12,7 +12,7 @@ nav {
   display: flex;
   justify-content: space-between;
   padding: 1rem;
-  background-color: #D4AA7D;
+  background-color: #d4aa7d;
   padding: 1rem;
 }
 
@@ -37,6 +37,7 @@ nav {
 }
 
 .basic-input {
+  display: flex;
   font-size: 16px;
   width: 200px;
   padding: 5px;
@@ -46,20 +47,19 @@ nav {
 .basic-button {
   background-color: transparent;
   border: 1px solid black;
-  padding: .5rem;
+  padding: 0.5rem;
 }
 
 .filled-button {
-  background-color: #D4AA7D;
+  background-color: #d4aa7d;
   border: 1px solid black;
   margin-top: 1rem;
-  padding: .5rem;
+  padding: 0.5rem;
 }
 
 .icon-container {
   /* height: 30rem; */
   width: 50%;
-  
 }
 
 .coins {
@@ -70,7 +70,7 @@ nav {
 }
 
 .app-desc {
-  background-color: #90A9B7;
+  background-color: #90a9b7;
   padding: 1rem;
   width: 90%;
   margin: 7rem auto 2rem;
