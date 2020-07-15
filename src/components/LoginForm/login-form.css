@@ -16,15 +16,25 @@
   font-family: "Lora", serif;
   font-weight: bolder;
   font-size: 20px;
+  display: none;
 }
 
 .signup-form input {
+  font-size: 16px;
+  border: 1px solid #2E1F27;
+  border-radius: 4px;
+  margin: 0px auto;
+  padding: 10px 60px 10px 10px;
+}
+
+.solid-orange-btn {
+  margin-top: 25px;
+  padding: 12px 60px;
   font-size: 20px;
   border: 1px solid #2e1f27;
   border-radius: 4px;
   margin: 10px auto;
   padding: 10px 60px 10px 10px;
-
   max-width: 250px;
 }
 

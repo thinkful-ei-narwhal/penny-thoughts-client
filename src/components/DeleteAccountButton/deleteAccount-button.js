@@ -9,14 +9,14 @@ export class deleteAccountButton extends Component {
   render() {
     return (
     <Fragment>
-    <h2 className="settings-subheader">Delete Your Account:</h2>
-    <button className= 'delete-button'
-    onClick={(e) => {
-       e.preventDefault();
-       this.context.toggleConfirm()
-    }}>
-      Delete Account
-    </button>
+      <h2 className="settings-subheader">If you'd like to delete your account, click the button below:</h2>
+      <button className= 'delete-button'
+      onClick={(e) => {
+        e.preventDefault();
+        this.context.toggleConfirm()
+      }}>
+        Delete Account
+      </button>
     </Fragment>
     )
   }
