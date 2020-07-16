@@ -1,5 +1,5 @@
 .home {
-  background-color: #E7E393;
+  background-color: #e7e393;
   padding-top: 16rem;
 }
 
@@ -14,20 +14,20 @@
   text-align: center;
   margin: 10px;
   font-size: 18px;
-  font-family: 'Yellowtail', cursive;
+  font-family: "Yellowtail", cursive;
   letter-spacing: 1px;
   text-decoration: none;
   padding: 5px;
   border-radius: 40px;
-  color: #E7E393;
-  background-color: #DD7230;
-  border: 5px double  #2E1F27;
+  color: #e7e393;
+  background-color: #dd7230;
+  border: 5px double #2e1f27;
 }
 
 .submit-message:hover {
-  background-color: #F4C95D;
-  color: #854D27;
-  border: 5px double #2E1F27;
+  background-color: #f4c95d;
+  color: #854d27;
+  border: 5px double #2e1f27;
   transition: 0.3s;
 }
 
@@ -37,8 +37,8 @@
   width: 100%;
   text-align: center;
   position: fixed;
-  top: 144px;
-  background-color: #E7E393;
+  top: 156px;
+  background-color: #e7e393;
   z-index: 1;
 }
 
@@ -50,8 +50,8 @@
   width: 280px;
   padding: 5px;
   display: block;
-  font-family: 'Lora', serif;
-  border: 1px solid #2E1F27;
+  font-family: "Lora", serif;
+  border: 1px solid #2e1f27;
   font-size: 16px;
   border-radius: 4px;
   padding: 3px 5px;
@@ -60,7 +60,7 @@
 
 @media only screen and (min-width: 600px) {
   .message-form {
-    top: 202px;
+    top: 220px;
   }
 
   .basic-input {

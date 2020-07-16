@@ -1,7 +1,9 @@
 .registration h2 {
   margin-bottom: 1rem;
 }
-
+h6 {
+  margin-bottom: 10px;
+}
 .RegistrationForm {
   display: flex;
   justify-content: space-around;
@@ -28,5 +30,4 @@
   .registration {
     padding-top: 14rem;
   }
-
 }

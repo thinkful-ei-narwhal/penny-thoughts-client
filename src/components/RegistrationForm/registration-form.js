@@ -17,22 +17,22 @@ export default class RegistrationForm extends Component {
 
   handleNameChange = (e) => {
     e.preventDefault()
-    this.setState({name: e.target.value})
+    this.setState({ name: e.target.value })
   }
 
   handleEmailChange = (e) => {
     e.preventDefault()
-    this.setState({email: e.target.value})
+    this.setState({ email: e.target.value })
   }
 
   handleUsernameChange = (e) => {
     e.preventDefault()
-    this.setState({username: e.target.value})
+    this.setState({ username: e.target.value })
   }
 
   handlePasswordChange = (e) => {
     e.preventDefault()
-    this.setState({password: e.target.value})
+    this.setState({ password: e.target.value })
   }
 
   handleSubmit = (e) => {
@@ -58,38 +58,38 @@ export default class RegistrationForm extends Component {
   render() {
     return (
       <section className="registration">
-      {this.state.error && <p className='private-home-error shake-horizontal'>{this.state.error}</p>}
+        {this.state.error && <p className='private-home-error shake-horizontal'>{this.state.error}</p>}
         <form onSubmit={(e) => this.handleSubmit(e)} className="RegistrationForm">
           <h2>Register</h2>
-
+          <h6>All user data is secured by encryption</h6>
           <label htmlFor='RegisterName'>
             Full Name:
-            <input onChange={(e) => this.handleNameChange(e)} type='text' name='RegisterName'/>
+            <input onChange={(e) => this.handleNameChange(e)} type='text' name='RegisterName' />
           </label>
 
           <label htmlFor='RegisterEmail'>
             E-Mail:
-            <input onChange={(e) => this.handleEmailChange(e)} type='email' name='RegisterEmail'/>
+            <input onChange={(e) => this.handleEmailChange(e)} type='email' name='RegisterEmail' />
           </label>
 
           <label htmlFor='RegisterUsername'>
             Username:
-            <input onChange={(e) => this.handleUsernameChange(e)} type='text' name='RegisterUsername'/>
+            <input onChange={(e) => this.handleUsernameChange(e)} type='text' name='RegisterUsername' />
           </label>
 
           <label htmlFor='RegisterPassword'>
             Password:
-            <input 
-            type="password" 
-            minLength="7" 
-            maxLength="25" 
-            required 
-            onChange={(e) => this.handlePasswordChange(e)} 
-            name='RegisterPassword'/>
+            <input
+              type="password"
+              minLength="7"
+              maxLength="25"
+              required
+              onChange={(e) => this.handlePasswordChange(e)}
+              name='RegisterPassword' />
           </label>
-          
-          <button 
-            className="solid-orange-btn" 
+
+          <button
+            className="solid-orange-btn"
             type='submit'>
             Create Account
           </button>

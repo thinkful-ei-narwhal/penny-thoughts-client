@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 import UserContext from '../../contexts/UserContext'
 import UserService from '../../services/userService'
 import './UserInfo.css'
@@ -29,7 +29,7 @@ export class UserInfo extends Component {
       <div className="user-info-container">
         <h2 className="settings-subheader">Edit Your User Information:</h2>
         <form
-          className= 'user_data'
+          className='user_data'
           onSubmit={(ev) => {
             ev.preventDefault();
             this.handleSubmit(ev.target.full_name.value, ev.target.email.value);
@@ -42,7 +42,7 @@ export class UserInfo extends Component {
             defaultValue={(this.context.userData) ? this.context.userData.full_name : null}
           />
           <label htmlFor='email'>Email: </label>
-          <input className="user-input" type='email'
+          <input className="user-input" type='text'
             name='email'
             id='email'
             defaultValue={(this.context.userData) ? this.context.userData.email : null}

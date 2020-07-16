@@ -1,4 +1,4 @@
-import React, { Component} from 'react'
+import React, { Component } from 'react'
 import MessageContext from '../../contexts/MessagesContext'
 import MessageService from '../../services/messageService'
 import SingleMessage from '../../components/SingleMessage/SingleMessage'
@@ -31,7 +31,7 @@ class PublicHomePage extends Component {
       <div>
         <main>
           <section className="user-greeting">
-            <WelcomeName/>
+            <WelcomeName />
           </section>
           <section className="coin-messages-container public">
             {this.generateMessages()}

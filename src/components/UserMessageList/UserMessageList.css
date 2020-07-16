@@ -7,14 +7,14 @@
   margin-left: auto;
   margin-right: auto;
   padding: 5px;
-  border: 5px double #2E1F27;
+  border: 5px double #2e1f27;
   border-radius: 10px;
 }
 
 .message-page-navigator input {
   padding: 5px;
-  font-family: 'Lora', serif;
-  border: 1px solid #2E1F27;
+  font-family: "Lora", serif;
+  border: 1px solid #2e1f27;
   font-size: 16px;
   border-radius: 4px;
   padding: 3px 5px;
@@ -22,12 +22,12 @@
 }
 
 .go-btn {
-  font-family: 'Lora', serif;
+  font-family: "Lora", serif;
   display: inline-block;
   margin: 10px 5px;
-  color: #2E1F27;
+  color: #2e1f27;
   background-color: transparent;
-  border: 2px solid #DD7230;
+  border: 2px solid #dd7230;
   border-radius: 4px;
 }
 
@@ -36,23 +36,30 @@
   width: 90%;
 }
 
-.message-page-navigator button{
-  font-family: 'Lora', serif;
+.message-page-navigator button {
+  font-family: "Lora", serif;
   font-size: 1.15rem;
   margin: 3px;
   padding: 15px 15px;
-  color: #E7E393;
-  background-color: #DD7230;
-  border: 1px solid #2E1F27;
+  color: #e7e393;
+  background-color: #dd7230;
+  border: 1px solid #2e1f27;
   border-radius: 4px;
 }
 
 .message-page-navigator button:hover {
-  color: #DD7230;
-  background-color: #E7E393;
-  border: 1px solid #2E1F27;
+  color: #dd7230;
+  background-color: #e7e393;
+  border: 1px solid #2e1f27;
   border-radius: 4px;
   transition: 0.3s;
+}
+
+#highlighted {
+  color: #dd7230;
+  background-color: #e7e393;
+  border: 1px solid #2e1f27;
+  border-radius: 4px;
 }
 
 @media screen and (min-width: 1000px) {
@@ -67,5 +74,12 @@
   .messages-container {
     width: 95%;
     margin: 0 auto;
+  }
+
+  #highlighted {
+    color: #dd7230;
+    background-color: #e7e393;
+    border: 1px solid #2e1f27;
+    border-radius: 4px;
   }
 }
