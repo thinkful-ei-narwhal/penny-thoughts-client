@@ -101,6 +101,13 @@ export default class UserMessages extends Component {
     return pageArray
   }
 
+  highlightPageNumber = (pageNumber) => {
+    if (pageNumber === this.state.page) {
+      return 'highlighted'
+    }
+    return ''
+  }
+
   renderNext = () => {
     if (this.state.page === this.state.pageCount) {
       return false
@@ -128,7 +135,7 @@ export default class UserMessages extends Component {
           </ul>
           <div className='message-page-navigator'>
             {(this.state.page > 1) && <button onClick={() => this.onPrevious()} className='previous' value='Previous'>Previous</button>}
-            {this.renderPageNumbers().map((pageNumber) => {return <button key={pageNumber} value={pageNumber} onClick={(ev) => this.onClickPageNumber(ev)}>{pageNumber}</button>})}
+            {this.renderPageNumbers().map((pageNumber) => {return <button key={pageNumber} id={this.highlightPageNumber(pageNumber)} value={pageNumber} onClick={(ev) => this.onClickPageNumber(ev)}>{pageNumber}</button>})}
             {(this.renderNext()) && <button onClick={() => this.onNext()} className='next' value='Next'>Next</button>}
             {(this.renderNext()) && <button onClick={() => this.onLast()} className='last' value={lastButton}>{lastButton}</button>}
           </div>

@@ -47,6 +47,13 @@
   border-radius: 4px;
 }
 
+#highlighted {
+  color: #DD7230;
+  background-color: #E7E393;
+  border: 1px solid #2E1F27;
+  border-radius: 4px;
+}
+
 .message-page-navigator button:hover {
   color: #DD7230;
   background-color: #E7E393;
