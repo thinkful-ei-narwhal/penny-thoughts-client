@@ -1,5 +1,6 @@
 {
   "name": "penny-thoughts-client",
+  "authors": "Daniel Scottile, Andrew Durrant, Logan Stribling, Joseph Rivera, Kevin Jiang, Cesar Lenin",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
