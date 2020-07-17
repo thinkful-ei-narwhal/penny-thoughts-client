@@ -1,6 +1,6 @@
 .modal-box{
     position: fixed;
-    color: #E7E393;
+    color: #e7d893;
     font-size: 18px;
     font-weight: bolder;
     text-shadow: 1px 1px #2E1F27;
@@ -25,7 +25,7 @@
 .report-button, .cancel-button, .yes-no-ok{
     font-family: 'Lora', serif;
     margin: 5px;
-    color: #E7E393;
+    color: #e7d893;
     font-size: 18px;
     font-weight: bolder;
     text-shadow: 1px 1px #2E1F27;
@@ -40,7 +40,7 @@
     font-size: 18px;
     font-weight: bolder;
     text-shadow: 1px 1px #2E1F27;
-    background-color: #E7E393;
+    background-color: #e7d893;
     border: 2px solid #2E1F27;
     border-radius: 4px;
 }
@@ -136,7 +136,7 @@
     display: none;
     width: 80%;
     letter-spacing: 2px;
-    text-shadow: 1px 1px #E7E393;
+    text-shadow: 1px 1px #e7d893;
 }
 
 .coin-text::before {

@@ -37,13 +37,13 @@
   padding: 15px;
   margin: 3rem auto 0 auto;
   border-radius: 40px;
-  color: #E7E393;
+  color: #e7d893;
   background-color: #DD7230;
   border: 5px double  #2E1F27;
 }
 
 .get-inspired:hover {
-  background-color: #E7E393;
+  background-color: #e7d893;
   color: #DD7230;
   border: 5px double #2E1F27;
   transition: 0.3s;
