@@ -11,7 +11,8 @@ Penny Thoughts
 
 ## Links
 live site: https://penny-thoughts.vercel.app/<br />
-server: https://mighty-peak-21411.herokuapp.com/
+server: https://mighty-peak-21411.herokuapp.com/<br />
+server repo: https://github.com/thinkful-ei-narwhal/penny-thoughts-server/
 
 ## Using The API
 Currently the API supports GET and POST endpoints.
