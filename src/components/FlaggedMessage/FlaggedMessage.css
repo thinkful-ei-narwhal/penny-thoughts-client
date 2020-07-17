@@ -23,7 +23,7 @@
   font-family: "Lora", serif;
   font-size: 16px;
   margin: 5px;
-  color: #e7e393;
+  color: #e7d893;
   background-color: #dd7230;
   border: 1px solid #2e1f27;
   border-radius: 4px;
@@ -34,7 +34,7 @@
 .admin-usermessage button:hover {
   margin: 5px;
   color: #dd7230;
-  background-color: #e7e393;
+  background-color: #e7d893;
   border: 1px solid #2e1f27;
   border-radius: 4px;
   transition: 0.3s;
@@ -54,7 +54,7 @@
   background-color: #dd7230;
   font-family: "Lora", serif;
   font-size: 22px;
-  color: #e7e393;
+  color: #e7d893;
   border: 1px solid #2e1f27;
   border-radius: 4px;
   padding: 3px;

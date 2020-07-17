@@ -1,5 +1,5 @@
 .home {
-  background-color: #e7e393;
+  background-color: #e7d893;
   padding-top: 16rem;
 }
 
@@ -19,7 +19,7 @@
   text-decoration: none;
   padding: 5px;
   border-radius: 40px;
-  color: #e7e393;
+  color: #e7d893;
   background-color: #dd7230;
   border: 5px double #2e1f27;
 }
@@ -38,7 +38,7 @@
   text-align: center;
   position: fixed;
   top: 156px;
-  background-color: #e7e393;
+  background-color: #e7d893;
   z-index: 1;
 }
 

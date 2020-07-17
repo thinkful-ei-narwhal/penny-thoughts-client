@@ -26,7 +26,7 @@
 .user_data button {
   font-family: 'Lora', serif;
   margin: 15px;
-  color: #E7E393;
+  color: #e7d893;
   background-color: #DD7230;
   border: 1px solid #2E1F27;
   border-radius: 4px;
@@ -36,7 +36,7 @@
 .user_data button:hover {
   margin: 5px;
   color: #DD7230;
-  background-color: #E7E393;
+  background-color: #e7d893;
   border: 1px solid #2E1F27;
   border-radius: 4px;
   transition: 0.3s;
@@ -61,7 +61,7 @@
   .user_data button {
     font-family: 'Lora', serif;
     margin: 15px;
-    color: #E7E393;
+    color: #e7d893;
     background-color: #DD7230;
     border: 1px solid #2E1F27;
     border-radius: 4px;
