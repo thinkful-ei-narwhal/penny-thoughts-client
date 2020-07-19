@@ -1,15 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import WelcomeName from './WelcomeName';
-import { BrowserRouter } from 'react-router-dom';
+import NewThinkingLoader from './NewThinkingLoader';
 
-describe('<WelcomeName />', () => {
+describe('<NewThinkingLoader />', () => {
     it('renders without crashing', () => {
       const div = document.createElement('div');
       ReactDOM.render(
-      <BrowserRouter>
-      <WelcomeName/>
-      </BrowserRouter>
+      <NewThinkingLoader/>
       , div);
       ReactDOM.unmountComponentAtNode(div);
     });
