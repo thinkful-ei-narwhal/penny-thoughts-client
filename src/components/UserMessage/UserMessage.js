@@ -6,6 +6,9 @@ export class UserMessage extends Component {
 
   static contextType = MessageContext;
 
+  /* by setting the ref to the id, we can get its value similar to jQuery 
+  without interfering with the DOM or needing to store input in state */
+
   handleEditMessage = (id) => {
     const message = this.refs[`${id}`].value;
     const { setError, updateUserMessage, clearError, setSuccess, toggleLoadingThink } = this.context

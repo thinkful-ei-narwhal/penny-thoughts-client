@@ -6,11 +6,23 @@ import './SingleMessage.css'
 
 export default function SingleMessage(props) {
 
+  /* This function component had to be created in order to use the 
+  LongPres.js event handler that we created.  Therefore, some things
+  are very different from the rest of the code. */
+
+  // We bring in context using the UseContext hook.
   const MessagesCon = useContext(MessageContext)
 
-  const [report, toggleReport] = useState(false)
-  const [confirm, toggleConfirm] = useState(false)
-  const [success, toggleSuccess] = useState(false)
+
+  // We apply a state and SetState in the useState hook similar to classes.
+
+  const [state, setState] = useState({report: false, confirm: false, success: false})
+  
+
+  /* Here we use an async/await function in order to make a second call if the 
+  message is already in the list of coins displayed.  It makes more sense than
+  sending data for a get (unRESTful) or a post (also unRESTful) and as the messages
+  increase, the chance of this happening approaches 0 */
 
   const updateMessage = async (id) => { 
     const messages = MessagesCon.messages.map(m => m.id);
@@ -26,13 +38,15 @@ export default function SingleMessage(props) {
   };
 
   const onLongPress = () => {
-    toggleReport(!report);
+    setState(oldVals => ({...oldVals, report: !state.report})) // The first example of updating state with hooks
   };
 
   const onClickCoin = () => {
-    flipCoin() // this starts the coin flip animation?
+    flipCoin() // this starts the coin flip animation
     updateMessage(props.id)
   }
+
+  // This is put here in order to allow the accessibility of key presses
 
   const handleKeyPress = (event) => {
     if(event.key === 'Enter') {
@@ -44,6 +58,8 @@ export default function SingleMessage(props) {
     }
   }
 
+  // This renders the report modal
+
   const renderReport = () => {
     return (
       <div className="modal-box">
@@ -54,14 +70,15 @@ export default function SingleMessage(props) {
         <p>Do you wish you continue?</p>
         <button className="report-button"
         onClick={() => {
-          toggleReport(!report)
-          toggleConfirm(!confirm)}
-        }>Yes, Report!</button>
+          setState(oldVals => ({...oldVals, report: !state.report, confirm: !state.confirm}))
+        }}>Yes, Report!</button>
         <button className="cancel-button"
-        onClick={() => toggleReport(!report)}>Cancel</button>
+        onClick={() => setState(oldVals => ({...oldVals, report: !state.report}))}>Cancel</button>
       </div>
     )
   }
+
+  // this renders the confirmation of a report
 
   const renderConfirm = () => {
     return (
@@ -73,21 +90,20 @@ export default function SingleMessage(props) {
           messageService.flagMessage(props.id)
             .then(() => {
             updateMessage(props.id)
-            toggleConfirm(false)
-            toggleReport(false);
-            toggleSuccess(true)
+            setState(oldVals => ({...oldVals, report: false, confirm: false, success: true}))
           })
         }}>Yes</button>
 
         <button
          className="yes-no-ok"
          onClick={() => {
-          toggleConfirm(false)
-          toggleReport(false);
+          setState(oldVals => ({...oldVals, report: false, confirm: false}))
         }}>No</button>
       </div>
     )
   }
+
+  // this renders that the report was successful
 
   const renderSuccess = () => {
     return (
@@ -97,13 +113,13 @@ export default function SingleMessage(props) {
         <button
         className="yes-no-ok"
          onClick={() => {
-          toggleConfirm(false)
-          toggleReport(false);
-          toggleSuccess(false);
+          setState(oldVals => ({...oldVals, report: false, confirm: false, success: false}))
         }}>OK</button>
       </div>
     )
   }
+
+  // this sets default options for the longPress event handler
 
   const defaultOptions = {
     shouldPreventDefault: true,
@@ -114,12 +130,14 @@ export default function SingleMessage(props) {
 
   /* --- Coin Stuff --- */
 
+  /* Here we need to make references to the coins and text in order to change their style 
+  for animations */
   
 
   const coinRef = React.useRef();
   const textRef = React.useRef();
-  const dilutedFrames = [2, 3, 8, 10, 11, 13, 19];
-  const finalFrames = [16, 6];
+  const dilutedFrames = [2, 3, 8, 10, 11, 13, 19]; // this changes the animation when slowing down
+  const finalFrames = [16, 6]; // when even more slowed down
 
   React.useEffect(() => {
     flipCoin();
@@ -130,12 +148,12 @@ const nextFrame = (target, frame, speed) => {
   if (speed < 20 + target && dilutedFrames.includes(frame)) {
     nextFrame(target, frame + 1, speed);
   } else if (speed > 60 + target && finalFrames.includes(frame)) {
-    if (coinRef.current){
+    if (coinRef.current){ // will crash if not checking for the current
       coinRef.current.style.backgroundImage = `url(images/coin${frame}.png)`;
       coinRef.current.classList.remove("spinning");
       coinRef.current.classList.add("finished");
     }
-    if (textRef.current){
+    if (textRef.current){ // will crash if not checking for the text
       
       textRef.current.classList.remove("spinning");
       textRef.current.classList.add("finished");
@@ -153,6 +171,8 @@ const nextFrame = (target, frame, speed) => {
     
   }
 };
+
+// flipping the coin starts the animation sequence
 
 const flipCoin = () => {
   const target = Math.floor(Math.random() * 50);
@@ -177,9 +197,9 @@ const flipCoin = () => {
           className="coin-text">{props.message}
           </p>
         </div>
-        {report && renderReport()}
-        {confirm && renderConfirm()}
-        {success && renderSuccess()}
+        {state.report && renderReport()}
+        {state.confirm && renderConfirm()}
+        {state.success && renderSuccess()}
       </Fragment>
   )
 

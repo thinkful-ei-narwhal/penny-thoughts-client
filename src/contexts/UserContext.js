@@ -60,6 +60,8 @@ export class UserProvider extends Component {
     TokenService.clearCallbackBeforeExpiry()
   }
 
+  // various state setting functions
+
   setError = error => {
     this.setState({ error })
   }
@@ -122,11 +124,11 @@ export class UserProvider extends Component {
   }
 
 
-  toggleConfirm = () => {
+  toggleConfirm = () => { // a value for when the user is about to confirm account deletion
     this.setState({ confirm: !this.state.confirm })
   }
-
-  toggleDelete = () => {
+ 
+  toggleDelete = () => { // a value for if the user deleted their account
     this.setState({ deleteAccount: !this.state.deleteAccount });
   }
 

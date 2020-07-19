@@ -26,6 +26,8 @@ class PublicHomePage extends Component {
     return temp
   }
 
+  // When a user submits a message, this handles whether to display a success message or a rejection message
+
   handleAddMessage = (message) => {
     const { setError, setSubmittedMessage, clearError, setSuccess, toggleLoading} = this.context
     if (!message) return setError('You must include a valid message.')
@@ -42,6 +44,8 @@ class PublicHomePage extends Component {
         setError(err.error)
       })
   }
+
+  // this renders the introduction for the user
 
   renderIntro() {
     const {error, success} = this.context

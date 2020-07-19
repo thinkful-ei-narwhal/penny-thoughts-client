@@ -18,6 +18,8 @@ export default class UserMessages extends Component {
     }
   }
 
+  // On mount, this gets the messages and the max pages for the user
+
   componentDidMount() {
     this.context.clearError()
     this.context.toggleLoading()
@@ -35,6 +37,8 @@ export default class UserMessages extends Component {
       .catch(err => this.context.setError(err))
   }
 
+  // this counts the pages based on how many messages there are
+
   countPages(messages) {
     let numberOfMessages = parseInt(messages[0].count)
     let pages = Math.ceil(numberOfMessages / 10)
@@ -49,6 +53,8 @@ export default class UserMessages extends Component {
     return temp
   }
 
+  // lets the user go back on the messages pagination
+
   onPrevious = () => {
     if (this.state.page === 1) {
       return
@@ -61,6 +67,8 @@ export default class UserMessages extends Component {
       .catch(err => this.context.setError(err))
   }
 
+  // lets the user go forward on the messages pagination
+
   onNext = () => {
     this.setState({ page: this.state.page + 1 })
     MessageService.getUserMessages(this.state.page + 1)
@@ -69,6 +77,8 @@ export default class UserMessages extends Component {
       })
       .catch(err => this.context.setError(err))
   }
+
+  // lets the user go to the last page (might be depreciated?)
 
   onLast = () => {
     this.setState({ page: this.state.pageCount })
@@ -79,6 +89,8 @@ export default class UserMessages extends Component {
       .catch(err => this.context.setError(err))
   }
 
+  // lets the user click on the page number to go right to it
+
   onClickPageNumber = (ev) => {
     ev.preventDefault()
     this.setState({ page: parseInt(ev.target.value) })
@@ -88,6 +100,8 @@ export default class UserMessages extends Component {
       })
       .catch(err => this.context.setError(err))
   }
+
+  // various renders
 
   renderPageButton = (pageNumber) => {
     return <button value={pageNumber} onClick={(ev) => this.onClickPageNumber(ev)}>{pageNumber}</button>

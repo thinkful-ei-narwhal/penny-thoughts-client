@@ -20,6 +20,9 @@ export class LandingPage extends Component {
           <Link className="get-inspired" to='/browse'>Get Inspired Here!</Link>
           <h2 className="landing-sub-subheader">Or...</h2>
           <LoginForm {...this.props}/>
+          <p>You can also log in with these credentials:</p>
+          <p>Username: Guest</p>
+          <p>Password: $4PpPpPp</p>
         </div>
       </div>
     )

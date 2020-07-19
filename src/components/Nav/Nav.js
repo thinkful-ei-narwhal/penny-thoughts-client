@@ -14,6 +14,8 @@ export class Nav extends Component {
     this.context.clearUserData();
   }
 
+  // if the user is an admin...
+
   renderLogoutLink() {
     if (jwtDecode(TokenService.getAuthToken()).admin) {
       return (
@@ -36,7 +38,7 @@ export class Nav extends Component {
           </NavLink> 
         </>
       )
-    } else {
+    } else { // if the user is registered...
       return (
         <>
           <NavLink  
@@ -54,6 +56,8 @@ export class Nav extends Component {
       )
     }
   }
+
+  // if the user is NOT registered...
 
   renderLoginLink() {
     if (this.props.location.pathname === '/register') {
