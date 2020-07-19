@@ -42,33 +42,33 @@ export class MessageProvider extends Component {
     }
   }
 
-  setError = error => {
+  setError = error => { // sets errors
     this.setState({
       success: null,
       error: error
     })
   }
 
-  clearError = () => {
+  clearError = () => { // clears errors
     this.setState({
       success: null,
       error: null
     })
   }
 
-  setMessages = data => {
+  setMessages = data => { // sets messages into state
     this.setState({
       messages: data
     })
   }
 
-  setFlaggedMessages = data => {
+  setFlaggedMessages = data => { // sets admin messages into state
     this.setState({
       flaggedMessages: [...data]
     })
   }
 
-  changeMessage = (data, id) => {
+  changeMessage = (data, id) => { // changes a message in state
     let ind = this.state.messages.findIndex(el => el.id === id)
     let newArr = this.state.messages;
     newArr[ind] = data;
@@ -77,7 +77,7 @@ export class MessageProvider extends Component {
     })
   }
 
-  setSubmittedMessage = message => {
+  setSubmittedMessage = message => { // sets the submitted message into state
     this.setState({
       submittedMessage: message
     }, () => {
@@ -85,34 +85,34 @@ export class MessageProvider extends Component {
     })
   }
 
-  setUserMessages = data => {
+  setUserMessages = data => { // sets the user messaes into state
     this.setState({
       userMessages: [...data]
     })
   }
 
-  unflagMessage = id => {
+  unflagMessage = id => { // unflags a message in state
     this.setState({
       flaggedMessages: this.state.flaggedMessages.filter(message => message.id !== id)
     })
   }
-  setFilterMessages = id =>{
+  setFilterMessages = id =>{ // honestly not entirely sure what this does....
     this.setState({
       userMessages: this.state.userMessages.filter(message => message.id !== id)
     })
   }
 
-  archiveMessage = id => {
+  archiveMessage = id => { // this archives a message in the admin dashboard in state
     this.setState({
       flaggedMessages: this.state.flaggedMessages.filter(message => message.id !== id)
     })
   }
 
-  toggleLoading = () => {
+  toggleLoading = () => { // a value for if things are loading
     this.setState({ isLoading: !this.state.isLoading })
   }
 
-  toggleLoadingThink = () => {
+  toggleLoadingThink = () => { // a value for if the thinking loader is active
     this.setState({ isLoadingThink: !this.state.isLoadingThink })
   }
 
@@ -128,13 +128,13 @@ export class MessageProvider extends Component {
     this.setState({ userMessages: userMessages, isLoading: false, error: null })
   }
 
-  clearSuccess = () => {
+  clearSuccess = () => { // clears the success message from state
     this.setState({
       sucess: null
     })
   }
 
-  setSuccess = () => {
+  setSuccess = () => { // sets the success message in state
     this.setState({
       error: null,
       success: 'Your message was successfully saved!'
@@ -143,7 +143,7 @@ export class MessageProvider extends Component {
     })
   }
 
-  deleteUserMessage = (messageID) => {
+  deleteUserMessage = (messageID) => { // deletes a user message
     const userMessages = [...this.state.userMessages]
     const ind = userMessages.findIndex(msg => msg.id === messageID);
     userMessages.splice(ind, 1);

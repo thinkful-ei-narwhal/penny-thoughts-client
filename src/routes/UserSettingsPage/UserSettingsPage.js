@@ -11,6 +11,8 @@ export default class UserSettingsPage extends Component {
 
   static contextType = UserContext;
 
+  // various modal boxes for when the user deletes their account
+
   renderConfirm = () => {
     return (
       <div className="modal-box">

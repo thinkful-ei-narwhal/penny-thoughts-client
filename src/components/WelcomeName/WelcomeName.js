@@ -13,14 +13,14 @@ export class WelcomeName extends Component {
       return (
         <div className="instructions">
           <h2>{`Welcome, ${user}!`}</h2>
-          <h3>Coin controls: Click to flip || Hold to report</h3>
+          <h3>Coin Controls: Click/Enter to Flip --- Hold Click/Space to Report</h3>
         </div>
       )
     } else {
       return (
         <div className="instructions">
           <h2>{`You are not logged in... `}<Link to='/'>Log In Here!</Link></h2>
-          <h3>Coin controls: Click to flip || Hold to report</h3>
+          <h3>Coin Controls: Click/Enter to Flip --- Hold Click/Space to Report</h3>
         </div>
       )
     }
