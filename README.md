@@ -11,29 +11,34 @@ Penny Thoughts
 
 ## Links
 live site: https://penny-thoughts.vercel.app/<br />
-server: https://mighty-peak-21411.herokuapp.com/
+server: https://mighty-peak-21411.herokuapp.com/<br />
+server repo: https://github.com/thinkful-ei-narwhal/penny-thoughts-server/
 
 ## Using The API
-Currently the API supports GET and POST endpoints.
 
-- Unprotected Endpoints<br />
-  + Sign Up: POST (https://url/api/api/users)<br />
-  + Get 10 Random Messages: GET (https://url/api/api/messages)<br />
+  - Auth Route '/api/auth'
+    + Login: POST '/login'{ username, password } => { authToken: [some auth token] }
 
-- Protected Endpoints<br />
-  + Login: POST (https://url/api/auth/login)<br />
-  + Edit Account Information: PATCH (https://url/api/users)<br />
-  + Delete Account: DELETE (https://url/api/users)<br />
-  + Submit a Message: POST (https://url/api/api/messages)
-  + Get User's Submitted Messages: GET (https://url/api/messages/userData/:page)<br />
-  + Edit User's Submitted Messages: PATCH (https://url/api/auth/messages/userData)<br />
-  + Delete User's Submitted Messages: DELETE (https://url/api/auth/messages/userData)<br />
-  + Report Messages: PATCH (https://url/api/auth/messages/report)<br />
+ - Messages Route '/api/messages' (most require authentication)
+  + Get 10 Messages: GET '/' => [{archived: false, date_created: [some date], date_modified: [some_date], flagged: [boolean], id: #, message: ['a message'], user_id: #}, ...]
+  + Post 1 message: POST (reqAuth) '/' { message } => [{archived: false, date_created: [some date], date_modified: [some_date], flagged: [boolean], id: #, message: ['a message'], user_id: #}]
+  + Get 1 Message: GET '/single:id' => [{archived: false, date_created: [some date], date_modified: [some_date], flagged: [boolean], id: #, message: ['a message'], user_id: #}]
+  + Get All Flagged Messages: GET (reqAuth) '/flagged' => [{archived: false, date_created: [some date], date_modified: [some_date], flagged: [boolean], id: #, message: ['a message'], user_id: #}, ...]
+  + Unflag a Message: PATCH (reqAuth) '/flagged' { id } => nothing
+  + Archive a Message: PATCH (reqAuth) '/archive' { id } => nothing
+  + Get User Messages: GET (reqAuth) '/userData/:page' => [{archived: false, date_created: [some date], date_modified: [some_date], flagged: [boolean], id: #, message: ['a message'], user_id: #}, ...]
+  + Get the Page Count: GET (reqAuth) '/pageCount' => {count: #}
+  + Patch a user message: PATCH (reqAuth) '/userData' { id, message } => nothing
+  + Delete a user Message: DELETE (reqAuth) '/userData' { id } => nothing
+  + Report (flag) a message: PATCH '/report' { id }=> nothing
+  
+  
+ - Users Route 'api/users' (all requre authentication)
+  + Get the user fullname and email: GET '/' => {full_name: [fullname] , email: [email]}
+  + Post the user fullname and email: POST '/' { full_name, username, email, password } => {full_name: [fullname] , email: [email]}
+  + Delete the user account: DELETE '/' { id } => { success: true }
+  + Edit user fullname and email: PATCH '/' { full_name, email } => nothing
 
-- Admin Endpoints<br />
-  + Get Reported Messages: GET (https://url/api/messages/flagged)<br />
-  + Archive Reported Message: PATCH (https://url/api/messages/archive)<br />
-  + Un-flag Reported Message: PATCH (https://url/api/messages/flagged)<br />
 
 ## Screen Shots
 ![Landing/LogIn](images/LandingLoginPage.png)<br />
@@ -43,15 +48,29 @@ Currently the API supports GET and POST endpoints.
 ![Admin](images/AdminPage.png)<br />
 
 ### Summary
-This app is an uplifting, anonymous, message sharing app. Negative messages are filtered out using a toxicity filter from TensorFlow. 
+Penny Thoughts is an application built for users to share uplifting and motivational messages in a world that is fraught with crisis.  In order to keep our space space, we filter messages using TensorFlow.js's Toxicity model.
 
 ## Technologies
-- Font End
+- General
+  * JavaScript
+- Front End
+  * HTML5
+  * CSS3
   * React
+  * Vercel
 - Back End
   * Node.js
+  * Express
+  * Heroku
+  * XSS
+  * Winston
+  * NYC
+  * Knex
   * Postgresql
   * TensorFlow
+  * Crypto-js
 - Testing
-  * Mocha, Chai
   * Jest
+  * Supertest
+  * Mocha, Chai
+  * Enzyme

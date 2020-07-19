@@ -5,6 +5,9 @@ import './FlaggedMessage.css'
 
 export class FlaggedMessage extends Component {
 
+
+  // These are the messages for the admin view.
+
   static contextType = MessageContext;
 
   handleUnflagMessage = (id) => {
