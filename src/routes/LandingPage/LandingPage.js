@@ -13,7 +13,7 @@ export class LandingPage extends Component {
           <p className="landing-description">Penny Thoughts is an app that allows users to share and view positive, motivational statements. With today's quarantine keeping people at home, Penny Thoughts helps bring positivity to users by showing them positive statements. Sign up and begin reaping the benefits of positivity.</p> 
           <div className="penny"/>
           <div className="penny-desc">
-            <p className="landing-description">Hello!  My name is Penny!  I'm an Artificial Intelligence built to filter messages so that we can all share our positive motivations safely!  I'm made using TensorFlow.js and a pre-built Toxcitity model, but I'm not perfect!  Sometimes things slip through, so appologies in advance!</p> 
+            <p className="landing-description">Hello!  My name is Penny!  I'm an Artificial Intelligence built to filter messages so that we can all share our positive motivations safely!  I'm made using TensorFlow.js and a pre-built Toxicity model, but I'm not perfect!  Sometimes things slip through, so apologies in advance!</p> 
           </div>
         </div>
         <div className="landing-login-container">
